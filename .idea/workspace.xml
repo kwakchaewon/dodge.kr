@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="2baa4afe-d6e2-4cec-b140-afa65d60db79" />
+  <component name="ProjectId" id="24Wy2o3vyDJFLfv4mCu34AOztV3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/css" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\DjangoWebApp\static\css" />
+      <recent name="C:\DjangoWebApp\communityboardapp" />
+      <recent name="C:\DjangoWebApp\communityboardapp\templates" />
+      <recent name="C:\DjangoWebApp\testapp\templates" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="" />
+      <created>1643760432205</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643760432205</updated>
+      <workItem from="1643760439966" duration="10097000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="667" y="197" key="#Deployment" timestamp="1643772496831">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="667" y="197" key="#Deployment/0.0.1707.1027@0.0.1707.1027" timestamp="1643772496831" />
+    <state x="740" y="214" key="#Options" timestamp="1643771762426">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="740" y="214" key="#Options/0.0.1707.1027@0.0.1707.1027" timestamp="1643771762426" />
+    <state x="158" y="162" key="#SSH_Configurations" timestamp="1643771793177">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="158" y="162" key="#SSH_Configurations/0.0.1707.1027@0.0.1707.1027" timestamp="1643771793177" />
+    <state x="100" y="104" width="962" height="827" key="DirDiffDialog" timestamp="1643784373763">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="100" y="104" width="962" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1643784373763" />
+    <state x="83" y="162" key="SettingsEditor" timestamp="1643761089581">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="83" y="162" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1643761089581" />
+    <state x="250" y="214" width="521" height="538" key="ftp.server.browser" timestamp="1643772481917">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="250" y="214" width="521" height="538" key="ftp.server.browser/0.0.1707.1027@0.0.1707.1027" timestamp="1643772481917" />
+  </component>
+</project>

@@ -1,0 +1,79 @@
+select now();
+
+show variables like '%character%';
+show variables like '%collation%';
+show variables like '%time_zone%';
+set global time_zone='Asia/Seoul';
+
+
+
+CREATE DATABASE testdb;
+show databases;
+use testdb;
+show tables;
+
+* 테이블 생성
+create table boards (
+id int(10) not null auto_increment,
+category_id int(10) not null,
+user_id int(10) not null,
+title varchar(300) not null,
+content text not null,
+registered_date datetime default current_timestamp,
+last_update_date_date datetime default null,
+view_count int(10) default '0',
+image varchar(255) default null,
+primary key (id),
+foreign key(user_id) references board_categories (id),
+foreign key(category_id) references auth_user (id)
+);
+
+create table board_categories(
+id integer(10) not null auto_increment,
+category_code varchar(100) not null,
+category_type varchar(100) not null,
+category_name varchar(100) not null,
+category_desc varchar(200) not null,
+list_count integer(10) default 20,
+authority int(1) default 20,
+creation_date datetime default current_timestamp,
+last_update_date datetime,
+primary key (id)
+);
+
+
+
+* board_categories, boards 데이터 추가
+insert into board_categories (category_code, category_type,category_name,category_desc)
+values ('testcategory','board','Test','Test Category');
+
+insert into boards (category_id, user_id, title, content)
+values (1, 1, 'John Test Post', 'Test Post 1');
+
+insert into boards (category_id, user_id, title, content)
+values (1, 2, 'Anna Test Post', 'Test Post 2');
+
+
+
+* 테이블 전체 데이터 삭제
+TRUNCATE boards;
+
+
+
+* 외래키 제거
+ALTER TABLE boards DROP FOREIGN KEY boards_ibfk_2;
+
+
+
+* 외래키 보기
+select * from information_schema.table_constraints where table_name = 'boards';
+
+
+
+* 외래키 추가
+alter table boards add foreign key(user_id) references auth_user(id);
+alter table boards add foreign key(category_id) references board_categories (id);
+
+
+
+
