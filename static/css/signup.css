@@ -15,6 +15,7 @@
     --color-orange: #feb546;
     --color-black:#000000;
 
+
     /* Font size */
     --font-large:48px;
     --font-medium:28px;
@@ -45,12 +46,12 @@
 }
 
 body{
-    background-color: var(--color-white);
+    background-color: var(--color);
 }
 
 a{
     text-decoration: none;
-    /*color: var(--color);*/
+    color: var();
 }
 
 ul{
@@ -70,10 +71,10 @@ section{
     text-align: center;
     position: relative;
     margin: 180px 600px 200px 600px;
+    background: var(--color-white);
     min-width: 500px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background: black;
 }
 
 
@@ -120,10 +121,12 @@ section{
 
 /*logincontainer__forgetpw,logincontainer__signin*/
 .logincontainer__forgetpw,.logincontainer__signin{
-    /*color: var(--color-blue);*/
     padding-bottom: 20px;
 }
 
+.logincontainer__forgetpw,.logincontainer__signin{
+    color: var(--color-blue);
+}
 
 
 /*logincontainer__forgetpw*/

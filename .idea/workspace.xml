@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="" />
+    <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/communityboardapp/templates/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Application plan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Application plan.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,8 +39,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="2baa4afe-d6e2-4cec-b140-afa65d60db79" />
   <component name="ProjectId" id="24Wy2o3vyDJFLfv4mCu34AOztV3" />
@@ -25,6 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static/css" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -43,15 +76,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1643760432205</updated>
-      <workItem from="1643760439966" duration="12715000" />
+      <workItem from="1643760439966" duration="12790000" />
+      <workItem from="1643960297087" duration="1626000" />
+      <workItem from="1643962298186" duration="1334000" />
+      <workItem from="1643963655150" duration="820000" />
+      <workItem from="1643964489540" duration="1694000" />
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="667" y="197" key="#Deployment" timestamp="1643772496831">
+    <state x="667" y="197" key="#Deployment" timestamp="1643968275824">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="667" y="197" key="#Deployment/0.0.1707.1027@0.0.1707.1027" timestamp="1643772496831" />
+    <state x="667" y="197" key="#Deployment/0.0.1707.1027@0.0.1707.1027" timestamp="1643968275824" />
+    <state x="517" y="208" key="#Inspections" timestamp="1643962647095">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="517" y="208" key="#Inspections/0.0.1707.1027@0.0.1707.1027" timestamp="1643962647095" />
     <state x="740" y="214" key="#Options" timestamp="1643771762426">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -60,17 +113,33 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="158" y="162" key="#SSH_Configurations/0.0.1707.1027@0.0.1707.1027" timestamp="1643771793177" />
-    <state x="100" y="104" width="962" height="827" key="DirDiffDialog" timestamp="1643814679533">
+    <state x="345" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1643962743147">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="100" y="104" width="962" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1643814679533" />
+    <state x="345" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1643962743147" />
+    <state x="625" y="330" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1643962874299">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="625" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1643962874299" />
+    <state x="100" y="104" width="1457" height="827" key="DirDiffDialog" timestamp="1643968345615">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="100" y="104" width="1457" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1643968345615" />
     <state x="83" y="162" key="SettingsEditor" timestamp="1643761089581">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="83" y="162" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1643761089581" />
-    <state x="250" y="214" width="521" height="538" key="ftp.server.browser" timestamp="1643772481917">
+    <state x="-4" y="167" width="831" height="696" key="dock-window-1" timestamp="1643962311843">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="250" y="214" width="521" height="538" key="ftp.server.browser/0.0.1707.1027@0.0.1707.1027" timestamp="1643772481917" />
+    <state x="-4" y="167" width="831" height="696" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1643962311843" />
+    <state x="250" y="214" width="521" height="538" key="ftp.server.browser" timestamp="1643968246220">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="250" y="214" width="521" height="538" key="ftp.server.browser/0.0.1707.1027@0.0.1707.1027" timestamp="1643968246220" />
+    <state x="636" y="244" key="search.everywhere.popup" timestamp="1643968394390">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="636" y="244" key="search.everywhere.popup/0.0.1707.1027@0.0.1707.1027" timestamp="1643968394390" />
   </component>
 </project>

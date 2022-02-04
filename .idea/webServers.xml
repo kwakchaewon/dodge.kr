@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d11a69c8-854b-460c-a012-dc07a1c9bdd7" name="DjangoWebApp">
+        <fileTransfer accessType="SFTP" port="22" sshConfigId="7d521409-c90e-427d-96df-6ab059349bdb" sshConfig="DjangoWebApp">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

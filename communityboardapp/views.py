@@ -9,3 +9,9 @@ def goToMain(request):
 
 def goLogin(request):
     return render(request, 'login.html')
+
+def goSignIn(request):
+    return render(request, 'login.html')
+
+def goSignUp(request):
+    return render(request, 'signup.html')
