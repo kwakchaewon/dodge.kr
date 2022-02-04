@@ -15,7 +15,6 @@
     --color-orange: #feb546;
     --color-black:#000000;
 
-
     /* Font size */
     --font-large:48px;
     --font-medium:28px;
@@ -35,7 +34,6 @@
     /* animation--duration */
     --animation-duration:300ms;
 
-
 }
 
 
@@ -46,12 +44,12 @@
 }
 
 body{
-    background-color: var(--color);
+    background-color: var(--color-light-grey);
 }
 
 a{
     text-decoration: none;
-    color: var();
+    color: var(--color-white);
 }
 
 ul{
@@ -66,21 +64,42 @@ section{
 
 
 
-/*logincontainer*/
-.logincontainer{
-    text-align: center;
-    position: relative;
-    margin: 180px 600px 200px 600px;
-    background: var(--color-white);
-    min-width: 500px;
+/*common*/
+.signup__container__id,.signup__container__pw,.signup__container__chkpw,
+.signup__container__email, .signup__container__phonenum, .signup__container__birth{
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 
 
-/*logincontainer__logo*/
-.logincontainer__logo{
+/*signup__container*/
+.signup__container{
+    text-align: center;
+    position: relative;
+    margin: 180px 600px 200px 600px;
+    min-width: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: var(--color-white);
+}
+
+
+.signup__container input{
+    font-size: 20px;
+    border: none;
+    border-bottom: solid 1px;
+}
+
+
+.signup__container h1{
+    font-weight: 700;
+}
+
+
+
+/*signup__container__logo*/
+.signup__container__logo{
     padding-top: 20px;
     padding-bottom:40px;
     font-weight: 700;
@@ -88,70 +107,46 @@ section{
 
 
 
-.logincontainer h1{
-    font-weight: 700;
-}
+/*signup__container__id*/
 
 
 
-/*logincontainer__id,logincontainer__pw*/
-.logincontainer__id,.logincontainer__pw{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+/*signup__container__pw*/
 
 
 
-.logincontainer__id input,.logincontainer__pw input{
-    font-size: 20px;
-    border: none;
-    border-bottom: solid 1px;
-}
+/*signup__container__chkpw*/
 
 
 
-
-/*logincontainer__id*/
-
-
-
-/*logincontainer__pw*/
+/*signup__container__email*/
 
 
 
-/*logincontainer__forgetpw,logincontainer__signin*/
-.logincontainer__forgetpw,.logincontainer__signin{
-    padding-bottom: 20px;
-}
-
-.logincontainer__forgetpw,.logincontainer__signin{
-    color: var(--color-blue);
-}
+/*signup__container__phonenum*/
 
 
-/*logincontainer__forgetpw*/
-.logincontainer__forgetpw{
 
-}
+/*signup__container__birth*/
 
 
-/*logincontainer__signup*/
-.logincontainer__signup{
+
+/*signup__container__signup*/
+.signup__container__signup{
     font-size: 30px;
     padding-top: 30px;
     padding-bottom: 20px;
 }
 
 
-
-#signupbtn{
-    width: 50%;
+#signupbtn, #cancel{
+    width: 23%;
     height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
-
-/*logincontainer__signin*/
-.logincontainer__signin{
-
+.signup__container__signup{
+    padding-top: 40px;
 }

@@ -19,16 +19,19 @@
 
 </head>
 <body>
-<div class="logincontainer">
-    <div class="logincontainer__logo"><h1>Sign up</h1></div>
+<div class="signup__container">
+    <div class="signup__container__logo"><h1>Sign up</h1></div>
     <form action="">
-        <div class="logincontainer__id"><input type="text" placeholder="아이디"></div>
-        <div class="logincontainer__pw"><input type="password" placeholder="비밀번호"></div>
-
-        <div class="logincontainer__signup"><button class="btn btn-info" id="signupbtn">로그인</button></div>
-
-        <div class="logincontainer__signin" >처음이신가요?</div>
-        <div class="logincontainer__forgetpw">비밀번호를 잊으셨나요?</div>
+        <div class="signup__container__id"><input type="text" placeholder="아이디"></div>
+        <div class="signup__container__pw"><input type="password" placeholder="비밀번호"></div>
+        <div class="signup__container__chkpw"><input type="password" placeholder="비밀번호 확인"></div>
+        <div class="signup__container__email"><input type="email" placeholder="email"></div>
+        <div class="signup__container__phonenum"><input type="tel" placeholder="전화번호"></div>
+        <div class="signup__container__birth"><input type="date" placeholder="생년월일"></div>
+        <div class="signup__container__signup">
+            <button class="btn btn-info" id="signupbtn">회원가입</button>
+            <button class="btn btn-danger" id="cancel">취소</button>
+        </div>
     </form>
 </div>
 </body>
