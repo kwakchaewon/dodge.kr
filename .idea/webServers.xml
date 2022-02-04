@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="d11a69c8-854b-460c-a012-dc07a1c9bdd7" name="DjangoWebApp">
-        <fileTransfer accessType="SFTP" port="22" sshConfigId="7d521409-c90e-427d-96df-6ab059349bdb" sshConfig="DjangoWebApp">
+      <webServer id="d11a69c8-854b-460c-a012-dc07a1c9bdd7" name="dodge.kr">
+        <fileTransfer rootFolder="/home/ubuntu" accessType="SFTP" host="15.164.216.53" port="22" sshConfigId="8e3889ab-e1de-41b6-ba90-127feb6750c5" sshConfig="ubuntu@15.164.216.53:22 key" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
