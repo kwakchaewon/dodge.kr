@@ -45,12 +45,12 @@
 }
 
 body{
-    background-color: var(--color-white);
+    background-color: var(--color-light-grey);
 }
 
 a{
     text-decoration: none;
-    /*color: var(--color);*/
+    color: var(--color-white);
 }
 
 ul{
@@ -73,7 +73,7 @@ section{
     min-width: 500px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background: black;
+    background: var(--color-white);
 }
 
 
@@ -120,7 +120,7 @@ section{
 
 /*logincontainer__forgetpw,logincontainer__signin*/
 .logincontainer__forgetpw,.logincontainer__signin{
-    /*color: var(--color-blue);*/
+    color: var(--color-blue);
     padding-bottom: 20px;
 }
 
