@@ -16,5 +16,8 @@ def goSignIn(request):
 def goSignUp(request):
     return render(request, 'signup.html')
 
+def goCommunity(request):
+    return render(request, 'community.html')
+
 # def goRegistUser(request):
 #  # return redirect('accounts:login')
