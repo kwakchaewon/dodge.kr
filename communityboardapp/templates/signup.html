@@ -13,6 +13,9 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    {% load static %}
+    <script src= "{% static 'js/signup.js' %}"></script>
 
     <!--    &lt;!&ndash; 합쳐지고 최소화된 최신 자바스크립트 &ndash;&gt;-->
     <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
@@ -21,16 +24,28 @@
 <body>
 <div class="signup__container">
     <div class="signup__container__logo"><h1>Sign up</h1></div>
-    <form action="">
-        <div class="signup__container__id"><input type="text" placeholder="아이디"></div>
-        <div class="signup__container__pw"><input type="password" placeholder="비밀번호"></div>
-        <div class="signup__container__chkpw"><input type="password" placeholder="비밀번호 확인"></div>
-        <div class="signup__container__email"><input type="email" placeholder="email"></div>
-        <div class="signup__container__phonenum"><input type="tel" placeholder="전화번호"></div>
-        <div class="signup__container__birth"><input type="date" placeholder="생년월일"></div>
+    <form action="" id="register_form" method="post" action="/registUser">
+        {% csrf_token %}
+        <div class="signup__container__id">
+            <input id="container__id" type="text" value="" placeholder="아이디">
+        </div>
+        <div class="signup__container__pw">
+            <input id="container__pw"  type="password" placeholder="비밀번호"></div>
+        <div class="signup__container__chkpw">
+            <input id="container__chkpw" type="password" placeholder="비밀번호 확인" value="">
+        </div>
+        <div class="signup__container__email">
+            <input id="container__email"  type="email" placeholder="email" value="">
+        </div>
+        <div class="signup__container__phonenum">
+            <input id="container__phonenum"  type="tel" placeholder="전화번호" value="">
+        </div>
+        <div class="signup__container__birth">
+            <input id="container__birth" type="date" placeholder="생년월일" value="">
+        </div>
         <div class="signup__container__signup">
-            <button class="btn btn-info" id="signupbtn">회원가입</button>
-            <button class="btn btn-danger" id="cancel">취소</button>
+            <button class="btn btn-info" id="signup__btn" onclick="registUsr()">회원가입</button>
+            <button class="btn btn-danger" id="cancel__btn" onclick="cancel()" >취소</button>
         </div>
     </form>
 </div>

@@ -139,7 +139,7 @@ section{
 }
 
 
-#signupbtn, #cancel{
+#signup__btn, #cancel__btn{
     width: 23%;
     height: 40px;
     margin-left: 10px;

@@ -6,4 +6,5 @@ urlpatterns = [
     path('', goToMain,),
     path('login', goLogin,),
     path('signup', goSignUp,),
+    # path('registUser', goRegistUser,),
 ]

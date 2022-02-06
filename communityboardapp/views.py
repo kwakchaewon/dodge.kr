@@ -15,3 +15,6 @@ def goSignIn(request):
 
 def goSignUp(request):
     return render(request, 'signup.html')
+
+# def goRegistUser(request):
+#  # return redirect('accounts:login')
