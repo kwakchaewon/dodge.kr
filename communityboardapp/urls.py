@@ -7,6 +7,4 @@ urlpatterns = [
     path('login', goLogin,),
     path('signup', goSignUp,),
     path('community', goCommunity, ),
-
-    # path('registUser', goRegistUser,),
 ]
