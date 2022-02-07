@@ -27,7 +27,7 @@ def signupCompleted(request):
     if request.method == "POST":
         username = request.POST['container__id']
         password = request.POST['container__pw']
-        email = request.POST['container__email']
+        email = request.POST['email__id'] + '@' + request.POST['email__domain']
         phone = request.POST['container__phonenum']
 
         # last_name = request.POST['container__name']
@@ -38,8 +38,8 @@ def signupCompleted(request):
         user = User.objects.create_user(username, password, email)
 
         # 사용자인증 및 로그인
-        loginUser = authenticate(username=username, password=password)
-        login(request, loginUser)
+        # loginUser = authenticate(username=username, password=password)
+        # login(request, loginUser)
 
 
         return redirect('/')

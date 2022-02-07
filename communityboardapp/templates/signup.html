@@ -46,11 +46,9 @@
         {#        추후 추가될 email#}
         <div class="signup__container__email">
             <div class="container__logo">이메일</div>
-            <input type="text" id="email__id" value="">
+            <input type="text" id="email__id" value="" name="email__id">
             @
-{#            <input type="text" id="email__domain">#}
-
-            <select id="email__selection" onchange="changeEmailDomain()">
+            <select id="email__domain" name="email__domain">
                 <option value="" selected="selected">--선택하세요--</option>
                 <option value="naver.com">naver.com</option>
                 <option value="daum.net">daum.net</option>

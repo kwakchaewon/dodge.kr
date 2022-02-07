@@ -11,9 +11,9 @@ function registUsr(){
     alert('비밀번호를 입력해주세요.');
     return;
     }
-    if (!$('#container__email').val())
+    if (!$('#email__id').val() || !$('#email__domain').val())
     {
-    alert('이메일을 입력해주세요.');
+    alert('이메일을 입력해주세요1.');
     return;
     }
     if (!$('#container__phonenum').val())
