@@ -36,4 +36,11 @@ function registUsr(){
 
     $('#register_form').submit();
 
-    }
+}
+
+
+
+function cancel(){
+    alert("머지")
+    $(location).attr('href','login')
+}
