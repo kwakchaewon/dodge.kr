@@ -5,6 +5,7 @@ from testapp.models import Boards
 import logging
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.contrib.auth import authenticate, login
 
 def goToMain(request):
     return render(request, 'main.html')
@@ -33,10 +34,15 @@ def signupCompleted(request):
         # birth = request.POST['container__birth']
         # userName = request.POST['container__id']
 
+        # 회원가입
         user = User.objects.create_user(username, password, email)
-        print("3")
+
+        # 사용자인증 및 로그인
+        loginUser = authenticate(username=username, password=password)
+        login(request, loginUser)
+
+
         return redirect('/')
-    print("4")
     return render(request, 'errorpage.html')
 
 # def goRegistUser(request):
