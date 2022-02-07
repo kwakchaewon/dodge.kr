@@ -67,8 +67,8 @@ section{
 /*common*/
 .signup__container__id,.signup__container__pw,.signup__container__chkpw, .signup__container__name,
 .signup__container__email, .signup__container__phonenum, .signup__container__birth{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 
@@ -78,7 +78,7 @@ section{
     text-align: center;
     position: relative;
     margin: 180px 600px 200px 600px;
-    min-width: 500px;
+    min-width: 600px;
     padding-top: 20px;
     padding-bottom: 20px;
     background: var(--color-white);
@@ -87,8 +87,11 @@ section{
 
 .signup__container input{
     font-size: 20px;
-    border: none;
     border-bottom: solid 1px;
+    border: solid 1px;
+    width: 360px;
+    height: 50px;
+    padding-left: 10px;
 }
 
 
@@ -96,6 +99,11 @@ section{
     font-weight: 700;
 }
 
+
+.container__logo{
+    text-align: left;
+    margin-left: 126px;
+}
 
 
 /*signup__container__logo*/
@@ -120,7 +128,14 @@ section{
 
 
 /*signup__container__email*/
+.signup__container__email input{
+    width: 198px;
+}
 
+.signup__container__email select{
+    width: 140px;
+    height: 50px;
+}
 
 
 /*signup__container__phonenum*/
