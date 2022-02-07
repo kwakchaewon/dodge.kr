@@ -116,7 +116,16 @@ section{
 
 
 /*signup__container__id*/
+.signup__container__id{
+    position: relative;
+}
 
+
+.id__check{
+    position: absolute;
+    right: 130px;
+    top: 43px;
+}
 
 
 /*signup__container__pw*/
