@@ -79,11 +79,10 @@ def userPasswordCheck(request):
                   "name='passwordcheck__result' id='passwordcheck__result' value=0/>"
 
         else:
-            msg = "<font color='red' display='block'>비밀번호를 확인해주세요</font><input type='hidden'" \
+            msg = "<font color='red' display='block'>비밀번호를 확인해주세요.</font><input type='hidden'" \
                   "name='passwordcheck__result' id='passwordcheck__result' value=0/>"
 
     return HttpResponse(msg)
-
 
 # def goRegistUser(request):
 #  # return redirect('accounts:login')

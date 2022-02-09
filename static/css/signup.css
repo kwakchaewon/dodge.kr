@@ -72,6 +72,12 @@ section{
 }
 
 
+#idcheck__result, #passwordcheck__result, #namecheck__result, #emailcheck__result, #birthcheck__result, #phonenumcheck__result{
+    display: block;
+}
+
+
+
 
 /*signup__container*/
 .signup__container{
@@ -130,9 +136,6 @@ section{
     border-radius: 5px;
 }
 
-#idcheck__result{
-    display: block;
-}
 
 
 /*signup__container__pw*/
@@ -140,9 +143,6 @@ section{
 
 
 /*signup__container__chkpw*/
-#passwordcheck__result{
-    display: block;
-}
 
 
 
