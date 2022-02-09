@@ -26,11 +26,11 @@
     <div class="signup__container__logo"><h1>Sign up</h1></div>
     <form id="register_form" method="post" action="/signupCompleted" method="post">
         {% csrf_token %}
-
         <div class="signup__container__id">
             <div class="container__logo">아이디</div>
             <input id="container__id" type="text" value="" name="container__id">
-            <button class="id__check" onclick="idCheck()">중복확인</button>
+            <div class="id__check" onclick="idCheck()">중복확인</div>
+            <span id="idcheck__result"></span>
         </div>
         <div class="signup__container__pw">
             <div class="container__logo">비밀번호</div>
@@ -44,7 +44,6 @@
             <input id="container__name" type="text" value="" name="container__name">
         </div>
 
-        {#        추후 추가될 email#}
         <div class="signup__container__email">
             <div class="container__logo">이메일</div>
             <input type="text" id="email__id" value="" name="email__id">

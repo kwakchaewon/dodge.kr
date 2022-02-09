@@ -6,6 +6,7 @@ import logging
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
+from django.http import HttpResponse
 
 def goToMain(request):
     return render(request, 'main.html')
@@ -44,6 +45,26 @@ def signupCompleted(request):
 
         return redirect('/')
     return render(request, 'errorpage.html')
+
+def userIdCheck(request):
+
+    if request.method == "POST":
+        username = request.POST.get('username', False)
+
+    else:
+        username = ''
+
+    idObject = User.objects.filter(username__exact=username)
+    idCount = idObject.count()
+
+    if idCount > 0:
+        msg = "<font color='red' display='block'>이미 존재하는 아이디입니다.</font><input type='hidden'" \
+              "name='idcheck__result' id='idcheck__result' value=0/>"
+
+    else:
+        msg = "<font color='green'>사용가능한 아이디입니다.</font><input type='hidden'" \
+              "name='idcheck__result' id='idcheck__result' value=0/>"
+    return HttpResponse(msg)
 
 # def goRegistUser(request):
 #  # return redirect('accounts:login')

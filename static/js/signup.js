@@ -30,7 +30,7 @@ function registUsr(){
     // 비밀번호 확인불가시
     if ($('#container__pw').val() != $('#container__chkpw').val())
     {
-    alert('비밀번호가 일치하지 않습니다')
+    alert('비밀번호가 일치하지 않습니다');
     return;
     }
 
@@ -41,6 +41,25 @@ function registUsr(){
 
 
 function cancel(){
-    alert("머지")
     $(location).attr('href','login')
+}
+
+
+function idCheck(){
+    if (!$('#container__id').val()){
+    alert('아이디를 입력해주세요.');
+    return;
+    }
+
+    $.ajax({
+    type: "POST",
+    url: "userIdCheck",
+    data: {
+        'username' : $('#container__id').val(),
+        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+    },
+        success : function(response){
+            $('#idcheck__result').html(response);
+        },
+    });
 }
