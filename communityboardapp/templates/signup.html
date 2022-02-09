@@ -28,7 +28,7 @@
         {% csrf_token %}
         <div class="signup__container__id">
             <div class="container__logo">아이디</div>
-            <input id="container__id" type="text" value="" name="container__id">
+            <input id="container__id" type="text" value="" name="container__id" onchange="inputIdChange()">
             <div class="id__check" onclick="idCheck()">중복확인</div>
             <div id="idcheck__result"></div>
         </div>

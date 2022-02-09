@@ -1,4 +1,5 @@
 function registUsr(){
+//    alert($('#idcheck__result').find("font").text());
 
     // 아이디 미기재 시
     if (!$('#container__id').val())
@@ -9,24 +10,22 @@ function registUsr(){
     return;
     }
 
-//    // 아이디 중복 확인 안했을 시
-//    if ($('#idcheck__result').val()=='')
-//    {
-//    alert($('#idcheck__result font'));
-//    alert('아이디 중복을 확인해주세요.');
-//    $('#idcheck__result').html(
-//    "<font color='red'>아이디를 중복을 확인해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
-//    return;
-//    }
-//
-//    // 아이디 중복시
-//    if ($('#idcheck__result').val()=='이미 존재하는 아이디입니다.')
-//    {
-//    alert('아이디 중복을 확인해주세요.');
-////    $('#idcheck__result').html(
-////    "<font color='red'>아이디를 중복을 확인해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
-//    return;
-//    }
+    // 아이디 중복 확인 안했을 시
+    if ($('#idcheck__result').find("font").text() =='' || $('#idcheck__result').find("font").text() == '아이디를 중복을 확인해주세요')
+    {
+    alert('아이디 중복을 확인해주세요.');
+    $('#idcheck__result').html(
+    "<font color='red'>아이디를 중복을 확인해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
+    return;
+    }
+
+    // 아이디 중복시
+    if ($('#idcheck__result').find("font").text() =='이미 존재하는 아이디입니다.')
+    {
+    alert('아이디 중복을 확인해주세요.');
+    return;
+    }
+
 
     // 비밀번호 미기재 시
     if (!$('#container__pw').val())
@@ -127,4 +126,11 @@ function passwordCheck(){
             $('#passwordcheck__result').html(response);
         },
     });
+}
+
+
+function inputIdChange(){
+    $('#idcheck__result').html(
+    "<font color='red'>아이디를 중복을 확인해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
+    return;
 }
