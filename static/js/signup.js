@@ -1,45 +1,86 @@
 function registUsr(){
 
-//    id, 비밀번호, 이름, 이메일, 전화번호, 생년월일 미기재 시
+    // 아이디 미기재 시
     if (!$('#container__id').val())
     {
     alert('아이디를 입력해주세요.');
+    $('#idcheck__result').html(
+    "<font color='red'>아이디를 입력해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
     return;
     }
+
+//    // 아이디 중복 확인 안했을 시
+//    if ($('#idcheck__result').val()=='')
+//    {
+//    alert($('#idcheck__result font'));
+//    alert('아이디 중복을 확인해주세요.');
+//    $('#idcheck__result').html(
+//    "<font color='red'>아이디를 중복을 확인해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
+//    return;
+//    }
+//
+//    // 아이디 중복시
+//    if ($('#idcheck__result').val()=='이미 존재하는 아이디입니다.')
+//    {
+//    alert('아이디 중복을 확인해주세요.');
+////    $('#idcheck__result').html(
+////    "<font color='red'>아이디를 중복을 확인해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
+//    return;
+//    }
+
+    // 비밀번호 미기재 시
     if (!$('#container__pw').val())
     {
+    $('#password__result').html(
+    "<font color='red'>비밀번호를 입력해주세요</font><input type='hidden' name='passwordcheck__result' id='passwordcheck__result' value=0/>");
     alert('비밀번호를 입력해주세요.');
     return;
     }
+
+    // 이름 미기재 시
+    if (!$('#container__name').val())
+    {
+    $('#namecheck__result').html(
+    "<font color='red'>이름을 입력해주세요</font><input type='hidden' name='namecheck__result' id='namecheck__result' value=0/>");
+    alert('이름을 입력해주세요.');
+    return;
+    }
+
+    // 이메일 미기재 시
     if (!$('#email__id').val() || !$('#email__domain').val())
     {
+    $('#emailcheck__result').html(
+    "<font color='red'>이메일을 입력해주세요</font><input type='hidden' name='emailcheck__result' id='emailcheck__result' value=0/>");
     alert('이메일을 입력해주세요.');
     return;
     }
+
+    // 전화번호 미기재 시
     if (!$('#container__phonenum').val())
     {
+    $('#phonenumcheck__result').html(
+    "<font color='red'>전화번호를 입력해주세요</font><input type='hidden' name='phonenumcheck__result' id='phonenumcheck__result' value=0/>");
     alert('전화번호를 입력해주세요.');
     return;
     }
+
+    // 생년월일 미기재 시
     if (!$('#container__birth').val())
     {
+    $('#birthcheck__result').html(
+    "<font color='red'>생년월일을 입력해주세요</font><input type='hidden' name='birthcheck__result' id='birthcheck__result' value=0/>");
     alert('생년월일을 입력해주세요.');
     return;
     }
 
-
-    // 아이디 중복시
-
-    // 중복 확인 안했을시시
-
-   // 비밀번호 확인불가시
+   // 비밀번호 불일치 시
     if ($('#container__pw').val() != $('#container__chkpw').val())
     {
     alert('비밀번호가 일치하지 않습니다');
     return;
     }
 
-//    $('#register_form').submit();
+    $('#register_form').submit();
 
 }
 
