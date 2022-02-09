@@ -13,7 +13,7 @@ function registUsr(){
     }
     if (!$('#email__id').val() || !$('#email__domain').val())
     {
-    alert('이메일을 입력해주세요1.');
+    alert('이메일을 입력해주세요.');
     return;
     }
     if (!$('#container__phonenum').val())
@@ -27,14 +27,19 @@ function registUsr(){
     return;
     }
 
-    // 비밀번호 확인불가시
+
+    // 아이디 중복시
+
+    // 중복 확인 안했을시시
+
+   // 비밀번호 확인불가시
     if ($('#container__pw').val() != $('#container__chkpw').val())
     {
     alert('비밀번호가 일치하지 않습니다');
     return;
     }
 
-    $('#register_form').submit();
+//    $('#register_form').submit();
 
 }
 
@@ -54,12 +59,31 @@ function idCheck(){
     $.ajax({
     type: "POST",
     url: "userIdCheck",
+
     data: {
         'username' : $('#container__id').val(),
         'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
     },
         success : function(response){
             $('#idcheck__result').html(response);
+        },
+    });
+}
+
+
+function passwordCheck(){
+
+    $.ajax({
+    type: "POST",
+    url: "userPasswordCheck",
+
+    data: {
+        'container__pw' : $('#container__pw').val(),
+        'container__chkpw' : $('#container__chkpw').val(),
+        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+    },
+        success : function(response){
+            $('#passwordcheck__result').html(response);
         },
     });
 }

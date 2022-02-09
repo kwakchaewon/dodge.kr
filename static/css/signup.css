@@ -140,6 +140,9 @@ section{
 
 
 /*signup__container__chkpw*/
+#passwordcheck__result{
+    display: block;
+}
 
 
 

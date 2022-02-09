@@ -64,7 +64,26 @@ def userIdCheck(request):
     else:
         msg = "<font color='green'>사용가능한 아이디입니다.</font><input type='hidden'" \
               "name='idcheck__result' id='idcheck__result' value=0/>"
+
     return HttpResponse(msg)
+
+def userPasswordCheck(request):
+
+    print(request.POST.get('container__pw', False) == request.POST.get('container__chkpw', False))
+
+    if request.method == "POST":
+
+        if request.POST.get('container__pw', False) == request.POST.get('container__chkpw', False):
+
+            msg = "<font color='green'>사용 가능한 비밀번호입니다.</font><input type='hidden'" \
+                  "name='passwordcheck__result' id='passwordcheck__result' value=0/>"
+
+        else:
+            msg = "<font color='red' display='block'>비밀번호를 확인해주세요</font><input type='hidden'" \
+                  "name='passwordcheck__result' id='passwordcheck__result' value=0/>"
+
+    return HttpResponse(msg)
+
 
 # def goRegistUser(request):
 #  # return redirect('accounts:login')

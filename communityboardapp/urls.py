@@ -1,5 +1,5 @@
 from django.urls import path
-from communityboardapp.views import goToMain, goLogin, goSignUp, goCommunity, signupCompleted, userIdCheck
+from communityboardapp.views import goToMain, goLogin, goSignUp, goCommunity, signupCompleted, userIdCheck,userPasswordCheck
 
 urlpatterns = [
     # path('cbvList', BoardListClassView.as_view(), name='cbv'),
@@ -10,4 +10,5 @@ urlpatterns = [
     path('community', goCommunity, ),
     path('signupCompleted', signupCompleted, ),
     path('userIdCheck', userIdCheck),
+    path('userPasswordCheck', userPasswordCheck),
 ]
