@@ -33,11 +33,11 @@
         </div>
         <div class="signup__container__pw">
             <div class="container__logo">비밀번호</div>
-            <input id="container__pw"  type="password" name="container__pw" onchange="passwordCheck()"></div>
+            <input id="container__pw"  type="password" name="container__pw" oninput="inputPasswordChange()" onchange="inputPasswordChange()"></div>
             <div id="password__result"></div>
         <div class="signup__container__chkpw">
             <div class="container__logo">비밀번호 확인</div>
-            <input id="container__chkpw" type="password" value="" name="container__chkpw" onchange="passwordCheck()">
+            <input id="container__chkpw" type="password" value="" name="container__chkpw" oninput="inputPasswordChange()" onchange="inputPasswordChange()">
             <div id="passwordcheck__result"></div>
         </div>
         <div class="signup__container__name">
