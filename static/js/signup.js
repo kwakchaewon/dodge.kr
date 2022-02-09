@@ -6,7 +6,7 @@ function registUsr(){
     {
     alert('아이디를 입력해주세요.');
     $('#idcheck__result').html(
-    "<font color='red'>아이디를 입력해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
+    "<font color='red'>아이디를 입력해주세요.</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
     return;
     }
 
@@ -15,7 +15,7 @@ function registUsr(){
     {
     alert('아이디 중복을 확인해주세요.');
     $('#idcheck__result').html(
-    "<font color='red'>아이디를 중복을 확인해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
+    "<font color='red'>아이디를 중복을 확인해주세요.</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
     return;
     }
 
@@ -31,7 +31,7 @@ function registUsr(){
     if (!$('#container__pw').val())
     {
     $('#password__result').html(
-    "<font color='red'>비밀번호를 입력해주세요</font><input type='hidden' name='passwordcheck__result' id='passwordcheck__result' value=0/>");
+    "<font color='red'>비밀번호를 입력해주세요.</font><input type='hidden' name='passwordcheck__result' id='passwordcheck__result' value=0/>");
     alert('비밀번호를 입력해주세요.');
     return;
     }
@@ -40,7 +40,7 @@ function registUsr(){
     if (!$('#container__name').val())
     {
     $('#namecheck__result').html(
-    "<font color='red'>이름을 입력해주세요</font><input type='hidden' name='namecheck__result' id='namecheck__result' value=0/>");
+    "<font color='red'>이름을 입력해주세요.</font><input type='hidden' name='namecheck__result' id='namecheck__result' value=0/>");
     alert('이름을 입력해주세요.');
     return;
     }
@@ -49,7 +49,7 @@ function registUsr(){
     if (!$('#email__id').val() || !$('#email__domain').val())
     {
     $('#emailcheck__result').html(
-    "<font color='red'>이메일을 입력해주세요</font><input type='hidden' name='emailcheck__result' id='emailcheck__result' value=0/>");
+    "<font color='red'>이메일을 입력해주세요.</font><input type='hidden' name='emailcheck__result' id='emailcheck__result' value=0/>");
     alert('이메일을 입력해주세요.');
     return;
     }
@@ -58,7 +58,7 @@ function registUsr(){
     if (!$('#container__phonenum').val())
     {
     $('#phonenumcheck__result').html(
-    "<font color='red'>전화번호를 입력해주세요</font><input type='hidden' name='phonenumcheck__result' id='phonenumcheck__result' value=0/>");
+    "<font color='red'>전화번호를 입력해주세요.</font><input type='hidden' name='phonenumcheck__result' id='phonenumcheck__result' value=0/>");
     alert('전화번호를 입력해주세요.');
     return;
     }
@@ -67,7 +67,7 @@ function registUsr(){
     if (!$('#container__birth').val())
     {
     $('#birthcheck__result').html(
-    "<font color='red'>생년월일을 입력해주세요</font><input type='hidden' name='birthcheck__result' id='birthcheck__result' value=0/>");
+    "<font color='red'>생년월일을 입력해주세요.</font><input type='hidden' name='birthcheck__result' id='birthcheck__result' value=0/>");
     alert('생년월일을 입력해주세요.');
     return;
     }
@@ -75,7 +75,7 @@ function registUsr(){
    // 비밀번호 불일치 시
     if ($('#container__pw').val() != $('#container__chkpw').val())
     {
-    alert('비밀번호가 일치하지 않습니다');
+    alert('비밀번호가 일치하지 않습니다.');
     return;
     }
 
@@ -131,6 +131,6 @@ function passwordCheck(){
 
 function inputIdChange(){
     $('#idcheck__result').html(
-    "<font color='red'>아이디를 중복을 확인해주세요</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
+    "<font color='red'>아이디를 중복을 확인해주세요.</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
     return;
 }
