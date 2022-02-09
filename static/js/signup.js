@@ -11,7 +11,7 @@ function registUsr(){
     }
 
     // 아이디 중복 확인 안했을 시
-    if ($('#idcheck__result').find("font").text() =='' || $('#idcheck__result').find("font").text() == '아이디를 중복을 확인해주세요')
+    if ($('#idcheck__result').find("font").text() =='' || $('#idcheck__result').find("font").text() == '아이디를 중복을 확인해주세요.')
     {
     alert('아이디 중복을 확인해주세요.');
     $('#idcheck__result').html(
@@ -128,9 +128,24 @@ function passwordCheck(){
     });
 }
 
-
+    // input 아이디 변경시
 function inputIdChange(){
+    if (!$('#container__id').val()){
     $('#idcheck__result').html(
-    "<font color='red'>아이디를 중복을 확인해주세요.</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
+    "<font color='red'>아이디를 입력해주세요.</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
     return;
+    }
+
+    $.ajax({
+    type: "POST",
+    url: "userIdCheck",
+
+    data: {
+        'username' : $('#container__id').val(),
+        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+    },
+        success : function(response){
+            $('#idcheck__result').html(response);
+        },
+    });
 }

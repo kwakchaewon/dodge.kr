@@ -129,20 +129,9 @@ section{
 }
 
 
-.id__check{
-    position: absolute;
-    right: 130px;
-    top: 42px;
-    border: solid 1px;
-    padding: 4px;
-    border-radius: 5px;
-}
-
-
 
 /*signup__container__pw*/
 .signup__container__pw{
-    padding-bottom: 12px;
 }
 
 
