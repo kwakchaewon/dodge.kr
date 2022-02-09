@@ -1,5 +1,5 @@
+// 회원가입 버튼 클릭시
 function registUsr(){
-//    alert($('#idcheck__result').find("font").text());
 
     // 아이디 미기재 시
     if (!$('#container__id').val())
@@ -84,34 +84,13 @@ function registUsr(){
 }
 
 
-
+// 취소 버튼 클릭시
 function cancel(){
     $(location).attr('href','login')
 }
 
 
-function idCheck(){
-    if (!$('#container__id').val()){
-    alert('아이디를 입력해주세요.');
-    return;
-    }
-
-    $.ajax({
-    type: "POST",
-    url: "userIdCheck",
-
-    data: {
-        'username' : $('#container__id').val(),
-        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
-    },
-        success : function(response){
-            $('#idcheck__result').html(response);
-        },
-    });
-}
-
-
-    // 아이디 변경 시
+// 아이디 입력 또는 변경 시
 function inputIdChange(){
     if (!$('#container__id').val()){
     $('#idcheck__result').html(
@@ -134,8 +113,8 @@ function inputIdChange(){
 }
 
 
-    // 패스워드 변경 시
-    function inputPasswordChange(){
+// 패스워드 입력 또는 변경 시
+function inputPasswordChange(){
 
     if($('#container__pw').val() == $('#container__chkpw').val()){
         $('#passwordcheck__result').html(
@@ -148,7 +127,7 @@ function inputIdChange(){
         "<font color='red' display='block'>비밀번호를 확인해주세요.</font><input type='hidden' name='passwordcheck__result' id='passwordcheck__result' value=0/>");
         return;
     }
-    }
+}
 
 
     // 이름  변경 시
