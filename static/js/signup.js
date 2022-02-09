@@ -111,23 +111,6 @@ function idCheck(){
 }
 
 
-function passwordCheck(){
-
-    $.ajax({
-    type: "POST",
-    url: "userPasswordCheck",
-
-    data: {
-        'container__pw' : $('#container__pw').val(),
-        'container__chkpw' : $('#container__chkpw').val(),
-        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
-    },
-        success : function(response){
-            $('#passwordcheck__result').html(response);
-        },
-    });
-}
-
     // 아이디 변경 시
 function inputIdChange(){
     if (!$('#container__id').val()){
