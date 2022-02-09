@@ -68,12 +68,14 @@ section{
 .signup__container__id,.signup__container__pw,.signup__container__chkpw, .signup__container__name,
 .signup__container__email, .signup__container__phonenum, .signup__container__birth{
     padding-top: 12px;
-    padding-bottom: 12px;
+    /*padding-bottom: 12px;*/
 }
 
 
-#idcheck__result, #passwordcheck__result, #namecheck__result, #emailcheck__result, #birthcheck__result, #phonenumcheck__result{
-    display: block;
+#idcheck__result, #passwordcheck__result, #namecheck__result,
+#emailcheck__result, #birthcheck__result, #phonenumcheck__result{
+    height: 12px;
+    display: list-item;
 }
 
 
@@ -139,6 +141,9 @@ section{
 
 
 /*signup__container__pw*/
+.signup__container__pw{
+    padding-bottom: 12px;
+}
 
 
 
