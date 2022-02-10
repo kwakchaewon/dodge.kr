@@ -7,11 +7,8 @@ def goToMain(request):
     return render(request, 'main.html')
 
 # 로그인 페이지 이동
-def goLogin(request):
-    return render(request, 'login.html')
-
-def goSignIn(request):
-    return render(request, 'login.html')
+# def goLogin(request):
+#     return render(request, 'login.html')
 
 def goSignUp(request):
     return render(request, 'signup.html')
