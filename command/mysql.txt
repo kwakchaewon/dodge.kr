@@ -75,5 +75,12 @@ alter table boards add foreign key(user_id) references auth_user(id);
 alter table boards add foreign key(category_id) references board_categories (id);
 
 
+* username이 "Anna", "John", "admin" 이 아닌 값을 테이블 auth_user에서 삭제
+delete from auth_user where not (username = "Anna" or username ="John" or username ="admin");
+
+
+* username이 "Anna", "John", "admin" 이 아닌 값을 테이블 auth_user에서 조회
+select username from auth_user where (username = "Anna" or username ="John" or username ="admin");
+
 
 
