@@ -24,10 +24,12 @@
     <form action="" method="POST">
         {% csrf_token %}
         <div class="logincontainer__id">
-            <input type="text" placeholder="아이디" name="username" id="username">
+            <input type="text" placeholder="아이디" name="username" id="username"
+            value="{{ form.username.value|default_if_none:'' }}">
         </div>
         <div class="logincontainer__pw">
-            <input type="password" placeholder="비밀번호" name="password" id="password">
+            <input type="password" placeholder="비밀번호" name="password" id="password"
+            value="{{ form.password.value | default_if_none:''}}">
         </div>
         {% if form.errors %}
         <span class="wrong__signin">아이디 또는 비밀번호를 잘못 입력했습니다.</span>
