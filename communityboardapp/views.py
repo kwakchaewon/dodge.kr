@@ -1,16 +1,12 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, TemplateView
-from testapp.models import Boards
-import logging
 from django.contrib.auth.models import User
-from django.contrib import auth
-from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 
+# 메인 페이지 이동
 def goToMain(request):
     return render(request, 'main.html')
 
+# 로그인 페이지 이동
 def goLogin(request):
     return render(request, 'login.html')
 
@@ -20,9 +16,11 @@ def goSignIn(request):
 def goSignUp(request):
     return render(request, 'signup.html')
 
+# 커뮤니티 이동
 def goCommunity(request):
     return render(request, 'community.html')
 
+# 회원가입
 def signupCompleted(request):
 
     if request.method == "POST":
@@ -46,6 +44,8 @@ def signupCompleted(request):
         return redirect('/')
     return render(request, 'errorpage.html')
 
+
+# 아이디 중복 확인
 def userIdCheck(request):
 
     if request.method == "POST":
