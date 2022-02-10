@@ -20,13 +20,19 @@
 <body>
 <div class="logincontainer">
     <div class="logincontainer__logo"><h1>DODGE.KR</h1></div>
-    <form action="">
 
-        <div class="logincontainer__id"><input type="text" placeholder="아이디"></div>
-        <div class="logincontainer__pw"><input type="password" placeholder="비밀번호"></div>
-
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="logincontainer__id">
+            <input type="text" placeholder="아이디" name="username" id="username">
+        </div>
+        <div class="logincontainer__pw">
+            <input type="password" placeholder="비밀번호" name="password" id="password">
+        </div>
+        {% if form.errors %}
+        <span class="wrong__signin">아이디 또는 비밀번호를 잘못 입력했습니다.</span>
+        {% endif %}
         <div class="logincontainer__signup"><button class="btn btn-info" id="signupbtn">로그인</button></div>
-
         <a class="logincontainer__signin" href="/signup">처음이신가요?</a>
         <a class="logincontainer__forgetpw" href="">비밀번호를 잊으셨나요?</a>
     </form>

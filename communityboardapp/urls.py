@@ -1,5 +1,5 @@
 from django.urls import path
-from communityboardapp.views import goToMain, goSignUp, goCommunity, signupCompleted, userIdCheck
+from communityboardapp.views import goToMain, goSignUp, goCommunity, signupCompleted, userIdCheck,loginCompleted
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -11,6 +11,6 @@ urlpatterns = [
     path('community', goCommunity, ),
     path('signupCompleted', signupCompleted, ),
     path('userIdCheck', userIdCheck),
-    path('login', auth_views.LoginView.as_view(template_name='communityboardapp/login.html',)),
-
+    path('login', auth_views.LoginView.as_view(template_name='login.html'), name='login.html'),
+    path('loginCompleted', loginCompleted, ),
 ]

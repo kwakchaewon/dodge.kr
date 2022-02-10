@@ -6,6 +6,7 @@
     --color-dark-white:#bdbdbd;
     --color-ocean:#0174DF;
     --color-dark-ocean:#013ADF;
+    --color-red: #CD1F48;
     --color-dark-pink:#ff6863;
     /*--color-black:#4d4d4d;*/
     --color-dark-grey: #4d4d4d;
@@ -151,5 +152,12 @@ section{
 
 /*logincontainer__signin*/
 .logincontainer__signin{
+
+}
+
+
+
+.wrong__signin{
+    color:var(--color-red);
 
 }

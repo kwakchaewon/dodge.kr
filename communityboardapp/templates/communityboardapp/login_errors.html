@@ -1,4 +1,8 @@
-{#{% if form.errors %}#}
+
+
+
+{% if form.errors %}
+    로그인 실패
 {#    {% for field in form %}#}
 {#        {% for error in field.errors %}  <!-- 필드 오류를 출력한다. -->#}
 {#            <div class="alert alert-danger">#}
@@ -12,4 +16,4 @@
 {#            <strong>{{ error }}</strong>#}
 {#        </div>#}
 {#    {% endfor %}#}
-{#{% endif %}#}
+{% endif %}

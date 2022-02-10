@@ -64,5 +64,9 @@ def userIdCheck(request):
 
     return HttpResponse(msg)
 
+def loginCompleted(request):
+    return render(request, 'main.html')
+
+
 # def goRegistUser(request):
 #  # return redirect('accounts:login')
