@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from django.contrib.auth import authenticate, login
+
 
 # 메인 페이지 이동
 def goToMain(request):
@@ -30,16 +32,24 @@ def signupCompleted(request):
         # birth = request.POST['container__birth']
         # userName = request.POST['container__id']
 
-        # 회원가입
-        user = User.objects.create_user(username, password, email)
+        # 회원가입 성공
+        try:
+            user = User.objects.create_user(username, email, password)
+            return redirect('/')
+
+        except:
+            redirect('error')
+
+
+
 
         # 사용자인증 및 로그인
         # loginUser = authenticate(username=username, password=password)
         # login(request, loginUser)
 
 
-        return redirect('/')
-    return render(request, 'errorpage.html')
+
+    return redirect('error')
 
 
 # 아이디 중복 확인
@@ -67,6 +77,9 @@ def userIdCheck(request):
 def loginCompleted(request):
     return render(request, 'main.html')
 
+
+def goErrorPage(request):
+    return render(request, 'errorpage.html')
 
 # def goRegistUser(request):
 #  # return redirect('accounts:login')
