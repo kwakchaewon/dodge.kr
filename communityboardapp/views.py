@@ -32,9 +32,15 @@ def signupCompleted(request):
         # birth = request.POST['container__birth']
         # userName = request.POST['container__id']
 
-        # 회원가입 성공
+        # 회원가입 성공시,
         try:
+            # 회원가입
             user = User.objects.create_user(username, email, password)
+
+            # 사용자 인증과 로그인 담당
+            user = authenticate(username=username, password=password)
+            login(request, user)
+
             return redirect('/')
 
         except:
