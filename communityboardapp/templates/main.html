@@ -1,52 +1,8 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dodge.kr</title>
-
-    <!-- 합쳐지고 최소화된 최신 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-    <!-- 부가적인 테마 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
-    <!--    &lt;!&ndash; 합쳐지고 최소화된 최신 자바스크립트 &ndash;&gt;-->
-    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
-
-</head>
-<body>
-
-<!--navbar-->
-<nav id="navbar">
-    <div class="navbar__logo">Dodge.kr</div>
-    <div class="navbar__menu__div">
-{#        <ul class="navbar__menu">#}
-{#            <li class="navbar__menu__items">Services</li>#}
-{#            <li class="navbar__menu__items">Muli-search</li>#}
-{#            <li class="navbar__menu__items">Community</li>#}
-{#        </ul>#}
-        <div class="navbar__menu">
-            <div class="navbar__menu__items">Services</div>
-            <div class="navbar__menu__items">Muli-search</div>
-            <div class="navbar__menu__items">Community</div>
-        </div>
-    </div>
-        <div class="navbar__logintab">
-        {% if user.is_authenticated  %}
-            <a class="glyphicon glyphicon-log-out" id="navbar__menu__logout" aria-hidden="true" href="logout">{{ user.username }}</a>
-        {% else %}
-            <a class="glyphicon glyphicon-log-in" id="navbar__menu__login" aria-hidden="true" href="login"></a>
-        {% endif %}
-        </div>
-</nav>
+{% extends 'header.html' %}
+{% block content %}
 
 <!--container__1-->
 <div class="container__1">
-
 
     <!--logo-->
     <section id="logo">
@@ -56,7 +12,6 @@
 
     <!--search-->
     <section id="search">
-
         <form action="">
             <div class="search__searchbar">
                 <input type="text" class="search__searchbar__summonersearch" placeholder="소환사명">
@@ -76,7 +31,6 @@
     <section id="footer">
         <div class="footer__reserve">2022 chaewon, Andrew kwak - All right reserved</div>
     </section>
-
 </div>
-</body>
-</html>
+
+{% endblock %}
