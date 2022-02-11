@@ -1,0 +1,21 @@
+/*container__board*/
+.container__board{
+    background: var(--color-white);
+    padding: 0px 40px 0px 40px;
+    margin: auto 40px auto 40px;
+
+}
+
+/*board__title*/
+
+
+/*board__table*/
+table{
+    text-align: left;
+}
+
+
+/*board__page*/
+
+
+/*board__search*/
