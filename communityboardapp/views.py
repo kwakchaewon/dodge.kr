@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
-
+from testapp.models import Boards
 
 # 메인 페이지 이동
 def goToMain(request):
@@ -17,6 +17,8 @@ def goSignUp(request):
 
 # 커뮤니티 이동
 def goCommunity(request):
+    boards = Boards.objects.all()
+    print(boards)
     return render(request, 'communityboard.html')
 
 # 회원가입
