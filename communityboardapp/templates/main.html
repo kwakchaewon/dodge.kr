@@ -24,17 +24,24 @@
 <nav id="navbar">
     <div class="navbar__logo">Dodge.kr</div>
     <div class="navbar__menu__div">
-        <ul class="navbar__menu">
-            <li class="navbar__menu__items">services</li>
-            <li class="navbar__menu__items">muli-search</li>
-            <li class="navbar__menu__items">community</li>
-        </ul>
+{#        <ul class="navbar__menu">#}
+{#            <li class="navbar__menu__items">Services</li>#}
+{#            <li class="navbar__menu__items">Muli-search</li>#}
+{#            <li class="navbar__menu__items">Community</li>#}
+{#        </ul>#}
+        <div class="navbar__menu">
+            <div class="navbar__menu__items">Services</div>
+            <div class="navbar__menu__items">Muli-search</div>
+            <div class="navbar__menu__items">Community</div>
+        </div>
+    </div>
+        <div class="navbar__logintab">
         {% if user.is_authenticated  %}
             <a class="glyphicon glyphicon-log-out" id="navbar__menu__logout" aria-hidden="true" href="logout">{{ user.username }}</a>
         {% else %}
             <a class="glyphicon glyphicon-log-in" id="navbar__menu__login" aria-hidden="true" href="login"></a>
         {% endif %}
-    </div>
+        </div>
 </nav>
 
 <!--container__1-->

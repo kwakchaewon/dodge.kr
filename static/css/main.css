@@ -132,6 +132,12 @@ p{
     margin: 0 4px;
 }
 
+
+.navbar__logintab{
+float: right;
+}
+
+
 #navbar__menu__login{
     color: var(--color-white);
 }
