@@ -1,0 +1,70 @@
+{% extends 'header.html' %}
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Dodge.kr : 커뮤니티</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/communityboard.css' %}">
+    </head>
+
+    <section class="container__board">
+        <div class="board__title">
+            커뮤니티 : 리그오브레전드와 관련된 글을 자유롭게 쓸 수 있는 공간입니다.
+        </div>
+
+        <div class="board__table">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>날짜</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>안녕하세요</td>
+                    <td>곽채원</td>
+                    <td>2021-02-11</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>안녕하세요2</td>
+                    <td>곽채원</td>
+                    <td>2021-02-11</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>안녕하세요3</td>
+                    <td>곽채원</td>
+                    <td>2021-02-11</td>
+                    <td>3</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        </div>
+        <a href="" class="btn btn-default pull-right">글쓰기</a>
+        <div class="board__page">
+            <ul class="pagination">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
+        </div>
+
+        <div class="board__search">
+
+        </div>
+    </section>
+
+{% endblock %}

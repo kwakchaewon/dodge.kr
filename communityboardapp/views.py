@@ -17,7 +17,7 @@ def goSignUp(request):
 
 # 커뮤니티 이동
 def goCommunity(request):
-    return render(request, 'community.html')
+    return render(request, 'communityboard.html')
 
 # 회원가입
 def signupCompleted(request):
@@ -86,6 +86,8 @@ def loginCompleted(request):
 
 def goErrorPage(request):
     return render(request, 'errorpage.html')
+
+
 
 # def goRegistUser(request):
 #  # return redirect('accounts:login')
