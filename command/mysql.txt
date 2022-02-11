@@ -83,4 +83,5 @@ delete from auth_user where not (username = "Anna" or username ="John" or userna
 select username from auth_user where (username = "Anna" or username ="John" or username ="admin");
 
 
-
+* 스키마 조회
+desc [테이블명]
