@@ -85,3 +85,28 @@ select username from auth_user where (username = "Anna" or username ="John" or u
 
 * 스키마 조회
 desc [테이블명]
+
+
+
+* 더미데이터 생성
+"DELIMITER $$
+DROP PROCEDURE IF EXISTS loopInsert2$$
+CREATE PROCEDURE loopInsert2()
+BEGIN
+    DECLARE i INT DEFAULT 1;
+        
+    WHILE i <= 500 DO
+        INSERT INTO boards (category_id , user_id, title,  content)
+          VALUES(1,4, concat('제목',i), concat('내용',i));
+        SET i = i + 1;
+    END WHILE;
+END$$
+DELIMITER $$"
+
+
+CALL loopInsert;
+
+
+
+
+
