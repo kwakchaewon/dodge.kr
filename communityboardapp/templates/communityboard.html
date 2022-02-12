@@ -38,23 +38,19 @@
                                 </tbody>
             </table>
         </div>
-
-
         </div>
         <a href="" class="btn btn-default pull-right">글쓰기</a>
         <div class="board__page">
+            {% for page in pageList %}
             <ul class="pagination">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                <li>{{ page }}</li>
             </ul>
+            {% endfor %}
         </div>
 
         <div class="board__search">
 
         </div>
     </section>
-    
+
 {% endblock %}
