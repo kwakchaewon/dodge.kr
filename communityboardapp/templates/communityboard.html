@@ -14,38 +14,28 @@
 
         <div class="board__table">
             <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>제목</th>
-                    <th>작성자</th>
-                    <th>날짜</th>
-                    <th>조회수</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>안녕하세요</td>
-                    <td>곽채원</td>
-                    <td>2021-02-11</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>안녕하세요2</td>
-                    <td>곽채원</td>
-                    <td>2021-02-11</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>안녕하세요3</td>
-                    <td>곽채원</td>
-                    <td>2021-02-11</td>
-                    <td>3</td>
-                </tr>
-                </tbody>
+                                <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>내용</th>
+                                    <th>조회수</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for list in boards %}
+                                <tr>
+
+                                    <td>{{ list.id }}</td>
+                                    <td>{{ list.title }}</td>
+                                    <td>{{ list.user_id }}</td>
+                                    <td>{{ list.view_count }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
             </table>
         </div>
 
@@ -66,5 +56,5 @@
 
         </div>
     </section>
-
+    
 {% endblock %}
