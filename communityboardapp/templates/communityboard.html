@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{% static 'css/communityboard.css' %}">
     </head>
 
+    {#    자유 게시판#}
     <section class="container__board">
         <div class="board__title">
             커뮤니티 : 리그오브레전드와 관련된 글을 자유롭게 쓸 수 있는 공간입니다.
@@ -40,17 +41,32 @@
         </div>
         </div>
         <a href="" class="btn btn-default pull-right">글쓰기</a>
+
         <div class="board__page">
+            <ul class="pagination">
+                {% if pageAble1 == 0 %}
+                {% endif %}
+                {% if pageAble1 == 1 %}
+                    <li class="page__item abled"><a href="">처음</a></li>
+                    <li class="page__item abled"><a href="">이전</a></li>
+                {% endif %}
+            </ul>
             {% for page in pageList %}
                 <ul class="pagination">
                     <li><a href="?page={{ page }}">{{ page }}</a></li>
                 </ul>
             {% endfor %}
+            <ul class="pagination">
+                {% if pageAble2 == 0 %}
+                {% endif %}
+                {% if pageAble2 == 1 %}
+                    <li class="page__item abled"><a href="">다음</a></li>
+                    <li class="page__item abled"><a href="">끝</a></li>
+                {% endif %}
+            </ul>
         </div>
-
         <div class="board__search">
 
         </div>
     </section>
-
 {% endblock %}

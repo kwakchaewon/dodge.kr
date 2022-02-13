@@ -36,7 +36,6 @@ def goCommunity(request):
     # initialBoard : 표기되는 첫 게시글 No / finalBoard : 표기되는 마지막 게시글 No
     initialBoard = boardsCount - 10 * (page) + 1
     finalBoard = boardsCount - 10 * (page) + 10
-    # page = math.ceil(boardsCount / 10)
 
 
     # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
@@ -51,13 +50,32 @@ def goCommunity(request):
     for i in range(initialPage, finalPage+1):
         pageList.append(i)
 
-    # print('initialPage: ', initialPage, ', finalPage: ', finalPage)
+
+    # 총 페이지 수
+    totPage = math.ceil(boardsCount / 10)
+
+
+    # 현재 페이지가 1 ~ 10 페이지 사이 or 총 페이지 <= 10
+    # 처음, 이전 버튼 표기한다 (pageAble1 = 1) / 처음, 이전 버튼 표기하지않는다 (pageAble1 = 0)
+    if page <= 10:
+        pageAble1 = 0
+    elif totPage <= 10:
+        pageAble1 = 0
+    else:
+        pageAble1 = 1
+
+    # 다음, 마지막 버튼 표기한다 (pageAble2 = 1) / 다음, 마지막 버튼 표기하지않는다 (pageAble2 = 0)
+    if math.floor(page) == math.floor(totPage):
+        pageAble2 = 0
+    else:
+        pageAble2 = 1
+
 
     # select * from Boards where id>initialBoard and id<=finalBoard order by id Desc
     boards = Boards.objects.filter(id__gt=initialBoard,
                                        id__lte=finalBoard).order_by('-id')
 
-    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList})
+    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'pageAble1': pageAble1, 'pageAble2' : pageAble2})
 
 
 # def index(request):
