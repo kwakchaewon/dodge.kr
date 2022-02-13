@@ -1,6 +1,6 @@
 from django.urls import path
 from communityboardapp.views import goToMain, goSignUp, goCommunity, \
-    signupCompleted, userIdCheck, loginCompleted, goErrorPage, index
+    signupCompleted, userIdCheck, loginCompleted, goErrorPage
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
