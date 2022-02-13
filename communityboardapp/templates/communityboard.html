@@ -14,37 +14,37 @@
 
         <div class="board__table">
             <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>제목</th>
-                                    <th>작성자</th>
-                                    <th>내용</th>
-                                    <th>조회수</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for list in boards %}
-                                <tr>
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>내용</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for list in boards %}
+                    <tr>
 
-                                    <td>{{ list.id }}</td>
-                                    <td>{{ list.title }}</td>
-                                    <td>{{ list.user_id }}</td>
-                                    <td>{{ list.view_count }}</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                {% endfor %}
-                                </tbody>
+                        <td>{{ list.id }}</td>
+                        <td>{{ list.title }}</td>
+                        <td>{{ list.user_id }}</td>
+                        <td>{{ list.view_count }}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
             </table>
         </div>
         </div>
         <a href="" class="btn btn-default pull-right">글쓰기</a>
         <div class="board__page">
             {% for page in pageList %}
-            <ul class="pagination">
-                <li>{{ page }}</li>
-            </ul>
+                <ul class="pagination">
+                    <li>{{ page }}</li>
+                </ul>
             {% endfor %}
         </div>
 

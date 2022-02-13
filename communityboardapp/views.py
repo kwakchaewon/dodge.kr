@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from testapp.models import Boards
 import math
+from django.core.paginator import Paginator
+
 
 
 # 메인 페이지 이동
@@ -56,23 +58,20 @@ def goCommunity(request):
     return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList})
 
 
+# def index(request):
+#     page = request.GET.get('page', '1')
+#     boardList = Boards.objects.order_by('-id')
+#
+#     # 페이지당 10개씩 보여준다.
+#     paginator = Paginator(boardList, 10)
+#
+#
+#     pagObj = paginator.get_page(page)
+#
+#     context = {'boardList': boardList}
+#
+#     return render(request, 'communityboard.html', context)
 
-    # if page == '':
-    #     page = 750
-    #
-    #     # 71개라 치면 1페이지일때 71부터 62까지
-    #     # 2페이지면 61부터 52까지
-    #     boards = Boards.objects.filter(id__gt=boardsCount - 10 * (page),
-    #                                    id__lte=boardsCount - 10 * (page) + 9).order_by('-id')
-    #     return render(request, 'communityboard.html', {'boards': boards})
-    #
-    #
-    # else:
-    #     page = 1
-    #     boards = Boards.objects.filter(id__gt=boardsCount - 10 * (page),
-    #                                    id__lte=boardsCount - 10 * (page) + 9).order_by('-id')
-    #     boards = Boards.objects.filter(id__gt=boardsCount - 10, id__lte=boardsCount).order_by('-id')
-    #     return render(request, 'communityboard.html', {'boards': boards})
 
 
 # 회원가입
