@@ -21,24 +21,26 @@ def goSignUp(request):
     return render(request, 'signup.html')
 
 
-# 커뮤니티 이동
+# Board 테이블 표기 및 페이징, 커뮤니티 이동
 def goCommunity(request):
 
     # page : 현재 선택한 페이지
-    page = 3
+    # page = 3
+    page = int(request.GET.get('page', 1))
 
     # boardsCount : 전체 게시글 개수
     boards = Boards.objects.all()
     boardsCount = boards.count()
+    print(boardsCount)
 
     # initialBoard : 표기되는 첫 게시글 No / finalBoard : 표기되는 마지막 게시글 No
-    initialBoard = boardsCount - 10 * (page)
+    initialBoard = boardsCount - 10 * (page) + 1
     finalBoard = boardsCount - 10 * (page) + 10
     # page = math.ceil(boardsCount / 10)
 
 
     # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
-    initialPage = math.trunc(page/10)*10+1
+    initialPage = math.trunc((page-1)/10)*10 + 1
 
     if boardsCount > 10 * (initialPage + 9):
         finalPage = initialPage + 9
@@ -49,7 +51,7 @@ def goCommunity(request):
     for i in range(initialPage, finalPage+1):
         pageList.append(i)
 
-    print('iinitialPage: ', initialPage, ', finalPage: ', finalPage)
+    # print('initialPage: ', initialPage, ', finalPage: ', finalPage)
 
     # select * from Boards where id>initialBoard and id<=finalBoard order by id Desc
     boards = Boards.objects.filter(id__gt=initialBoard,

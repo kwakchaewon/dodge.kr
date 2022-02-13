@@ -43,7 +43,7 @@
         <div class="board__page">
             {% for page in pageList %}
                 <ul class="pagination">
-                    <li>{{ page }}</li>
+                    <li><a href="?page={{ page }}">{{ page }}</a></li>
                 </ul>
             {% endfor %}
         </div>
