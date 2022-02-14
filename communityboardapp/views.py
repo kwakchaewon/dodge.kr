@@ -91,8 +91,6 @@ def goCommunity(request):
 
     # page = 요청된 페이지. default 0
     page = int(request.GET.get('page', 1))
-    # print(type(page))
-    # print(page)
 
     # 페이지당 보여줄 게시글 개수 설정
     paginator = Paginator(allBoards, 10)
@@ -194,5 +192,3 @@ def loginCompleted(request):
 def goErrorPage(request):
     return render(request, 'errorpage.html')
 
-# def goRegistUser(request):
-#  # return redirect('accounts:login')
