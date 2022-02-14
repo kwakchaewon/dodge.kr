@@ -20,7 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/communityboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/communityboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/~$ding convention.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +74,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="djangowebapp.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -115,7 +119,7 @@
       <workItem from="1644624804849" duration="17176000" />
       <workItem from="1644660151606" duration="2539000" />
       <workItem from="1644696920532" duration="6199000" />
-      <workItem from="1644720101494" duration="6633000" />
+      <workItem from="1644720101494" duration="36734000" />
     </task>
     <servers />
   </component>
@@ -156,18 +160,18 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="625" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1644132405370" />
-    <state x="355" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1644563902153">
+    <state x="355" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1644852775351">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="355" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644563902153" />
+    <state x="355" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644852775351" />
     <state x="679" y="314" width="944" height="525" key="DiffContextDialog" timestamp="1644589973290">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="679" y="314" width="944" height="525" key="DiffContextDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644589973290" />
-    <state x="1" y="93" width="1217" height="827" key="DirDiffDialog" timestamp="1644629928327">
+    <state x="225" y="181" width="1217" height="827" key="DirDiffDialog" timestamp="1644855342689">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="1" y="93" width="1217" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644629928327" />
+    <state x="225" y="181" width="1217" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644855342689" />
     <state width="778" height="196" key="GridCell.Tab.0.bottom" timestamp="1644166620890">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -200,9 +204,20 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="250" y="214" width="521" height="538" key="ftp.server.browser/0.0.1707.1027@0.0.1707.1027" timestamp="1643973703579" />
-    <state x="637" y="243" width="672" height="678" key="search.everywhere.popup" timestamp="1644634578245">
+    <state x="637" y="243" width="672" height="678" key="search.everywhere.popup" timestamp="1644855337556">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="637" y="243" width="672" height="678" key="search.everywhere.popup/0.0.1707.1027@0.0.1707.1027" timestamp="1644634578245" />
+    <state x="637" y="243" width="672" height="678" key="search.everywhere.popup/0.0.1707.1027@0.0.1707.1027" timestamp="1644855337556" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../Python/Python38/Lib/site-packages/django/utils/datastructures.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
