@@ -13,9 +13,6 @@ def goToMain(request):
     return render(request, 'main.html')
 
 
-# 로그인 페이지 이동
-# def goLogin(request):
-#     return render(request, 'login.html')
 
 def goSignUp(request):
     return render(request, 'signup.html')
@@ -132,21 +129,6 @@ def goCommunity(request):
 
 
     return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage })
-
-
-# def index(request):
-#     page = request.GET.get('page', '1')
-#     boardList = Boards.objects.order_by('-id')
-#
-#     # 페이지당 10개씩 보여준다.
-#     paginator = Paginator(boardList, 10)
-#
-#
-#     pagObj = paginator.get_page(page)
-#
-#     context = {'boardList': boardList}
-#
-#     return render(request, 'communityboard.html', context)
 
 
 
