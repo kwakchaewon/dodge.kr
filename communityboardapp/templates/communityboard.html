@@ -43,13 +43,13 @@
         <a href="" class="btn btn-default pull-right">글쓰기</a>
 
 
-{#    pagination#}
+        {#    pagination#}
         <div class="board__page">
 
             <ul class="pagination">
                 {% if boards.has_previous %}
                     <li><a href="?page=1">처음</a></li>
-{#                                        <li><a href="?page={{ board_list.previous_page_number }}">이전</a></li>#}
+                    <li><a href="?page={{ previousPage }}">이전</a></li>
                 {% endif %}
             </ul>
 
@@ -60,20 +60,20 @@
             {% endfor %}
 
 
-{#                    {% if page >= boards.number|add:-2 and page <= board_list.number|add:2 %}#}
-{#                    <span class="{% if page == boards.number %}current{% endif %}">#}
-{#                        <a href="?page={{ page }}">{{ page}}</a>#}
-{#                    </span>#}
-{#                    {% elif page >= board_list.number|add:-3 and page <= board_list.number|add:3 %}#}
-{#                        ..#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
+            {#                    {% if page >= boards.number|add:-2 and page <= board_list.number|add:2 %}#}
+            {#                    <span class="{% if page == boards.number %}current{% endif %}">#}
+            {#                        <a href="?page={{ page }}">{{ page}}</a>#}
+            {#                    </span>#}
+            {#                    {% elif page >= board_list.number|add:-3 and page <= board_list.number|add:3 %}#}
+            {#                        ..#}
+            {#                    {% endif %}#}
+            {#                {% endfor %}#}
 
 
             <ul class="pagination">
-                 {% if boards.has_next %}
-{#                    <li><a href="?pageCal={{ page }}">다음</a></li>#}
-                    <li><a href="?page={{ boards.paginator.num_pages }}">끝</a></li>
+                {% if boards.has_next %}
+                    <li><a href="?page={{ nextPage }}">다음</a></li>
+                    <li><a href="?page={{ boards.num_pages }}">끝</a></li>
                 {% endif %}
             </ul>
         </div>
