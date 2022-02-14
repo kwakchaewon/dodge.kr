@@ -148,3 +148,10 @@ float: right;
 #navbar__menu__login{
     color: var(--color-white);
 }
+
+
+/*footer*/
+#footer{
+    background: var(--color-dark-grey);
+    color: var(--color-white);
+}
