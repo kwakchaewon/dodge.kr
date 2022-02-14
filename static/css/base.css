@@ -102,6 +102,12 @@ p{
 }
 
 
+.wrapper{
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
 
 /*navbar*/
 #navbar{
@@ -154,4 +160,9 @@ float: right;
 #footer{
     background: var(--color-dark-grey);
     color: var(--color-white);
+    width: 100%;
+	height: auto;
+	bottom: 0px;
+	position: absolute;
+
 }
