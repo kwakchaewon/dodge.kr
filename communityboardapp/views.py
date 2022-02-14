@@ -24,40 +24,95 @@ def goSignUp(request):
 # Board 테이블 표기 및 페이징, 커뮤니티 이동
 def goCommunity(request):
 
-    # page : 현재 선택한 페이지
+    # # page : 현재 선택한 페이지
+    # page = int(request.GET.get('page', 1))
+    #
+    # # boardsCount : 전체 게시글 개수
+    # boards = Boards.objects.all()
+    # boardsCount = boards.count()
+    #
+    # # 총 페이지 수
+    # totPage = math.ceil(boardsCount / 10)
+    #
+    #
+    # # # 처음, 이전, 다음, 끝 버튼 누를 경우 실행
+    # # pageCal = str(request.GET.get('page', ''))
+    # #
+    # # if pageCal == 'first':
+    # #     page = 1
+    # #     print('성공')
+    # # elif pageCal == 'previous':
+    # #     page = math.trunc(math.trunc(page/10) * 10 - 1) + 1
+    # # elif pageCal == 'next':
+    # #     page = math.ceil(page/10)*10 + 1
+    # # elif pageCal == 'last':
+    # #     page = totPage
+    #
+    #
+    #
+    #
+    # # initialBoard : 표기되는 첫 게시글 No / finalBoard : 표기되는 마지막 게시글 No
+    # initialBoard = boardsCount - 10 * (page) + 1
+    # finalBoard = boardsCount - 10 * (page) + 10
+    #
+    #
+
+    # # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
+    # initialPage = math.trunc((page-1)/10)*10 + 1
+    #
+    # if boardsCount > 10 * (initialPage + 9):
+    #     finalPage = initialPage + 9
+    # else:
+    #     finalPage = math.ceil(boardsCount / 10)
+    #
+    # pageList = []
+    # for i in range(initialPage, finalPage+1):
+    #     pageList.append(i)
+    #
+    #
+    # # 현재 페이지가 1 ~ 10 페이지 사이 or 총 페이지 <= 10
+    # # 처음, 이전 버튼 표기한다 (pageAble1 = 1) / 처음, 이전 버튼 표기하지않는다 (pageAble1 = 0)
+    # if page <= 10:
+    #     pageAble1 = 0
+    # elif totPage <= 10:
+    #     pageAble1 = 0
+    # else:
+    #     pageAble1 = 1
+    #
+    # # 다음, 마지막 버튼 표기한다 (pageAble2 = 1) / 다음, 마지막 버튼 표기하지않는다 (pageAble2 = 0)
+    # if math.floor(page) == math.floor(totPage):
+    #     pageAble2 = 0
+    # else:
+    #     pageAble2 = 1
+    #
+    #
+    # # select * from Boards where id>initialBoard and id<=finalBoard order by id Desc
+    # boards = Boards.objects.filter(id__gt=initialBoard,
+    #                                    id__lte=finalBoard).order_by('-id')
+
+    allBoards = Boards.objects.all().order_by("-id")
+
+    # page = 요청된 페이지. default 0
     page = int(request.GET.get('page', 1))
 
-    # boardsCount : 전체 게시글 개수
-    boards = Boards.objects.all()
-    boardsCount = boards.count()
+    # 페이지당 보여줄 게시글 개수 설정
+    paginator = Paginator(allBoards, 10)
 
-    # 총 페이지 수
-    totPage = math.ceil(boardsCount / 10)
+    # 페이징 객체 설정 : 요청된 페이지에 해당하는 페이징 객체 설정
+    boards = paginator.get_page(page)
 
+    # 표기될 페이지 개수
+    page = int(request.GET.get('page', 1))
+    boards = paginator.get_page(page)
 
-    # # 처음, 이전, 다음, 끝 버튼 누를 경우 실행
-    # pageCal = str(request.GET.get('page', ''))
-    #
-    # if pageCal == 'first':
-    #     page = 1
-    #     print('성공')
-    # elif pageCal == 'previous':
-    #     page = math.trunc(math.trunc(page/10) * 10 - 1) + 1
-    # elif pageCal == 'next':
-    #     page = math.ceil(page/10)*10 + 1
-    # elif pageCal == 'last':
-    #     page = totPage
-
-
-
-
-    # initialBoard : 표기되는 첫 게시글 No / finalBoard : 표기되는 마지막 게시글 No
-    initialBoard = boardsCount - 10 * (page) + 1
-    finalBoard = boardsCount - 10 * (page) + 10
-
+    # 전체 게시글 개수
+    # boardsCount = Boards.objects.all().count()
+    boardsCount = paginator.count
+    print(boardsCount)
 
     # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
     initialPage = math.trunc((page-1)/10)*10 + 1
+
 
     if boardsCount > 10 * (initialPage + 9):
         finalPage = initialPage + 9
@@ -68,28 +123,7 @@ def goCommunity(request):
     for i in range(initialPage, finalPage+1):
         pageList.append(i)
 
-
-    # 현재 페이지가 1 ~ 10 페이지 사이 or 총 페이지 <= 10
-    # 처음, 이전 버튼 표기한다 (pageAble1 = 1) / 처음, 이전 버튼 표기하지않는다 (pageAble1 = 0)
-    if page <= 10:
-        pageAble1 = 0
-    elif totPage <= 10:
-        pageAble1 = 0
-    else:
-        pageAble1 = 1
-
-    # 다음, 마지막 버튼 표기한다 (pageAble2 = 1) / 다음, 마지막 버튼 표기하지않는다 (pageAble2 = 0)
-    if math.floor(page) == math.floor(totPage):
-        pageAble2 = 0
-    else:
-        pageAble2 = 1
-
-
-    # select * from Boards where id>initialBoard and id<=finalBoard order by id Desc
-    boards = Boards.objects.filter(id__gt=initialBoard,
-                                       id__lte=finalBoard).order_by('-id')
-
-    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'pageAble1': pageAble1, 'pageAble2' : pageAble2, 'page':page})
+    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList})
 
 
 # def index(request):
