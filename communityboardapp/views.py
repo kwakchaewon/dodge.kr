@@ -25,13 +25,31 @@ def goSignUp(request):
 def goCommunity(request):
 
     # page : 현재 선택한 페이지
-    # page = 3
     page = int(request.GET.get('page', 1))
 
     # boardsCount : 전체 게시글 개수
     boards = Boards.objects.all()
     boardsCount = boards.count()
-    print(boardsCount)
+
+    # 총 페이지 수
+    totPage = math.ceil(boardsCount / 10)
+
+
+    # # 처음, 이전, 다음, 끝 버튼 누를 경우 실행
+    # pageCal = str(request.GET.get('page', ''))
+    #
+    # if pageCal == 'first':
+    #     page = 1
+    #     print('성공')
+    # elif pageCal == 'previous':
+    #     page = math.trunc(math.trunc(page/10) * 10 - 1) + 1
+    # elif pageCal == 'next':
+    #     page = math.ceil(page/10)*10 + 1
+    # elif pageCal == 'last':
+    #     page = totPage
+
+
+
 
     # initialBoard : 표기되는 첫 게시글 No / finalBoard : 표기되는 마지막 게시글 No
     initialBoard = boardsCount - 10 * (page) + 1
@@ -49,10 +67,6 @@ def goCommunity(request):
     pageList = []
     for i in range(initialPage, finalPage+1):
         pageList.append(i)
-
-
-    # 총 페이지 수
-    totPage = math.ceil(boardsCount / 10)
 
 
     # 현재 페이지가 1 ~ 10 페이지 사이 or 총 페이지 <= 10
@@ -75,7 +89,7 @@ def goCommunity(request):
     boards = Boards.objects.filter(id__gt=initialBoard,
                                        id__lte=finalBoard).order_by('-id')
 
-    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'pageAble1': pageAble1, 'pageAble2' : pageAble2})
+    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'pageAble1': pageAble1, 'pageAble2' : pageAble2, 'page':page})
 
 
 # def index(request):

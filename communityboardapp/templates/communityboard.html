@@ -47,8 +47,8 @@
                 {% if pageAble1 == 0 %}
                 {% endif %}
                 {% if pageAble1 == 1 %}
-                    <li class="page__item abled"><a href="">처음</a></li>
-                    <li class="page__item abled"><a href="">이전</a></li>
+                    <li><a href="?pageCal='first'">처음</a></li>
+                    <li><a href="?pageCal='previous'">이전</a></li>
                 {% endif %}
             </ul>
             {% for page in pageList %}
@@ -60,8 +60,8 @@
                 {% if pageAble2 == 0 %}
                 {% endif %}
                 {% if pageAble2 == 1 %}
-                    <li class="page__item abled"><a href="">다음</a></li>
-                    <li class="page__item abled"><a href="">끝</a></li>
+                    <li><a href="?pageCal={{ page }}">다음</a></li>
+                    <li><a href="?pageCal=last">끝</a></li>
                 {% endif %}
             </ul>
         </div>
