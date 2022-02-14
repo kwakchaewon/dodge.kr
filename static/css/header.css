@@ -54,6 +54,13 @@ a{
     color: var(--color-white);
 }
 
+
+a:hover{
+    text-decoration: none;
+    cursor : pointer;
+}
+
+
 ul{
     padding-left: 0;
     list-style: none;
