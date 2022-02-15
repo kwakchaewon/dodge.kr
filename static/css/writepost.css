@@ -6,6 +6,7 @@
 
 #title {
     font-size: var(--font-semimedium);
+    width: 600px;
 }
 
 
@@ -34,13 +35,23 @@
     margin: 16px 0px;
 }
 
-#content{
+#content {
     width: 100%
 }
 
 
-textarea{
+textarea {
     width: 100%;
     height: 32em;
     resize: none;
+}
+
+
+#user {
+    display: none;
+}
+
+
+#img_file {
+    margin: 16px 0px;
 }
