@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
@@ -127,8 +128,14 @@ def goCommunity(request):
     return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage })
 
 
+# 게시글 쓰기 페이지 이동
+@login_required
 def writePost(request):
     return render(request, 'writepost.html')
+
+
+def boardwriteCompleted(request):
+    return redirect('/community')
 
 
 # 회원가입
