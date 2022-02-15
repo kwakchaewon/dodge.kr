@@ -117,14 +117,12 @@ def goCommunity(request):
     for i in range(initialPage, finalPage+1):
         pageList.append(i)
 
-
     # 이전, 다음 페이지 클릭시 넘어갈 페이지 값
     previousPage = math.trunc((page - 1)/10) * 10
     nextPage = math.ceil(page/10)*10 + 1
 
     print('previousPage: ', previousPage)
     print('nextPage: ', nextPage)
-
 
     return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage })
 

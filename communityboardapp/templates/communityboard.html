@@ -39,37 +39,21 @@
                 </tbody>
             </table>
         </div>
-        
         <a href="" class="btn btn-default pull-right">글쓰기</a>
-
 
         {#    pagination#}
         <div class="board__page">
-
             <ul class="pagination">
                 {% if boards.has_previous %}
                     <li><a href="?page=1">처음</a></li>
                     <li><a href="?page={{ previousPage }}">이전</a></li>
                 {% endif %}
             </ul>
-
             {% for page in pageList %}
                 <ul class="pagination">
                     <li><a href="?page={{ page }}">{{ page }}</a></li>
                 </ul>
             {% endfor %}
-
-
-            {#                    {% if page >= boards.number|add:-2 and page <= board_list.number|add:2 %}#}
-            {#                    <span class="{% if page == boards.number %}current{% endif %}">#}
-            {#                        <a href="?page={{ page }}">{{ page}}</a>#}
-            {#                    </span>#}
-            {#                    {% elif page >= board_list.number|add:-3 and page <= board_list.number|add:3 %}#}
-            {#                        ..#}
-            {#                    {% endif %}#}
-            {#                {% endfor %}#}
-
-
             <ul class="pagination">
                 {% if boards.has_next %}
                     <li><a href="?page={{ nextPage }}">다음</a></li>
