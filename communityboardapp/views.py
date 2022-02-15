@@ -127,6 +127,9 @@ def goCommunity(request):
     return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage })
 
 
+def writePost(request):
+    return render(request, 'writepost.html')
+
 
 # 회원가입
 def signupCompleted(request):

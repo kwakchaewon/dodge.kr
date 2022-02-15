@@ -1,6 +1,6 @@
 from django.urls import path
 from communityboardapp.views import goToMain, goSignUp, goCommunity, \
-    signupCompleted, userIdCheck, loginCompleted, goErrorPage
+    signupCompleted, userIdCheck, loginCompleted, goErrorPage, writePost
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -9,6 +9,7 @@ urlpatterns = [
     path('', goToMain, name='main'),
     path('signup', goSignUp,),
     path('community', goCommunity, ),
+    path('community/write', writePost, ),
     path('signupCompleted', signupCompleted, ),
     path('userIdCheck', userIdCheck),
     path('login', auth_views.LoginView.as_view(template_name='login.html'), name='login.html'),
