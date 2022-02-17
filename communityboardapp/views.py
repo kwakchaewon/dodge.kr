@@ -125,7 +125,7 @@ def goCommunity(request):
     print('previousPage: ', previousPage)
     print('nextPage: ', nextPage)
 
-    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage })
+    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage})
 
 
 # 게시글 쓰기 페이지 이동
