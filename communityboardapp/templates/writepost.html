@@ -23,7 +23,7 @@
         <div class="writeboard__div">
 
 
-            <form action="" class="writeboard__form">
+            <form action="/boardwriteCompleted" class="writeboard__form" method="post">
                 {% csrf_token %}
                 <input type="text" name="title" id="title" placeholder="제목을 입력해주세요.">
                 <input type="text" name="user" id="user" value="{{ user.username }}">
