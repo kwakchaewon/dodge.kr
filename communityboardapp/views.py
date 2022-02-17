@@ -243,3 +243,7 @@ def loginCompleted(request):
 def goErrorPage(request):
     return render(request, 'errorpage.html')
 
+
+def viewBoard(request):
+    return render(request, 'viewboard.html')
+
