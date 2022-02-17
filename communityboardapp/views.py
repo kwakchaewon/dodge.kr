@@ -140,9 +140,11 @@ def boardwriteCompleted(request):
     if request.method == "POST":
         title = request.POST['title']
         content = request.POST['content']
-        user = request.POST['user']
+        user = AuthUser.objects.get(username=request.user)
+        # user = request.POST['user']
+        category = BoardCategories.objects.get(id=1)
 
-        print('제목: ',title,'  내용: ',content,'  작성자:',user)
+        print('제목: ', title, '  내용: ', content, '  작성자:', user)
 
         try:
             img_file = request.POST['img_file']
@@ -153,41 +155,30 @@ def boardwriteCompleted(request):
     else:
         title = None
 
-    print(request.user)
-    category = BoardCategories.objects.get(id=1)
-    user = AuthUser.objects.get(username=request.user)
-    article = Boards(category=category, user=user, title=title, content=content, image=img_file)
-    article.save()
 
+    # 게시글 작성 성공 시
+    try:
+        category = BoardCategories.objects.get(id=1)
+        if title != None:
+        # if request.user and title and content and request.user.is_superuser >= category.authority:
+            article = Boards(category=category, user=user, title=title, content=content, image=img_file)
+            article.save()
+
+            print('1')
+            return redirect('/community')
+
+        else:
+            print('2')
+            return redirect('/error')
+
+
+    # 게시글 작성 실패 시
+    except:
+        print('3')
+         # return redirect('/error')
+
+    # print('4')
     return redirect('/community')
-
-
-
-
-    args = {}
-
-    # # 게시글 작성 성공 시
-    # try:
-    #     category = BoardCategories.objects.get(id=1)
-    #     if request.user and title and content and request.user.is_superuser >= category.authority:
-    #         article = Boards(category=category, user=request.user, title=title, content=content, image=img_file)
-    #         article.save()
-    #
-    #         print('1')
-    #         return redirect('/community')
-    #
-    #     else:
-    #         print('2')
-    #         return redirect('/error')
-    #
-    #
-    # # 게시글 작성 실패 시
-    # except:
-    #     print('3')
-    #      # return redirect('/error')
-    #
-    # # print('4')
-    # return redirect('/community')
 
 
 # 회원가입완료
