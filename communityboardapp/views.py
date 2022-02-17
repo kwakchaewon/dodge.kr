@@ -1,11 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.contrib.auth import authenticate, login
 from testapp.models import Boards, BoardCategories, AuthUser
 import math
 from django.core.paginator import Paginator
+from django.views.generic import DetailView
 
 
 
@@ -243,7 +244,22 @@ def loginCompleted(request):
 def goErrorPage(request):
     return render(request, 'errorpage.html')
 
+# 게시판 조회
+# class viewBoard(DetailView):
+#
+#     model = Boards
+#     template_name = 'viewboard.html'
+#     context_object_name = 'board'
 
-def viewBoard(request):
+
+def viewBoard(request, id):
+
+    try:
+        board = Boards.objects.get(pk=id)
+
+    except:
+        Boards.DoesNotExist
+        raise Http404("Does not exist!")
+
     return render(request, 'viewboard.html')
 
