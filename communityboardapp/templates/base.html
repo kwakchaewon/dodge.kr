@@ -35,7 +35,7 @@
     </div>
         <div class="navbar__logintab">
         {% if user.is_authenticated  %}
-            <a class="glyphicon glyphicon-log-out" id="navbar__menu__logout" aria-hidden="true" href="{% url 'logout' %}">{{ user.username }}</a>
+            {{ user.username }} <a class="glyphicon glyphicon-log-out" id="navbar__menu__logout" aria-hidden="true" href="{% url 'logout' %}"></a>
         {% else %}
             <a class="glyphicon glyphicon-log-in" id="navbar__menu__login" aria-hidden="true" href= "{% url 'login' %}"></a>
         {% endif %}
