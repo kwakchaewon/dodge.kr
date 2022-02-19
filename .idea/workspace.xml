@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/mysql.txt" beforeDir="false" afterPath="$PROJECT_DIR$/command/mysql.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +125,7 @@
       <workItem from="1644696920532" duration="6199000" />
       <workItem from="1644720101494" duration="55933000" />
       <workItem from="1644985810621" duration="1117000" />
-      <workItem from="1645060712536" duration="5268000" />
+      <workItem from="1645060712536" duration="27075000" />
     </task>
     <servers />
   </component>
@@ -196,14 +198,14 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="83" y="162" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1643761089581" />
-    <state x="152" y="108" width="1432" height="831" key="dock-window-1" timestamp="1644926987775">
+    <state x="705" y="122" width="897" height="688" key="dock-window-1" timestamp="1645231710158">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="152" y="108" width="1432" height="831" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1644926987775" />
-    <state x="714" y="0" width="1007" height="903" key="dock-window-2" timestamp="1644568584508">
+    <state x="705" y="122" width="897" height="688" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1645231710158" />
+    <state x="278" y="61" width="1274" height="709" key="dock-window-2" timestamp="1645149567205">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="714" y="0" width="1007" height="903" key="dock-window-2/0.0.1707.1027@0.0.1707.1027" timestamp="1644568584508" />
+    <state x="278" y="61" width="1274" height="709" key="dock-window-2/0.0.1707.1027@0.0.1707.1027" timestamp="1645149567205" />
     <state x="250" y="214" width="521" height="538" key="ftp.server.browser" timestamp="1643973703579">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>

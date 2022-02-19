@@ -105,8 +105,3 @@ DELIMITER $$"
 
 
 CALL loopInsert;
-
-
-
-
-
