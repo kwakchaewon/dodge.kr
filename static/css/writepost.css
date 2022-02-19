@@ -1,15 +1,12 @@
+/*container__writeboard*/
 .container__writeboard {
     background: var(--color-white);
     margin: 0 60px;
     padding: 20px 40px;
 }
 
-#title {
-    font-size: var(--font-semimedium);
-    width: 600px;
-}
 
-
+/*writeboard__div*/
 .writeboard__div {
     padding: 33px 68px 40px;
     margin-top: 15px;
@@ -17,15 +14,24 @@
 }
 
 
-#id {
-    padding: 8px;
-    height: 372px;
-    font-size: var(--font-regular);
-}
-
+/*writeboard__form*/
 .writeboard__form {
     text-align: left;
 }
+
+
+#title {
+    font-size: var(--font-semimedium);
+    width: 600px;
+}
+
+
+/*#id {*/
+/*    padding: 8px;*/
+/*    height: 372px;*/
+/*    font-size: var(--font-regular);*/
+/*}*/
+
 
 .content {
     width: 100%;

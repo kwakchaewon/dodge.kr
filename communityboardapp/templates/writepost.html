@@ -11,18 +11,11 @@
         <script>
     alert("로그인이 필요한 기능입니다.")
     location.href = "{% url 'community' %}"
-
-
-
-
-
         </script>
     {% endif %}
 
     <section class="container__writeboard">
         <div class="writeboard__div">
-
-
             <form action="/boardwriteCompleted" class="writeboard__form" method="post">
                 {% csrf_token %}
                 <input type="text" name="title" id="title" placeholder="제목을 입력해주세요.">
@@ -38,63 +31,6 @@
                 </div>
             </form>
         </div>
-
-        {#        <div class="row block-center board">#}
-        {#            <form action="" class="writeboard__form">#}
-        {#                {% csrf_token %}#}
-        {##}
-        {#                <div class="row">#}
-        {##}
-        {#                </div>#}
-        {##}
-        {#                <div class="row border-top-line">#}
-        {#                    <div class="col-1 right">#}
-        {#                        <p>작성자</p>#}
-        {#                    </div>#}
-        {#                    <div class="col-11">#}
-        {#                        <p>admin</p>#}
-        {#                    </div>#}
-        {#                </div>#}
-        {##}
-        {#                <div class="row">#}
-        {#                    <div class="col-1 right">#}
-        {#                        <p>제목</p>#}
-        {#                    </div>#}
-        {#                    <div class="col-11">#}
-        {#                        <input type="text" name="title" id="title" class="form-width-90">#}
-        {#                    </div>#}
-        {##}
-        {#                    <div>#}
-        {##}
-        {#                    </div>#}
-        {#                    <div>#}
-        {##}
-        {#                    </div>#}
-        {##}
-        {##}
-        {#                </div>#}
-        {##}
-        {##}
-        {##}
-        {#                <input type="text" class="writeboard__title">#}
-        {#                <div class="writeboard__warning">#}
-        {#                    ※ 음란물, 차별, 비하, 혐오 및 초상권, 저작권 침해 게시글은 민, 현사상의 책임을 질 수 있습니다.#}
-        {#                </div>#}
-        {#                <input type="text" class="writeboard__writer">#}
-        {#                <textarea class="form-width-90" name="content" id="content" cols="30" rows="10">#}
-        {##}
-        {#            </textarea>#}
-        {#            <input type="text" class="writeboard__board">#}
-        {##}
-        {#                <input type="file" name="img_file" accept="image/gif, image/jpeg, image/png">#}
-        {#                <div class="writeboard__cancel">#}
-        {#                    취소#}
-        {#                </div>#}
-        {#                <button class="writeboard__regist">#}
-        {#                    등록#}
-        {#                </button>#}
-        {#            </form>#}
-        {#        </div>#}
     </section>
 
 {% endblock %}
