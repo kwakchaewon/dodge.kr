@@ -261,5 +261,5 @@ def viewBoard(request, id):
         Boards.DoesNotExist
         raise Http404("Does not exist!")
 
-    return render(request, 'viewboard.html')
+    return render(request, 'viewboard.html', {'board': board})
 
