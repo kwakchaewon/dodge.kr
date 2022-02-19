@@ -256,10 +256,13 @@ def viewBoard(request, id):
 
     try:
         board = Boards.objects.get(pk=id)
+        username = AuthUser.objects.get(pk=board.user_id).username
+
+
 
     except:
         Boards.DoesNotExist
         raise Http404("Does not exist!")
 
-    return render(request, 'viewboard.html', {'board': board})
+    return render(request, 'viewboard.html', {'board': board, 'username': username})
 
