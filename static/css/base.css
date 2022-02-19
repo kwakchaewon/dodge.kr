@@ -13,6 +13,7 @@
     --color-yellow: #fff7d1;
     --color-orange: #feb546;
     --color-black:#000000;
+    --color-regular-grey:#7c7979;
 
 
     /* Font size */
@@ -46,7 +47,7 @@
 }
 
 body{
-    background-color: var(--color-light-grey);
+    background-color: var(--color-regular-grey);
 }
 
 a{
