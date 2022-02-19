@@ -28,7 +28,7 @@
                 {% for list in boards %}
                     <tr>
                         <td>{{ list.id }}</td>
-                        <td>{{ list.title }}</td>
+                        <td><a href="viewboard/{{ list.id }}">{{ list.title }}</a></td>
                         <td>{{ list.user_id }}</td>
                         <td>{{ list.content }}</td>
                         <td></td>
