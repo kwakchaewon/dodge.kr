@@ -1,28 +1,28 @@
 /*container__1*/
-.container__1{
+.container__1 {
     /*width: 1080px;*/
     /*margin: 0px auto;*/
+    height: 820px;
 }
 
 
 /*logo*/
-#logo{
+#logo {
     height: 300px;
 }
 
 
 /*search*/
-.search__searchbar__summonersearch{
+.search__searchbar__summonersearch {
     width: 624px;
     height: 50px;
 }
 
 
 /*board*/
-#board{
+#board {
     height: 300px;
 }
-
 
 
 /*!*footer*!*/

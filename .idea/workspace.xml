@@ -21,9 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,15 +59,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\dodge.kr\communityboardapp\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dodge.kr\communityboardapp\templates\communityboardapp" />
       <recent name="C:\dodge.kr\templates\communityboardapp" />
       <recent name="C:\DjangoWebApp\static\css" />
       <recent name="C:\DjangoWebApp\communityboardapp" />
       <recent name="C:\DjangoWebApp\communityboardapp\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dodge.kr\communityboardapp\templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -124,7 +124,7 @@
       <workItem from="1644696920532" duration="6199000" />
       <workItem from="1644720101494" duration="55933000" />
       <workItem from="1644985810621" duration="1117000" />
-      <workItem from="1645060712536" duration="36275000" />
+      <workItem from="1645060712536" duration="50330000" />
     </task>
     <servers />
   </component>
