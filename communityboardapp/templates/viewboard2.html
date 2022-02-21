@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Dodge.kr : 커뮤니티</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/viewboard2.css' %}">
+    </head>
+
+    {#    자유 게시판#}
+    <section class="container__viewboard">
+        <div class="container__board__wrap">
+            <div class="board__title">
+                <h3>커뮤니티 : 리그오브레전드와 관련된 글을 자유롭게 쓸 수 있는 공간입니다.</h3>
+            </div>
+
+            <div class="container__board">
+                <div>
+                    <div class="board__info">
+                        <div class="board__info__title"><h3>{{ board.title }}</h3></div>
+                        <div class="board__info__writer">
+                            <h5>
+                                <span class="info__writer">{{ username }}</span>
+                                <span class="info__date">2021.03.27 18:58:40</span>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="board__content">
+                {{ board.content }}
+                <div class="content__recommend">
+                    <div class="recommend__left">추천</div>
+                    <div class="recommend__right">비추</div>
+                </div>
+            </div>
+            <div class="container__comments">
+                <form action="">
+                    <div class="comment__title">댓글</div>
+                    <div class="comment__inputdiv">
+                            <textarea name="" id="" cols="30" rows="10" class="comment__input"
+                                      placeholder="댓글을 입력해주세요."></textarea>
+                        <button class="btn btn-default">등록</button>
+                    </div>
+                </form>
+{#                <hr class="comment__endline">#}
+                <div class="comment__table">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <td>이재명이 그렇게 좋냐</td>
+                            <td>전이삭</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                            <td>조재형</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                            <td>최한영</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                            <td>조재형</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                            <td>조재형</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                            <td>조재형</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                            <td>조재형</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                            <td>조재형</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+{% endblock %}
