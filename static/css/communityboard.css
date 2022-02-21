@@ -1,22 +1,36 @@
 /*container__board*/
-.container__board{
+.container__board {
     background: var(--color-white);
-    padding: 0px 40px 0px 40px;
-    margin: auto 40px auto 40px;
+    /*position: relative;*/
+    width: 1450px;
+    margin: 0 auto;
+}
 
+
+/*container__board__wrap*/
+.container__board__wrap {
+    margin: 20px auto 0;
+    width: 1160px;
+    height: 1300px;
+}
+
+
+/*left__board*/
+.left__board {
+    width: 840px;
+    float: left;
 }
 
 /*board__title*/
-
-
-/*board__table*/
-table{
+.board__title {
     text-align: left;
+    margin-bottom: 30px;
 }
 
 
-td a{
-    color: var(--color-black);
+/*board__table*/
+table {
+    text-align: left;
 }
 
 
@@ -24,3 +38,35 @@ td a{
 
 
 /*board__search*/
+
+
+/*right__board*/
+.right__board {
+    float: right;
+
+    /*width: 840px;*/
+    /*width: 300px;*/
+
+    width: 280px;
+    margin-top: 80px;
+}
+
+
+.board__table__title, .notify__title {
+    font-size: var(--font-regular);
+    border-bottom: 2px solid var(--color-black);
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+
+.right__board__user {
+    border: solid 1px black;
+    margin-bottom: 30px;
+}
+
+
+.right__board__popular {
+    border: solid 1px black;
+}
+

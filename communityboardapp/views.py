@@ -95,7 +95,7 @@ def goCommunity(request):
     page = int(request.GET.get('page', 1))
 
     # 페이지당 보여줄 게시글 개수 설정
-    paginator = Paginator(allBoards, 10)
+    paginator = Paginator(allBoards, 20)
 
     # 페이징 객체 설정 : 요청된 페이지에 해당하는 페이징 객체 설정
     boards = paginator.get_page(page)

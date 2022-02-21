@@ -4,63 +4,127 @@
         <meta charset="UTF-8">
         <title>Dodge.kr : 커뮤니티</title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'css/communityboard.css' %}">
+        <link rel="stylesheet" href="{% static 'css/communityboard2.css' %}">
     </head>
 
     {#    자유 게시판#}
     <section class="container__board">
-        <div class="board__title">
-            커뮤니티 : 리그오브레전드와 관련된 글을 자유롭게 쓸 수 있는 공간입니다.
-        </div>
+        <div class="container__board__wrap">
+            <div class="left__board">
+                <div class="board__title">
+                    <h3>커뮤니티 : 리그오브레전드와 관련된 글을 자유롭게 쓸 수 있는 공간입니다.</h3>
+                </div>
 
-        <div class="board__table">
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>제목</th>
-                    <th>작성자</th>
-                    <th>내용</th>
-                    <th>조회수</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for list in boards %}
-                    <tr>
-                        <td>{{ list.id }}</td>
-                        <td><a href="viewboard/{{ list.id }}">{{ list.title }}</a></td>
-                        <td>{{ list.user_id }}</td>
-                        <td>{{ list.content }}</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <a href="community/write" class="btn btn-default pull-right">글쓰기</a>
+                <div class="notify__table">
+                    <div class="notify__title">
+                        공지
+                    </div>
 
-        {#    pagination#}
-        <div class="board__page">
-            <ul class="pagination">
-                {% if boards.has_previous %}
-                    <li><a href="?page=1">처음</a></li>
-                    <li><a href="?page={{ previousPage }}">이전</a></li>
-                {% endif %}
-            </ul>
-            {% for page in pageList %}
-                <ul class="pagination">
-                    <li><a href="?page={{ page }}">{{ page }}</a></li>
-                </ul>
-            {% endfor %}
-            <ul class="pagination">
-                {% if boards.has_next %}
-                    <li><a href="?page={{ nextPage }}">다음</a></li>
-                    <li><a href="?page={{ boards.num_pages }}">끝</a></li>
-                {% endif %}
-            </ul>
-        </div>
-        <div class="board__search">
+                    <table class="table table-hover">
+
+                        <tbody>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                        </tr>
+                        <tr>
+                            <td>윤석열이 그렇게 좋냐</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="board__table">
+                    <div class="board__table__title">
+                        전체보기
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>내용</th>
+                            <th>조회수</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for list in boards %}
+                            <tr>
+                                <td>{{ list.id }}</td>
+                                <td><a href="viewboard/{{ list.id }}">{{ list.title }}</a></td>
+                                <td>{{ list.user_id }}</td>
+                                <td>{{ list.content }}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <a href="community/write" class="btn btn-default pull-right">글쓰기</a>
+
+                {#    pagination#}
+                <div class="board__page">
+                    <ul class="pagination">
+                        {% if boards.has_previous %}
+                            <li><a href="?page=1">처음</a></li>
+                            <li><a href="?page={{ previousPage }}">이전</a></li>
+                        {% endif %}
+                    </ul>
+                    {% for page in pageList %}
+                        <ul class="pagination">
+                            <li><a href="?page={{ page }}">{{ page }}</a></li>
+                        </ul>
+                    {% endfor %}
+                    <ul class="pagination">
+                        {% if boards.has_next %}
+                            <li><a href="?page={{ nextPage }}">다음</a></li>
+                            <li><a href="?page={{ boards.num_pages }}">끝</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="board__search">
+                </div>
+
+
+            </div>
+
+            <div class="right__board">
+                <div class="right__board__user">
+                    <div></div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                </div>
+
+                <div class="right__board__popular">
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                    <div>안녕</div>
+                </div>
+
+            </div>
         </div>
     </section>
 {% endblock %}
