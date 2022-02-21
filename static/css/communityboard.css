@@ -4,6 +4,7 @@
     /*position: relative;*/
     width: 1450px;
     margin: 0 auto;
+    padding-top: 8px;
 }
 
 
@@ -37,7 +38,9 @@ table {
 /*board__page*/
 
 
+
 /*board__search*/
+
 
 
 /*right__board*/
@@ -60,13 +63,13 @@ table {
 }
 
 
-.right__board__user {
-    border: solid 1px black;
+.right__board__user, .right__board__popular {
+    border: solid 1px var(--color-light-grey);
     margin-bottom: 30px;
 }
 
 
-.right__board__popular {
-    border: solid 1px black;
+#board__user__login{
+    margin: 10px 0px;
 }
 
