@@ -1,14 +1,25 @@
-/*common*/
+/*container__board*/
 .container__viewboard {
     background: var(--color-white);
-    /*margin: 0 60px;*/
-    /*padding: 20px 40px;*/
-    font-size: var(--font-semimedium);
-    /*width: 600px;*/
+    /*position: relative;*/
+    width: 1450px;
+    margin: 0 auto;
+    padding-top: 8px;
+}
 
-    background: var(--color-white);
-    padding: 0px 40px 0px 40px;
-    margin: auto 40px auto 40px;
+
+/*container__board__wrap*/
+.container__board__wrap {
+    margin: 20px auto 0;
+    width: 1160px;
+    height: 900px;
+}
+
+
+/*board__title*/
+.board__title {
+    text-align: left;
+    margin-bottom: 30px;
 }
 
 
@@ -52,12 +63,14 @@
     padding-left: 10px;
 }
 
+
 .board__content {
     font-size: 18px;
     text-align: left;
     padding-bottom: 10px;
     margin: 16px 0 32px;
 }
+
 
 .content__recommend {
     width: 280px;
@@ -107,14 +120,20 @@
 }
 
 
-.comment__inputdiv > .btn-default{
-    margin-top: 8px;
+.comment__input {
+    width: 94%;
+}
+
+
+.comment__inputdiv > .btn-default {
     float: right;
+    height: 4em;
+    width: 6%;
 }
 
 
 .comment__input {
-    width: 100%;
+    width: 94%;
     height: 4em;
     resize: none;
     float: left;
@@ -127,6 +146,14 @@
 }
 
 
+.comment__table{
+    border-top: solid 2px var(--color-black);
+    margin-top: 57px;
+}
+
+
 .comment__table thead {
     display: none;
 }
+
+
