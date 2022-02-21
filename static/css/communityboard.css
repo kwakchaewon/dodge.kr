@@ -35,6 +35,10 @@ table {
 }
 
 
+td a{
+    color: var(--color-black);
+}
+
 /*board__page*/
 
 
