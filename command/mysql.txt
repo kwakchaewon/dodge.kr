@@ -105,3 +105,27 @@ DELIMITER $$"
 
 
 CALL loopInsert;
+
+
+* board_comment 테이블 생성
+create table board_comment(
+id integer(10) not null auto_increment,
+board_id int(10) not null,
+username int(00) not null,
+registered_date  datetime default current_timestamp,
+content varchar(300) not null,
+primary key (id),
+foreign key(board_id) references boards(id),
+foreign key(username) references auth_user(id)
+);
+
+
+* board_comment 테스트 데이터 삽입
+insert into board_comment (id, board_id, username, registered_date, content)
+values (,7511,'admin',,'최한영돼지');
+
+
+
+
+
+

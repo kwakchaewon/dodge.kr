@@ -237,10 +237,11 @@ def userIdCheck(request):
     return HttpResponse(msg)
 
 
+# 로그인완료
 def loginCompleted(request):
     return render(request, 'main.html')
 
-
+# 에러페이지 이동
 def goErrorPage(request):
     return render(request, 'errorpage.html')
 
@@ -252,6 +253,7 @@ def goErrorPage(request):
 #     context_object_name = 'board'
 
 
+# 게시글 자세히
 def viewBoard(request, id):
 
     try:
