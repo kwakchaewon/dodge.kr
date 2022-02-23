@@ -262,11 +262,17 @@ def viewBoard(request, id):
         board = Boards.objects.get(pk=id)
         username = AuthUser.objects.get(pk=board.user_id).username
 
-        print(id)
-        comment = BoardComment.objects.filter(board_id=id)
 
-    except:
+        comment = BoardComment.objects.filter(board_id=7511)
+        # comment2 = BoardComment.objects.get(board_id=7511).username
+
+        # print(comment2)
+
+
+
+    except Exception as e:
         Boards.DoesNotExist
+        print(e)
         raise Http404("Does not exist!")
 
     return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment})
