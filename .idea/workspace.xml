@@ -21,9 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/communityboardapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Application plan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Application plan.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/testapp/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +128,7 @@
       <workItem from="1644985810621" duration="1117000" />
       <workItem from="1645060712536" duration="52434000" />
       <workItem from="1645429811237" duration="16210000" />
-      <workItem from="1645452334811" duration="26551000" />
+      <workItem from="1645452334811" duration="28091000" />
     </task>
     <servers />
   </component>
@@ -177,11 +178,11 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="679" y="314" width="944" height="525" key="DiffContextDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644589973290" />
-    <state x="2871" y="25" width="1369" height="1046" key="DirDiffDialog" timestamp="1645588788276">
+    <state x="2871" y="25" width="1369" height="1046" key="DirDiffDialog" timestamp="1645601314040">
       <screen x="2560" y="0" width="1920" height="1040" />
     </state>
     <state x="195" y="-17" width="1217" height="827" maximized="true" key="DirDiffDialog/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1645519735199" />
-    <state x="2871" y="25" width="1369" height="1046" key="DirDiffDialog/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1645588788276" />
+    <state x="2871" y="25" width="1369" height="1046" key="DirDiffDialog/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1645601314040" />
     <state x="225" y="181" width="1217" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644855342689" />
     <state width="778" height="196" key="GridCell.Tab.0.bottom" timestamp="1644166620890">
       <screen x="0" y="0" width="1707" height="1027" />

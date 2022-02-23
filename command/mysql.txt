@@ -115,8 +115,7 @@ username int(00) not null,
 registered_date  datetime default current_timestamp,
 content varchar(300) not null,
 primary key (id),
-foreign key(board_id) references boards(id),
-foreign key(username) references auth_user(id)
+foreign key(board_id) references boards(id)
 );
 
 
