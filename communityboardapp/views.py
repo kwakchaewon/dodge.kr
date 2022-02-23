@@ -277,3 +277,9 @@ def viewBoard(request, id):
 
     return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment})
 
+
+
+# 댓글삽입
+# def insertComment:
+
+
