@@ -3,7 +3,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404
 from django.contrib.auth import authenticate, login
-from testapp.models import Boards, BoardCategories, AuthUser
+
+from testapp import models
+from testapp.models import Boards, BoardCategories, AuthUser,BoardComment
 import math
 from django.core.paginator import Paginator
 from django.views.generic import DetailView
@@ -260,11 +262,12 @@ def viewBoard(request, id):
         board = Boards.objects.get(pk=id)
         username = AuthUser.objects.get(pk=board.user_id).username
 
-
+        print(id)
+        comment = BoardComment.objects.filter(board_id=id)
 
     except:
         Boards.DoesNotExist
         raise Http404("Does not exist!")
 
-    return render(request, 'viewboard.html', {'board': board, 'username': username})
+    return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment})
 

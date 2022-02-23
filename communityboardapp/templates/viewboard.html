@@ -48,38 +48,17 @@
                 <div class="comment__table">
                     <table class="table table-hover">
                         <tbody>
-                        <tr>
-                            <td>이재명이 그렇게 좋냐</td>
-                            <td>전이삭</td>
-                        </tr>
-                        <tr>
-                            <td>윤석열이 그렇게 좋냐</td>
-                            <td>조재형</td>
-                        </tr>
-                        <tr>
-                            <td>윤석열이 그렇게 좋냐</td>
-                            <td>최한영</td>
-                        </tr>
-                        <tr>
-                            <td>윤석열이 그렇게 좋냐</td>
-                            <td>조재형</td>
-                        </tr>
-                        <tr>
-                            <td>윤석열이 그렇게 좋냐</td>
-                            <td>조재형</td>
-                        </tr>
-                        <tr>
-                            <td>윤석열이 그렇게 좋냐</td>
-                            <td>조재형</td>
-                        </tr>
-                        <tr>
-                            <td>윤석열이 그렇게 좋냐</td>
-                            <td>조재형</td>
-                        </tr>
-                        <tr>
-                            <td>윤석열이 그렇게 좋냐</td>
-                            <td>조재형</td>
-                        </tr>
+
+                        {% for comment in comment %}
+                            <tr>
+                                <td>{{ comment.id }}</td>
+                                <td>{{ comment.registered_date }}</td>
+                                <td>{{ comment.username }}</td>
+                                <td>{{ comment.board_id}}</td>
+                                <td>{{ comment.content}}</td>
+                            </tr>
+                        {% endfor %}
+
                         </tbody>
                     </table>
                 </div>

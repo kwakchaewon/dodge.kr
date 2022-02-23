@@ -122,7 +122,7 @@ foreign key(username) references auth_user(id)
 
 * board_comment 테스트 데이터 삽입
 insert into board_comment (id, board_id, username, registered_date, content)
-values (,7511,'admin',,'최한영돼지');
+values (1,7511,'admin',now(),'최한영돼지');
 
 
 
