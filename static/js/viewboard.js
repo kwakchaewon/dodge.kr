@@ -13,7 +13,7 @@ function insertComment(){
         success : function(response){
         let str = '<tr><td>'+response.content+'</td><td>'+response.username+'</td><td>'+response.registered_date+'</td></tr>';
         $('#commentTable>tbody:first').append(str);
-        $('#comment__textarea').value='';
+        $('#comment__textarea').val("");
         },
     });
 }
