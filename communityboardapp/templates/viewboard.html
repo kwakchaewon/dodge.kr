@@ -4,7 +4,13 @@
         <meta charset="UTF-8">
         <title>Dodge.kr : 커뮤니티</title>
         {% load static %}
+        <script type="text/javascript"> var insertCommentHref = "{% url 'insertComment' %}" </script>
+        <script type="text/javascript"> var username = "{{ user.username }}" </script>
+        <script type="text/javascript"> var boardId = "{{ boardId }}" </script>
+
         <link rel="stylesheet" href="{% static 'css/viewboard.css' %}">
+        <script src="{% static 'js/viewboard.js' %}"></script>
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
 
     {#    자유 게시판#}
@@ -37,28 +43,27 @@
             </div>
             <div class="container__comments">
                 <form action="">
+                    {% csrf_token %}
                     <div class="comment__title">댓글</div>
                     <div class="comment__inputdiv">
-                            <textarea name="" id="" cols="30" rows="10" class="comment__input"
+                            <textarea name="comment__textarea" id="comment__textarea" cols="30" rows="10"
+                                      class="comment__input"
                                       placeholder="댓글을 입력해주세요."></textarea>
-                        <button class="btn btn-default">등록</button>
+                        <div class="btn btn-default" onclick="insertComment()">등록</div>
                     </div>
                 </form>
                 {#                <hr class="comment__endline">#}
                 <div class="comment__table">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="commentTable" name="commentTable">
                         <tbody>
 
                         {% for comment in comment %}
                             <tr>
-                                <td>{{ comment.id }}</td>
-                                <td>{{ comment.registered_date }}</td>
+                                <td>{{ comment.content }}</td>
                                 <td>{{ comment.username }}</td>
-                                <td>{{ comment.board_id}}</td>
-                                <td>{{ comment.content}}</td>
+                                <td>{{ comment.registered_date }}</td>
                             </tr>
                         {% endfor %}
-
                         </tbody>
                     </table>
                 </div>

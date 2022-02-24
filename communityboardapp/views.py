@@ -1,21 +1,22 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, JsonResponse
 from django.contrib.auth import authenticate, login
-
+from datetime import datetime
 from testapp import models
-from testapp.models import Boards, BoardCategories, AuthUser,BoardComment
+from testapp.models import Boards, BoardCategories, AuthUser, BoardComment
 import math
 from django.core.paginator import Paginator
 from django.views.generic import DetailView
-
+from django.core import serializers
+from django.core.serializers.json import DjangoJSONEncoder
+import json
 
 
 # 메인 페이지 이동
 def goToMain(request):
     return render(request, 'main.html')
-
 
 
 def goSignUp(request):
@@ -24,7 +25,6 @@ def goSignUp(request):
 
 # Board 테이블 표기 및 페이징, 커뮤니티 이동
 def goCommunity(request):
-
     # # page : 현재 선택한 페이지
     # page = int(request.GET.get('page', 1))
     #
@@ -110,7 +110,7 @@ def goCommunity(request):
     boardsCount = paginator.count
 
     # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
-    initialPage = math.trunc((page-1)/10)*10 + 1
+    initialPage = math.trunc((page - 1) / 10) * 10 + 1
 
     if boardsCount > 10 * (initialPage + 9):
         finalPage = initialPage + 9
@@ -118,17 +118,18 @@ def goCommunity(request):
         finalPage = math.ceil(boardsCount / 10)
 
     pageList = []
-    for i in range(initialPage, finalPage+1):
+    for i in range(initialPage, finalPage + 1):
         pageList.append(i)
 
     # 이전, 다음 페이지 클릭시 넘어갈 페이지 값
-    previousPage = math.trunc((page - 1)/10) * 10
-    nextPage = math.ceil(page/10)*10 + 1
+    previousPage = math.trunc((page - 1) / 10) * 10
+    nextPage = math.ceil(page / 10) * 10 + 1
 
     print('previousPage: ', previousPage)
     print('nextPage: ', nextPage)
 
-    return render(request, 'communityboard.html', {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage})
+    return render(request, 'communityboard.html',
+                  {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage})
 
 
 # 게시글 쓰기 페이지 이동
@@ -139,7 +140,6 @@ def writePost(request):
 
 @login_required
 def boardwriteCompleted(request):
-
     if request.method == "POST":
         title = request.POST['title']
         content = request.POST['content']
@@ -158,12 +158,11 @@ def boardwriteCompleted(request):
     else:
         title = None
 
-
     # 게시글 작성 성공 시
     try:
         category = BoardCategories.objects.get(id=1)
         if title != None:
-        # if request.user and title and content and request.user.is_superuser >= category.authority:
+            # if request.user and title and content and request.user.is_superuser >= category.authority:
             article = Boards(category=category, user=user, title=title, content=content, image=img_file)
             article.save()
 
@@ -178,7 +177,7 @@ def boardwriteCompleted(request):
     # 게시글 작성 실패 시
     except:
         print('3')
-         # return redirect('/error')
+        # return redirect('/error')
 
     # print('4')
     return redirect('/community')
@@ -243,9 +242,11 @@ def userIdCheck(request):
 def loginCompleted(request):
     return render(request, 'main.html')
 
+
 # 에러페이지 이동
 def goErrorPage(request):
     return render(request, 'errorpage.html')
+
 
 # 게시판 조회
 # class viewBoard(DetailView):
@@ -257,17 +258,11 @@ def goErrorPage(request):
 
 # 게시글 자세히
 def viewBoard(request, id):
-
     try:
         board = Boards.objects.get(pk=id)
         username = AuthUser.objects.get(pk=board.user_id).username
 
-
         comment = BoardComment.objects.filter(board_id=7511)
-        # comment2 = BoardComment.objects.get(board_id=7511).username
-
-        # print(comment2)
-
 
 
     except Exception as e:
@@ -275,11 +270,31 @@ def viewBoard(request, id):
         print(e)
         raise Http404("Does not exist!")
 
-    return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment})
-
+    return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment, 'boardId': id})
 
 
 # 댓글삽입
-# def insertComment:
+def insertComment(request):
+    if request.method == "POST":
+        username = request.POST.get('username', False)
+        content = request.POST.get('content', False)
 
+        boardId = request.POST.get('boardId', False)
+        board = Boards.objects.get(id=boardId)
 
+        boardComment = BoardComment(board=board, username=username, content=content)
+        boardComment.save()
+
+        comment = BoardComment.objects.filter(board=board).order_by('-registered_date')
+
+        print(board)
+        print(comment)
+
+        context = {
+            'content': content,
+            'username': username,
+            'registered_date': ''
+        }
+
+        # return JsonResponse(context)
+        return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
