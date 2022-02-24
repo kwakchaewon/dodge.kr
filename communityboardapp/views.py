@@ -293,7 +293,7 @@ def insertComment(request):
         context = {
             'content': content,
             'username': username,
-            'registered_date': ''
+            'registered_date': boardComment.registered_date
         }
 
         # return JsonResponse(context)
