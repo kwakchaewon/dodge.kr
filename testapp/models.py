@@ -92,7 +92,7 @@ class BoardCategories(models.Model):
 class BoardComment(models.Model):
     board = models.ForeignKey('Boards', models.DO_NOTHING)
     username = models.CharField(max_length=150)
-    registered_date = models.DateTimeField(blank=True, null=True)
+    registered_date = models.DateTimeField(auto_now_add=True)
     content = models.CharField(max_length=300)
 
     class Meta:
