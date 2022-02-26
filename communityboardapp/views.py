@@ -275,20 +275,20 @@ def viewBoard(request, id):
 
 # 댓글삽입
 def insertComment(request):
+
     if request.method == "POST":
         username = request.POST.get('username', False)
         content = request.POST.get('content', False)
-
         boardId = request.POST.get('boardId', False)
         board = Boards.objects.get(id=boardId)
 
+        # registered_date= Datetimefield()
+
+        # insert into board_comment (id, board_id, username, registered_date, content) values (#, board.id, username,now(), content);
         boardComment = BoardComment(board=board, username=username, content=content)
         boardComment.save()
 
         comment = BoardComment.objects.filter(board=board).order_by('-registered_date')
-
-        print(board)
-        print(comment)
 
         context = {
             'content': content,
@@ -296,5 +296,4 @@ def insertComment(request):
             'registered_date': boardComment.registered_date
         }
 
-        # return JsonResponse(context)
         return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
