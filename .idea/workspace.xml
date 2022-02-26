@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/communityboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/communityboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/viewboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/viewboard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,9 @@
       <workItem from="1644985810621" duration="1117000" />
       <workItem from="1645060712536" duration="52434000" />
       <workItem from="1645429811237" duration="16210000" />
-      <workItem from="1645452334811" duration="58060000" />
+      <workItem from="1645452334811" duration="59909000" />
+      <workItem from="1645838364999" duration="1732000" />
+      <workItem from="1645883531170" duration="5883000" />
     </task>
     <servers />
   </component>
@@ -255,7 +259,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/communityboardapp/templates/viewboard.html</url>
-          <line>59</line>
+          <line>71</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
