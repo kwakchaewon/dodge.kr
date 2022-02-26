@@ -100,8 +100,6 @@ def goCommunity(request):
     paginator = Paginator(allBoards, 20)
 
     # 페이징 객체 설정 : 요청된 페이지에 해당하는 페이징 객체 설정
-    boards = paginator.get_page(page)
-
     # 표기될 페이지 개수
     boards = paginator.get_page(page)
 
@@ -124,9 +122,6 @@ def goCommunity(request):
     # 이전, 다음 페이지 클릭시 넘어갈 페이지 값
     previousPage = math.trunc((page - 1) / 10) * 10
     nextPage = math.ceil(page / 10) * 10 + 1
-
-    print('previousPage: ', previousPage)
-    print('nextPage: ', nextPage)
 
     return render(request, 'communityboard.html',
                   {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage})
@@ -262,7 +257,7 @@ def viewBoard(request, id):
         board = Boards.objects.get(pk=id)
         username = AuthUser.objects.get(pk=board.user_id).username
 
-        comment = BoardComment.objects.filter(board_id=7511)
+        comment = BoardComment.objects.filter(board_id=id)
 
 
     except Exception as e:
