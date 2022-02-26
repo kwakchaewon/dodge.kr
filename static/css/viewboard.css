@@ -113,22 +113,27 @@
 }
 
 
-.comment__inputdiv {
+.comment__inputdiv__authenticated {
     padding: 16px 0 16px 0;
     border-top: solid 2px var(--color-black);
-    border-bottom: solid 2px var(--color-black);
+}
+
+
+.comment__inputdiv__authenticated > .btn-default {
+    float: right;
+    height: 4em;
+    width: 6%;
+}
+
+
+.comment__inputdiv__none {
+    padding: 16px 0 16px 0;
+    border-top: solid 2px var(--color-black);
 }
 
 
 .comment__input {
     width: 94%;
-}
-
-
-.comment__inputdiv > .btn-default {
-    float: right;
-    height: 4em;
-    width: 6%;
 }
 
 
@@ -146,9 +151,14 @@
 }
 
 
-.comment__table{
+#comments__form {
+    margin-bottom: 57px;
+}
+
+
+.comment__table {
     border-top: solid 2px var(--color-black);
-    margin-top: 57px;
+    /*margin-top: 57px;*/
 }
 
 
