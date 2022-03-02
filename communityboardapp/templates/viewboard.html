@@ -5,7 +5,7 @@
         <title>Dodge.kr : 커뮤니티</title>
         {% load static %}
         <script type="text/javascript"> var insertCommentHref = "{% url 'insertComment' %}" </script>
-        <script type="text/javascript"> var username = "{{ user.username }}" </script>
+        <script type="text/javascript"> var username = "{{ user.id }}" </script>
         <script type="text/javascript"> var boardId = "{{ boardId }}" </script>
 
         <link rel="stylesheet" href="{% static 'css/viewboard.css' %}">
@@ -60,11 +60,6 @@
                         <div>댓글 작성을 위해서는 로그인이 필요합니다.</div>
                     </div>
                 {% endif %}
-
-
-
-                {#                <hr class="comment__endline">#}
-
 
                 <div class="comment__table">
                     <table class="table table-hover" id="commentTable" name="commentTable">

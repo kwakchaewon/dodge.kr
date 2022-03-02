@@ -95,7 +95,7 @@ class BoardComment(models.Model):
     level = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=300)
     reference_reply_id = models.IntegerField()
-    registered_date = models.DateTimeField(blank=True, null=True)
+    registered_date = models.DateTimeField(blank=True, null=True, auto_now_add=True)
     last_update_date = models.DateTimeField(blank=True, null=True)
 
     class Meta:

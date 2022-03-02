@@ -256,9 +256,6 @@ def viewBoard(request, id):
 
         boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
         print(boardComment.values())
-        # board = Boards.objects.get(pk=id)
-        # username = AuthUser.objects.get(pk=board.user_id).username
-        # comment = BoardComment.objects.filter(board_id=id)
 
 
     except Exception as e:
@@ -267,24 +264,30 @@ def viewBoard(request, id):
         raise Http404("Does not exist!")
 
     # return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment, 'boardId': id})
-    return render(request, 'viewboard.html', {'boardComment': boardComment})
+    return render(request, 'viewboard.html', {'boardComment': boardComment, 'boardId': id})
 
 # 댓글삽입
+@login_required
 def insertComment(request):
 
     if request.method == "POST":
         username = request.POST.get('username', False)
         content = request.POST.get('content', False)
         boardId = request.POST.get('boardId', False)
+
         board = Boards.objects.get(id=boardId)
 
-        # registered_date= Datetimefield()
+        print(board)
+
+        user = AuthUser.objects.get(id=username)
 
         # insert into board_comment (id, board_id, username, registered_date, content) values (#, board.id, username,now(), content);
-        boardComment = BoardComment(board=board, username=username, content=content)
+        boardComment = BoardComment(article=board, user=user, content=content, reference_reply_id='4')
         boardComment.save()
+        
+        print("성공1")
 
-        comment = BoardComment.objects.filter(board=board).order_by('-registered_date')
+        comment = BoardComment.objects.filter(article=board).order_by('-registered_date')
 
         context = {
             'content': content,
