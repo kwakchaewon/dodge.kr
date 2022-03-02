@@ -90,10 +90,13 @@ class BoardCategories(models.Model):
 
 
 class BoardComment(models.Model):
-    board = models.ForeignKey('Boards', models.DO_NOTHING)
-    username = models.CharField(max_length=150)
-    registered_date = models.DateTimeField(auto_now_add=True)
+    article = models.ForeignKey('Boards', models.DO_NOTHING)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    level = models.IntegerField(blank=True, null=True)
     content = models.CharField(max_length=300)
+    reference_reply_id = models.IntegerField()
+    registered_date = models.DateTimeField(blank=True, null=True)
+    last_update_date = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         managed = False

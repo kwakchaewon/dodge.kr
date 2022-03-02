@@ -69,11 +69,11 @@
                 <div class="comment__table">
                     <table class="table table-hover" id="commentTable" name="commentTable">
                         <tbody>
-                        {% for comment in comment %}
+                        {% for comments in boardComment %}
                             <tr>
-                                <td>{{ comment.content }}</td>
-                                <td>{{ comment.username }}</td>
-                                <td>{{ comment.registered_date }}</td>
+                                <td>{{ comments.content }}</td>
+                                <td>{{ comments.user.username }}</td>
+                                <td>{{ comments.registered_date }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>

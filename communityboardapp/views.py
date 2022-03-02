@@ -249,21 +249,16 @@ def goErrorPage(request):
     return render(request, 'errorpage.html')
 
 
-# 게시판 조회
-# class viewBoard(DetailView):
-#
-#     model = Boards
-#     template_name = 'viewboard.html'
-#     context_object_name = 'board'
-
 
 # 게시글 자세히
 def viewBoard(request, id):
     try:
-        board = Boards.objects.get(pk=id)
-        username = AuthUser.objects.get(pk=board.user_id).username
 
-        comment = BoardComment.objects.filter(board_id=id)
+        boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
+        print(boardComment.values())
+        # board = Boards.objects.get(pk=id)
+        # username = AuthUser.objects.get(pk=board.user_id).username
+        # comment = BoardComment.objects.filter(board_id=id)
 
 
     except Exception as e:
@@ -271,8 +266,8 @@ def viewBoard(request, id):
         print(e)
         raise Http404("Does not exist!")
 
-    return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment, 'boardId': id})
-
+    # return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment, 'boardId': id})
+    return render(request, 'viewboard.html', {'boardComment': boardComment})
 
 # 댓글삽입
 def insertComment(request):
