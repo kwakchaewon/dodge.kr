@@ -92,6 +92,11 @@ def goCommunity(request):
     #                                    id__lte=finalBoard).order_by('-id')
 
     allBoards = Boards.objects.all().order_by("-id")
+    # allBoards = Boards.objects.prefetch_related('user').order_by("-id")
+    # allBoards = Boards.objects.all().select_related('user', 'username').order_by("-id")
+    # allBoards = Boards.objects.select_related('user').all().order_by("-id")
+
+    print(allBoards.values())
 
     # page = 요청된 페이지. default 0
     page = int(request.GET.get('page', 1))
