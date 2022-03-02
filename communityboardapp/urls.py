@@ -13,7 +13,6 @@ urlpatterns = [
     path('community', goCommunity, name='community'),
     path('community/write', writePost, ),
     path('boardwriteCompleted', boardwriteCompleted, name='boardwriteCompleted'),
-
     path('signupCompleted', signupCompleted, ),
     path('userIdCheck', userIdCheck,),
     path('login', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
@@ -21,5 +20,4 @@ urlpatterns = [
     path('error', goErrorPage),
     path('viewboard/<int:id>/', viewBoard, name='viewboard'),
     path('insertComment', insertComment, name='insertComment'),
-
 ]

@@ -109,13 +109,17 @@ CALL loopInsert;
 
 * board_comment 테이블 생성
 create table board_comment(
-id integer(10) not null auto_increment,
-board_id int(10) not null,
-username int(00) not null,
-registered_date  datetime default current_timestamp,
+id int(10) not null auto_increment,
+article_id int(10) not null,
+user_id int(10) not null,
+level tinyint(1) default 1,
 content varchar(300) not null,
+reference_reply_id int(10) not null,
+registered_date  datetime default current_timestamp,
+last_update_date datetime,
 primary key (id),
-foreign key(board_id) references boards(id)
+foreign key(article_id) references boards(),
+foreign key(user_id) references auth_user()
 );
 
 
