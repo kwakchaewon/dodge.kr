@@ -96,10 +96,11 @@ def goCommunity(request):
     # allBoards = Boards.objects.all().select_related('user', 'username').order_by("-id")
     # allBoards = Boards.objects.select_related('user').all().order_by("-id")
 
-    print(allBoards.values())
+    # print(allBoards.values())
 
-    # page = 요청된 페이지. default 0
+    # page = 요청된 페이지. default 1
     page = int(request.GET.get('page', 1))
+    print(page)
 
     # 페이지당 보여줄 게시글 개수 설정
     paginator = Paginator(allBoards, 20)
@@ -109,8 +110,8 @@ def goCommunity(request):
     boards = paginator.get_page(page)
 
     # 전체 게시글 개수
-    # boardsCount = Boards.objects.all().count()
-    boardsCount = paginator.count
+    boardsCount = Boards.objects.all().count()
+    num_pages = paginator.num_pages
 
     # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
     initialPage = math.trunc((page - 1) / 10) * 10 + 1
@@ -129,7 +130,7 @@ def goCommunity(request):
     nextPage = math.ceil(page / 10) * 10 + 1
 
     return render(request, 'communityboard.html',
-                  {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage})
+                  {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage, 'numPages' : num_pages})
 
 
 # 게시글 쓰기 페이지 이동
