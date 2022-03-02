@@ -124,10 +124,12 @@ foreign key(user_id) references auth_user()
 
 
 * board_comment 테스트 데이터 삽입
-insert into board_comment (id, board_id, username, registered_date, content)
-values (1,7511,'admin',now(),'최한영돼지');
+insert into board_comment (id, article_id, user_id , content, reference_reply_id, registered_date)
+values (1,7513, 4 ,'최한영돼지',1 ,now());
 
 
+insert into board_comment (id, article_id, user_id , content, reference_reply_id, registered_date)
+values (1,7513, 4 ,'최한영돼지',2 ,now());
 
 
 

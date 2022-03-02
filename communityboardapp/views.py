@@ -276,16 +276,11 @@ def insertComment(request):
         boardId = request.POST.get('boardId', False)
 
         board = Boards.objects.get(id=boardId)
-
-        print(board)
-
         user = AuthUser.objects.get(id=username)
 
         # insert into board_comment (id, board_id, username, registered_date, content) values (#, board.id, username,now(), content);
         boardComment = BoardComment(article=board, user=user, content=content, reference_reply_id='4')
         boardComment.save()
-        
-        print("성공1")
 
         comment = BoardComment.objects.filter(article=board).order_by('-registered_date')
 
