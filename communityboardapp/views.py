@@ -181,19 +181,17 @@ def goErrorPage(request):
 
 # 게시글 자세히
 def viewBoard(request, id):
+
     try:
-
         boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
-        print(boardComment.values())
-
+        board = Boards.objects.get(id=id)
 
     except Exception as e:
         Boards.DoesNotExist
         print(e)
         raise Http404("Does not exist!")
 
-    # return render(request, 'viewboard.html', {'board': board, 'username': username, 'comment': comment, 'boardId': id})
-    return render(request, 'viewboard.html', {'boardComment': boardComment, 'boardId': id})
+    return render(request, 'viewboard.html', {'boardComment': boardComment, 'boardId': id, 'board': board})
 
 # 댓글삽입
 @login_required

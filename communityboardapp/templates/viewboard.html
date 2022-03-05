@@ -7,13 +7,14 @@
         <script type="text/javascript"> var insertCommentHref = "{% url 'insertComment' %}" </script>
         <script type="text/javascript"> var username = "{{ user.id }}" </script>
         <script type="text/javascript"> var boardId = "{{ boardId }}" </script>
-
         <link rel="stylesheet" href="{% static 'css/viewboard.css' %}">
         <script src="{% static 'js/viewboard.js' %}"></script>
         <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
 
     {#    자유 게시판#}
+
+    <div style="display: none">{{ board.updateViewcount}}</div>
     <section class="container__viewboard">
         <div class="container__board__wrap">
             <div class="board__title">
@@ -26,8 +27,9 @@
                         <div class="board__info__title"><h3>{{ board.title }}</h3></div>
                         <div class="board__info__writer">
                             <h5>
-                                <span class="info__writer">{{ username }}</span>
+                                <span class="info__writer">{{ board.user.username }}</span>
                                 <span class="info__date">2021.03.27 18:58:40</span>
+                                <span class="info__viewcount">조회 : {{ board.view_count }}</span>
                             </h5>
                         </div>
                     </div>

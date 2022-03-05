@@ -61,6 +61,12 @@
 
 .info__date {
     padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid var(--color-light-grey);
+}
+
+.info__viewcount {
+    padding-left: 10px;
 }
 
 

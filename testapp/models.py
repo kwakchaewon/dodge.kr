@@ -110,12 +110,17 @@ class Boards(models.Model):
     content = models.TextField()
     registered_date = models.DateTimeField(blank=True, null=True)
     last_update_date_date = models.DateTimeField(blank=True, null=True)
-    view_count = models.IntegerField(blank=True, null=True)
+    view_count = models.PositiveIntegerField(default=0)
     image = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'boards'
+
+    @property
+    def updateViewcount(self):
+        self.view_count = self.view_count + 1
+        self.save()
 
 
 class DjangoAdminLog(models.Model):
