@@ -75,6 +75,7 @@ section{
 #emailcheck__result, #birthcheck__result, #phonenumcheck__result{
     height: 12px;
     display: list-item;
+     list-style:none;
 }
 
 
