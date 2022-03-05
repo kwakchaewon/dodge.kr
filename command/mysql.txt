@@ -118,10 +118,9 @@ reference_reply_id int(10) not null,
 registered_date  datetime default current_timestamp,
 last_update_date datetime,
 primary key (id),
-foreign key(article_id) references boards(),
-foreign key(user_id) references auth_user()
+foreign key(article_id) references boards(id),
+foreign key(user_id) references auth_user(id)
 );
-
 
 * board_comment 테스트 데이터 삽입
 insert into board_comment (id, article_id, user_id , content, reference_reply_id, registered_date)
