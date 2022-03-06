@@ -126,10 +126,19 @@ foreign key(user_id) references auth_user(id)
 insert into board_comment (id, article_id, user_id , content, reference_reply_id, registered_date)
 values (1,7513, 4 ,'최한영돼지',1 ,now());
 
-
 insert into board_comment (id, article_id, user_id , content, reference_reply_id, registered_date)
 values (1,7513, 4 ,'최한영돼지',2 ,now());
 
+
+
+* auth_user 테이블 구조 변경
+ALTER TABLE auth_user ADD COLUMN
+ phone VARCHAR(20) NOT NULL; 
+ 
+ALTER TABLE auth_user ADD COLUMN
+date_birth datetime(6) NOT NULL; 
+ 
+alter table auth_user modify column first_name varchar(150);
 
 
 

@@ -115,35 +115,62 @@ def boardwriteCompleted(request):
 
 # 회원가입완료
 def signupCompleted(request):
-    if request.method == "POST":
-        username = request.POST['container__id']
-        password = request.POST['container__pw']
-        email = request.POST['email__id'] + '@' + request.POST['email__domain']
-        phone = request.POST['container__phonenum']
+    username = request.POST['container__id']
+    password = request.POST['container__pw']
+    email = request.POST['email__id'] + '@' + request.POST['email__domain']
+    phone = request.POST['container__phonenum']
+    last_name = request.POST['container__name']
+    date_birth = request.POST['container__birth']
 
-        # last_name = request.POST['container__name']
-        # birth = request.POST['container__birth']
-        # userName = request.POST['container__id']
+    # 회원가입완료
+    user = AuthUser.objects.create_user(username, password, last_name, email, phone, date_birth)
 
-        # 회원가입 성공시,
-        try:
-            # 회원가입
-            user = User.objects.create_user(username, email, password)
+    # 사용자 인증 및 로그인
+    user = authenticate(username=username, password=password)
+    login(request, user)
 
-            # 사용자 인증과 로그인 담당
-            user = authenticate(username=username, password=password)
-            login(request, user)
+    return redirect('/')
 
-            return redirect('/')
 
-        except:
-            redirect('error')
-
-        # 사용자인증 및 로그인
-        # loginUser = authenticate(username=username, password=password)
-        # login(request, loginUser)
-
-    return redirect('error')
+    # # if request.method == "POST":
+    #     username = request.POST['container__id']
+    #     password = request.POST['container__pw']
+    #     email = request.POST['email__id'] + '@' + request.POST['email__domain']
+    #     phone = request.POST['container__phonenum']
+    #     last_name = request.POST['container__name']
+    #     date_birth = request.POST['container__birth']
+    #
+    #     # 회원가입완료
+    #     user = User.objects.create_user(username, password, last_name, email, phone, date_birth)
+    #
+    #     # 사용자 인증 및 로그인
+    #     user = authenticate(username=username, password=password)
+    #     login(request, user)
+    #
+    #     return redirect('/')
+    #
+    #     # # 회원가입 성공시,
+    #     # try:
+    #     #     # 회원가입
+    #     #     # user = User.objects.create_user(username, email, password, {'phone': phone, 'date_birth': date_birth, 'last_name': last_name})
+    #     #     user = User.objects.create_user(username, email, password, {phone, last_name})
+    #     #
+    #     #
+    #     #     # 사용자 인증과 로그인 담당
+    #     #     user = authenticate(username=username, password=password)
+    #     #     login(request, user)
+    #     #
+    #     #     return redirect('/')
+    #     #
+    #     # except:
+    #     #     redirect('error')
+    #
+    #     # 사용자인증 및 로그인
+    #     # loginUser = authenticate(username=username, password=password)
+    #     # login(request, loginUser)
+    #
+    # # else:
+    # # return redirect('error')
 
 
 # 아이디 중복 확인
@@ -154,7 +181,7 @@ def userIdCheck(request):
     else:
         username = ''
 
-    idObject = User.objects.filter(username__exact=username)
+    idObject = AuthUser.objects.filter(username__exact=username)
     idCount = idObject.count()
 
     if idCount > 0:

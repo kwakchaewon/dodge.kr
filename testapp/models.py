@@ -6,6 +6,8 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.contrib.auth.models import AbstractUser, BaseUserManager,AbstractBaseUser
+from django.utils import timezone
 
 
 class AuthGroup(models.Model):
@@ -37,17 +39,60 @@ class AuthPermission(models.Model):
         unique_together = (('content_type', 'codename'),)
 
 
-class AuthUser(models.Model):
+class AuthUserManager(BaseUserManager):
+    def create_user(self, username, password, last_name, email, phone, date_birth):
+        user = self.model(
+            username=username,
+            last_name=last_name,
+            email=email,
+            phone=phone,
+            date_birth=date_birth,
+            date_joined=timezone.now(),
+            is_superuser=0,
+            is_staff=0,
+            is_active=1
+        )
+
+        user.set_password(password)
+        user.save(using=self.db)
+        return user
+
+    def create_superuser(self, username, password, last_name, email, phone, date_birth):
+        user = self.model(
+            username=username,
+            password=password,
+            last_name=last_name,
+            email=email,
+            phone=phone,
+            date_birth=date_birth
+        )
+
+        user.is_superuser = 1
+        user.is_staff = 1
+        user.save(using=self.db)
+        return user
+
+
+
+class AuthUser(AbstractBaseUser):
     password = models.CharField(max_length=128)
     last_login = models.DateTimeField(blank=True, null=True)
     is_superuser = models.IntegerField()
     username = models.CharField(unique=True, max_length=150)
-    first_name = models.CharField(max_length=150)
+    first_name = models.CharField(max_length=150, null=True)
     last_name = models.CharField(max_length=150)
     email = models.CharField(max_length=254)
     is_staff = models.IntegerField()
     is_active = models.IntegerField()
     date_joined = models.DateTimeField()
+    phone = models.CharField(max_length=20)
+    date_birth = models.DateTimeField()
+
+    objects = AuthUserManager()
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email', 'last_name', 'phone', 'date_birth']
+
 
     class Meta:
         managed = False
