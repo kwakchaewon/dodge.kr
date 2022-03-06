@@ -122,6 +122,17 @@ foreign key(article_id) references boards(id),
 foreign key(user_id) references auth_user(id)
 );
 
+
+* board_comment 외래키 스키마 변경
+
+ALTER TABLE board_comment DROP FOREIGN KEY board_comment_ibfk_1;
+ALTER TABLE board_comment DROP FOREIGN KEY board_comment_ibfk_2;
+
+ALTER TABLE board_comment ADD CONSTRAINT FOREIGN KEY (article_id) REFERENCES boards(id) ON DELETE CASCADE;
+ALTER TABLE board_comment ADD CONSTRAINT FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE;
+
+
+
 * board_comment 테스트 데이터 삽입
 insert into board_comment (id, article_id, user_id , content, reference_reply_id, registered_date)
 values (1,7513, 4 ,'최한영돼지',1 ,now());
