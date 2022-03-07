@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/signup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +137,7 @@
       <workItem from="1646201855148" duration="14110000" />
       <workItem from="1646455718462" duration="9657000" />
       <workItem from="1646490944622" duration="19103000" />
-      <workItem from="1646564944853" duration="2372000" />
+      <workItem from="1646564944853" duration="15201000" />
     </task>
     <servers />
   </component>
@@ -186,11 +188,11 @@
     </state>
     <state x="2953" y="161" width="1062" height="532" key="DiffContextDialog/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1645715863425" />
     <state x="679" y="314" width="944" height="525" key="DiffContextDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644589973290" />
-    <state x="2836" y="-10" width="1369" height="1046" maximized="true" key="DirDiffDialog" timestamp="1646575804006">
+    <state x="2836" y="-10" width="1369" height="1046" key="DirDiffDialog" timestamp="1646582478547">
       <screen x="2560" y="0" width="1920" height="1040" />
     </state>
     <state x="195" y="-17" width="1217" height="827" key="DirDiffDialog/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1646543484420" />
-    <state x="2836" y="-10" width="1369" height="1046" maximized="true" key="DirDiffDialog/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1646575804006" />
+    <state x="2836" y="-10" width="1369" height="1046" key="DirDiffDialog/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1646582478547" />
     <state x="225" y="181" width="1217" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644855342689" />
     <state width="778" height="196" key="GridCell.Tab.0.bottom" timestamp="1644166620890">
       <screen x="0" y="0" width="1707" height="1027" />
@@ -250,12 +252,12 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="250" y="214" width="521" height="538" key="ftp.server.browser/0.0.1707.1027@0.0.1707.1027" timestamp="1643973703579" />
-    <state x="637" y="243" width="673" height="679" key="search.everywhere.popup" timestamp="1646538079498">
+    <state x="637" y="243" width="672" height="678" key="search.everywhere.popup" timestamp="1646661073294">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="637" y="243" width="673" height="679" key="search.everywhere.popup/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1646538079498" />
     <state x="3276" y="246" width="756" height="687" key="search.everywhere.popup/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1645710797473" />
-    <state x="637" y="243" width="672" height="678" key="search.everywhere.popup/0.0.1707.1027@0.0.1707.1027" timestamp="1645255145135" />
+    <state x="637" y="243" width="672" height="678" key="search.everywhere.popup/0.0.1707.1027@0.0.1707.1027" timestamp="1646661073294" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
