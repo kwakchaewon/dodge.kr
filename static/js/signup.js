@@ -19,6 +19,7 @@ function registUsr(){
     if (!$('#container__id').val())
     {
     alert('아이디를 입력해주세요.');
+    $('#container__id').focus();
     $('#idcheck__result').html(
     "<font color='red'>아이디를 입력해주세요.</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
     return;
@@ -29,6 +30,7 @@ function registUsr(){
     if ($('#idcheck__result').find("font").text() =='' || $('#idcheck__result').find("font").text() == '아이디를 중복을 확인해주세요.')
     {
     alert('아이디 중복을 확인해주세요.');
+    $('#container__id').focus();
     $('#idcheck__result').html(
     "<font color='red'>아이디를 중복을 확인해주세요.</font><input type='hidden' name='idcheck__result' id='idcheck__result' value=0/>");
     return;
@@ -37,6 +39,7 @@ function registUsr(){
     // 아이디 조건 (5~20자 영어 소문자, 숫자 조합)에 맞지 않을시
     if(!idPattern.test(idValue)){
     alert('아이디는 5~20자의 소문자 및 숫자로 사용 가능합니다.');
+    $('#container__id').focus();
     return;
     }
 
@@ -44,67 +47,86 @@ function registUsr(){
     if ($('#idcheck__result').find("font").text() =='이미 존재하는 아이디입니다.')
     {
     alert('아이디 중복을 확인해주세요.');
+    $('#container__id').focus();
     return;
     }
 
     // 비밀번호 미기재 시
     if (!pwVal)
     {
+    alert('비밀번호를 입력해주세요.');
+    $('#container__pw').focus();
     $('#password__result').html(
     "<font color='red'>비밀번호를 입력해주세요.</font><input type='hidden' name='password__result' id='password__result' value=0/>");
-    alert('비밀번호를 입력해주세요.');
     return;
     }
 
     // 비밀번호 조건(8~20자 영문, 숫자, 특수문자 조합)에 맞지 않을시
     if(!pwPattern.test(pwVal)){
+        alert('비밀번호는 8~20자의 영문,숫자,특수문자로 사용 가능합니다.');
+        $('#container__pw').focus();
         $('#password__result').html(
         "<font color='red'>비밀번호는 8~20자의 영문,숫자,특수문자로 사용 가능합니다.</font><input type='hidden' name='password__result' id='password__result' value=0/>");
-        alert('비밀번호는 8~20자의 영문,숫자,특수문자로 사용 가능합니다.');
         return;
     }
 
     // 비밀번호와 비밀번호 확인이 다를 시
     if(pwVal != chkpwVal){
+        alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.')
+        $('#container__chkpw').focus();
         $('#passwordcheck__result').html(
         "<font color='red' display='block'>비밀번호와 일치하지 않습니다.</font><input type='hidden' name='passwordcheck__result' id='passwordcheck__result' value=0/>");
-        alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.')
         return;
     }
 
     // 이름 미기재 시
     if (!$('#container__name').val())
     {
+    alert('이름을 입력해주세요.');
+    $('#container__name').focus();
     $('#namecheck__result').html(
     "<font color='red'>이름을 입력해주세요.</font><input type='hidden' name='namecheck__result' id='namecheck__result' value=0/>");
-    alert('이름을 입력해주세요.');
     return;
     }
 
-    // 이메일 미기재 시
-    if (!$('#email__id').val() || !$('#email__domain').val())
+    // 이메일 아이디 미기재 시
+    if (!$('#email__id').val())
     {
+    alert('이메일을 입력해주세요.');
+
     $('#emailcheck__result').html(
     "<font color='red'>이메일을 입력해주세요.</font><input type='hidden' name='emailcheck__result' id='emailcheck__result' value=0/>");
-    alert('이메일을 입력해주세요.');
     return;
     }
+
+    // 이메일 도메인 미 기재시
+    if(!$('#email__domain').val())
+    {
+    alert('이메일을 입력해주세요.');
+    $('#email__domain').focus();
+    $('#emailcheck__result').html(
+    "<font color='red'>이메일을 입력해주세요.</font><input type='hidden' name='emailcheck__result' id='emailcheck__result' value=0/>");
+    return;
+    }
+
 
     // 전화번호 미기재 시
     if (!$('#container__phonenum').val())
     {
+    alert('전화번호를 입력해주세요.');
+    $('#container__phonenum').focus();
     $('#phonenumcheck__result').html(
     "<font color='red'>전화번호를 입력해주세요.</font><input type='hidden' name='phonenumcheck__result' id='phonenumcheck__result' value=0/>");
-    alert('전화번호를 입력해주세요.');
     return;
     }
 
     // 생년월일 미기재 시
     if (!$('#container__birth').val())
     {
+    alert('생년월일을 입력해주세요.');
+    $('#container__birth').focus();
     $('#birthcheck__result').html(
     "<font color='red'>생년월일을 입력해주세요.</font><input type='hidden' name='birthcheck__result' id='birthcheck__result' value=0/>");
-    alert('생년월일을 입력해주세요.');
     return;
     }
 
@@ -112,11 +134,11 @@ function registUsr(){
     if (pwVal != chkpwVal)
     {
     alert('비밀번호가 일치하지 않습니다.');
+    $('#container__chkpw').focus();
     return;
     }
 
     $('#register_form').submit();
-
 }
 
 
