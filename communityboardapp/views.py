@@ -5,13 +5,15 @@ from django.http import HttpResponse, Http404, JsonResponse
 from django.contrib.auth import authenticate, login
 from datetime import datetime
 from testapp import models
-from testapp.models import Boards, BoardCategories, AuthUser, BoardComment
+from .models import Boards, BoardCategories, AuthUser, BoardComment
 import math
 from django.core.paginator import Paginator
 from django.views.generic import DetailView
 from django.core import serializers
 from django.core.serializers.json import DjangoJSONEncoder
 import json
+from django.contrib.auth.hashers import check_password
+# from .forms import boardsForm
 
 
 # 메인 페이지 이동
@@ -59,17 +61,38 @@ def goCommunity(request):
     nextPage = math.ceil(page / 10) * 10 + 1
 
     return render(request, 'communityboard.html',
-                  {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage, 'numPages' : num_pages})
+                  {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage,
+                   'numPages': num_pages})
 
 
 # 게시글 쓰기 페이지 이동
 @login_required
 def writePost(request):
+    # writePostForm = boardsForm()
+
     return render(request, 'writepost.html')
+    # return render(request, 'writepost.html', {'writePostForm': writePostForm})
 
 
 @login_required
 def boardwriteCompleted(request):
+
+
+    # # post 방식으로 넘어오고 데이터들이 올바른 형식이면 데이터 베이스에 저장
+    # if request.method == "POST":
+    #     writePostForm = boardsForm(request.POST)
+    #
+    #     if writePostForm.is_valid():
+    #         writePostForm.save()
+    #         return redirect('/community')
+    #
+    #     # else:
+    #     #     return redirect('index')
+    #
+    # else:
+    #     writePostForm = boardsForm()
+    #     return render(request, 'writepost.html', {'writePostForm': writePostForm})
+
     if request.method == "POST":
         title = request.POST['title']
         content = request.POST['content']
@@ -103,14 +126,14 @@ def boardwriteCompleted(request):
             print('2')
             return redirect('/error')
 
-
     # 게시글 작성 실패 시
     except:
         print('3')
-        # return redirect('/error')
+    # return redirect('/error')
 
-    # print('4')
-    return redirect('/community')
+
+# print('4')
+# return redirect('/community')
 
 
 # 회원가입완료
@@ -130,7 +153,6 @@ def signupCompleted(request):
     login(request, user)
 
     return redirect('/')
-
 
     # # if request.method == "POST":
     #     username = request.POST['container__id']
@@ -205,10 +227,8 @@ def goErrorPage(request):
     return render(request, 'errorpage.html')
 
 
-
 # 게시글 자세히
 def viewBoard(request, id):
-
     try:
         boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
         board = Boards.objects.get(id=id)
@@ -220,10 +240,10 @@ def viewBoard(request, id):
 
     return render(request, 'viewboard.html', {'boardComment': boardComment, 'boardId': id, 'board': board})
 
+
 # 댓글삽입
 @login_required
 def insertComment(request):
-
     if request.method == "POST":
         username = request.POST.get('username', False)
         content = request.POST.get('content', False)
@@ -245,3 +265,9 @@ def insertComment(request):
         }
 
         return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
+
+# 게시글 삭제
+def deleteBoard(request, id):
+    board = Boards.objects.get(id=id)
+    board.delete()
+    return redirect('/community')

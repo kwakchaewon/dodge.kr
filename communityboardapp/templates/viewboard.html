@@ -32,7 +32,7 @@
                                 <span class="info__viewcount">조회 : {{ board.view_count }}</span>
                                 <span class="info__boardbtn">
                                     <span class="btn__boardrevise">수정</span>
-                                    <span class="btn__boarddelete">삭제</span>
+                                    <span class="btn__boarddelete"><a href="{% url 'deleteBoard' boardId %}">삭제</a></span>
                                 </span>
                             </h5>
                         </div>
