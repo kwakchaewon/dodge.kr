@@ -4,3 +4,5 @@ python manage.py runserver : 파이썬 서버 실행
 python manage.py runserver  0.0.0.0:8000
 rm [파일명] :  파일삭제
 rm -r [디렉토리] : 디렉토리 삭제
+netstat -tnl : 포트 확인
+fuser -k -n tcp 8080 : 8080 포트 종료
