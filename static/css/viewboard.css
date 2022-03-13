@@ -65,7 +65,24 @@
     border-right: 1px solid var(--color-light-grey);
 }
 
+
+.info__boardbtn{
+    float: right;
+}
+
+
 .info__viewcount {
+    padding-left: 10px;
+}
+
+
+.btn__boardrevise{
+    padding-right: 10px;
+    border-right: solid 1px var(--color-light-grey);
+}
+
+
+.btn__boarddelete{
     padding-left: 10px;
 }
 
