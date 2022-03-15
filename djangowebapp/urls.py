@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('testapp/', include('testapp.urls')),
     path('', include('communityboardapp.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ]
