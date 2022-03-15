@@ -267,6 +267,7 @@ def insertComment(request):
         return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
 
 # 게시글 삭제
+@login_required
 def deleteBoard(request, id):
     board = Boards.objects.get(id=id)
     board.delete()
