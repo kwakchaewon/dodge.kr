@@ -1,9 +1,6 @@
 from django.urls import path
-from communityboardapp.views import goToMain, goSignUp, goCommunity, \
-    signupCompleted, userIdCheck, loginCompleted, goErrorPage, writePost, \
-    boardwriteCompleted, viewBoard, insertComment, deleteBoard
-
 from django.contrib.auth import views as auth_views
+from communityboardapp.views import *
 
 urlpatterns = [
     # path('cbvList', BoardListClassView.as_view(), name='cbv'),
@@ -21,4 +18,6 @@ urlpatterns = [
     path('viewboard/<int:id>/', viewBoard, name='viewboard'),
     path('insertComment', insertComment, name='insertComment'),
     path('deleteBoard/<int:id>/', deleteBoard, name='deleteBoard'),
+    path('editBoard/<int:id>/', editBoard, name='editBoard'),
+
 ]

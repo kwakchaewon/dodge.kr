@@ -227,7 +227,7 @@ def goErrorPage(request):
     return render(request, 'errorpage.html')
 
 
-# 게시글 자세히
+# 게시글 자세히 조회
 def viewBoard(request, id):
     try:
         boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
@@ -272,3 +272,10 @@ def deleteBoard(request, id):
     board = Boards.objects.get(id=id)
     board.delete()
     return redirect('/community')
+
+
+# 게시글 수정 페이지 이동
+@login_required
+def editBoard(request, id):
+    board = Boards.objects.get(id=id)
+    return render(request, 'editboard.html', {'board': board})
