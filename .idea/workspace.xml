@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/css/editboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/editboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangowebapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangowebapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/~$ding convention.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/editboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/editboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +40,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -138,7 +142,7 @@
       <workItem from="1646490944622" duration="19103000" />
       <workItem from="1646564944853" duration="15382000" />
       <workItem from="1646806118170" duration="5382000" />
-      <workItem from="1647140720063" duration="25932000" />
+      <workItem from="1647140720063" duration="32657000" />
     </task>
     <servers />
   </component>
@@ -278,7 +282,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/communityboardapp/templates/viewboard.html</url>
-          <line>77</line>
+          <line>78</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
