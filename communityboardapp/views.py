@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404, JsonResponse
 from django.contrib.auth import authenticate, login
-from datetime import datetime
+from datetime import datetime, timezone
 from testapp import models
 from .models import Boards, BoardCategories, AuthUser, BoardComment
 import math
@@ -13,6 +13,8 @@ from django.core import serializers
 from django.core.serializers.json import DjangoJSONEncoder
 import json
 from django.contrib.auth.hashers import check_password
+
+
 # from .forms import boardsForm
 
 
@@ -76,8 +78,6 @@ def writePost(request):
 
 @login_required
 def boardwriteCompleted(request):
-
-
     # # post 방식으로 넘어오고 데이터들이 올바른 형식이면 데이터 베이스에 저장
     # if request.method == "POST":
     #     writePostForm = boardsForm(request.POST)
@@ -266,6 +266,7 @@ def insertComment(request):
 
         return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
 
+
 # 게시글 삭제
 @login_required
 def deleteBoard(request, id):
@@ -279,3 +280,46 @@ def deleteBoard(request, id):
 def editBoard(request, id):
     board = Boards.objects.get(id=id)
     return render(request, 'editboard.html', {'board': board})
+
+
+@login_required
+def editBoardCompleted(request):
+
+    if request.method == "POST":
+        title = request.POST['title']
+        content = request.POST['content']
+        user = AuthUser.objects.get(username=request.user)
+        boardId = request.POST['boardId']
+
+        try:
+            img_file = request.POST['img_file']
+
+        except:
+            img_file = None
+
+    else:
+        title = None
+
+    # 게시글 작성 성공 시
+    try:
+        if request.user and title and content and boardId:
+            article = Boards.objects.get(id=boardId)
+            if article.user != request.user:
+                redirection_page = '/error'
+                print(article.user)
+                print(request.user)
+                print('1')
+            else:
+                article.title = title
+                article.content = content
+                article.last_update_date_date = timezone.now()
+
+                if img_file:
+                    article.image = img_file
+
+                article.save()
+                redirection_page = '/viewboard/' + boardId + '/'
+    except:
+        redirection_page = '/error'
+
+    return redirect(redirection_page)
