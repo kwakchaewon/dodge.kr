@@ -76,14 +76,21 @@
 }
 
 
+.btn__boardrevise a,.btn__boarddelete a{
+    color: var(--color-black);
+}
+
+
 .btn__boardrevise{
     padding-right: 10px;
     border-right: solid 1px var(--color-light-grey);
 }
 
 
+
 .btn__boarddelete{
     padding-left: 10px;
+    color: var(--color-black);
 }
 
 

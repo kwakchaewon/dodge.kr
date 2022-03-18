@@ -30,16 +30,14 @@
                                 <span class="info__writer">{{ board.user.username }}</span>
                                 <span class="info__date">2021.03.27 18:58:40</span>
                                 <span class="info__viewcount">조회 : {{ board.view_count }}</span>
-{#                                {% if board.user.username == user %}#}
+                                {% if board.user|striptags == user|striptags %}
                                     <span class="info__boardbtn">
-                                    <span>{{ user }}</span>
-                                    <span>{{ board.user.username }}</span>
                                     <span class="btn__boardrevise"><a
                                             href="{% url 'editBoard' boardId %}">수정</a></span>
                                     <span class="btn__boarddelete"><a
                                             href="{% url 'deleteBoard' boardId %}">삭제</a></span>
                                 </span>
-{#                                {% endif %}#}
+                                {% endif %}
                             </h5>
                         </div>
                     </div>
