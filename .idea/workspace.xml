@@ -20,14 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/editboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/editboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/editboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/editboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/viewboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/viewboard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +139,8 @@
       <workItem from="1646490944622" duration="19103000" />
       <workItem from="1646564944853" duration="15382000" />
       <workItem from="1646806118170" duration="5382000" />
-      <workItem from="1647140720063" duration="32657000" />
+      <workItem from="1647140720063" duration="33341000" />
+      <workItem from="1647585397489" duration="8283000" />
     </task>
     <servers />
   </component>
@@ -224,12 +222,12 @@
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1645532365494" />
     <state width="561" height="452" key="SwitcherDM/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1645589254417" />
-    <state x="739" y="19" width="711" height="1024" key="dock-window-1" timestamp="1647302871562">
+    <state x="0" y="86" width="1106" height="843" key="dock-window-1" timestamp="1647593153607">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="401" y="299" width="926" height="706" key="dock-window-1/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1646543152185" />
     <state x="403" y="49" width="1207" height="950" key="dock-window-1/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1646225919658" />
-    <state x="739" y="19" width="711" height="1024" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1647302871562" />
+    <state x="0" y="86" width="1106" height="843" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1647593153607" />
     <state x="2641" y="31" width="1009" height="882" key="dock-window-2" timestamp="1646572542268">
       <screen x="2560" y="0" width="1920" height="1040" />
     </state>
@@ -282,7 +280,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/communityboardapp/templates/viewboard.html</url>
-          <line>78</line>
+          <line>76</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
