@@ -284,12 +284,17 @@ def editBoard(request, id):
 
 @login_required
 def editBoardCompleted(request):
-
     if request.method == "POST":
         title = request.POST['title']
         content = request.POST['content']
         user = AuthUser.objects.get(username=request.user)
         boardId = request.POST['boardId']
+
+        # print(title)
+        # print(content)
+        # print(user)
+        # print(request.user)
+        # print(boardId)
 
         try:
             img_file = request.POST['img_file']
@@ -300,26 +305,26 @@ def editBoardCompleted(request):
     else:
         title = None
 
-    # 게시글 작성 성공 시
+    # 게시글 수정 성공 시
     try:
         if request.user and title and content and boardId:
             article = Boards.objects.get(id=boardId)
-            if article.user != request.user:
+            if str(article.user) != str(request.user):
+
                 redirection_page = '/error'
-                print(article.user)
-                print(request.user)
-                print('1')
+
             else:
                 article.title = title
                 article.content = content
-                article.last_update_date_date = timezone.now()
+                article.last_update_date_date = datetime.now()
 
                 if img_file:
                     article.image = img_file
 
                 article.save()
                 redirection_page = '/viewboard/' + boardId + '/'
-    except:
+    except Exception as e:
+        print(e)
         redirection_page = '/error'
 
     return redirect(redirection_page)
