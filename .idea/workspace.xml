@@ -21,10 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/viewboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/viewboard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +138,8 @@
       <workItem from="1646564944853" duration="15382000" />
       <workItem from="1646806118170" duration="5382000" />
       <workItem from="1647140720063" duration="33341000" />
-      <workItem from="1647585397489" duration="8283000" />
+      <workItem from="1647585397489" duration="9243000" />
+      <workItem from="1647662352936" duration="3506000" />
     </task>
     <servers />
   </component>
@@ -191,12 +190,12 @@
     </state>
     <state x="2953" y="161" width="1062" height="532" key="DiffContextDialog/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1645715863425" />
     <state x="679" y="314" width="944" height="525" key="DiffContextDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644589973290" />
-    <state x="2836" y="-10" width="1369" height="1046" key="DirDiffDialog" timestamp="1646582478547">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state x="225" y="181" width="1217" height="827" key="DirDiffDialog" timestamp="1647662871018">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="195" y="-17" width="1217" height="827" key="DirDiffDialog/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1646543484420" />
     <state x="2836" y="-10" width="1369" height="1046" key="DirDiffDialog/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1646582478547" />
-    <state x="225" y="181" width="1217" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1644855342689" />
+    <state x="225" y="181" width="1217" height="827" key="DirDiffDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1647662871018" />
     <state width="778" height="196" key="GridCell.Tab.0.bottom" timestamp="1644166620890">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -222,12 +221,12 @@
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1645532365494" />
     <state width="561" height="452" key="SwitcherDM/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1645589254417" />
-    <state x="0" y="86" width="1106" height="843" key="dock-window-1" timestamp="1647593153607">
+    <state x="0" y="86" width="1106" height="843" key="dock-window-1" timestamp="1647594434238">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="401" y="299" width="926" height="706" key="dock-window-1/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1646543152185" />
     <state x="403" y="49" width="1207" height="950" key="dock-window-1/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1646225919658" />
-    <state x="0" y="86" width="1106" height="843" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1647593153607" />
+    <state x="0" y="86" width="1106" height="843" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1647594434238" />
     <state x="2641" y="31" width="1009" height="882" key="dock-window-2" timestamp="1646572542268">
       <screen x="2560" y="0" width="1920" height="1040" />
     </state>
