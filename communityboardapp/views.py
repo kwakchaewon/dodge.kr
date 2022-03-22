@@ -29,42 +29,108 @@ def goSignUp(request):
 
 # Board 테이블 표기 및 페이징, 커뮤니티 이동
 def goCommunity(request):
-    allBoards = Boards.objects.all().order_by("-id")
-
     # page = 요청된 페이지. default 1
     page = int(request.GET.get('page', 1))
-    print(page)
 
-    # 페이지당 보여줄 게시글 개수 설정
-    paginator = Paginator(allBoards, 20)
+    # searchType = 검색 type
+    searchType = str(request.GET.get('searchType', ''))
+    # searchWord = 검색어
+    searchWord = str(request.GET.get('searchWord', ''))
 
-    # 페이징 객체 설정 : 요청된 페이지에 해당하는 페이징 객체 설정
-    # 표기될 페이지 개수
-    boards = paginator.get_page(page)
+    print("searchword :" + searchWord)
+    print("searchtype :" + searchType)
 
-    # 전체 게시글 개수
-    boardsCount = Boards.objects.all().count()
-    num_pages = paginator.num_pages
+    # 검색어 없음 / 커뮤니티 처음 페이지
+    if searchWord == '':
+        
+        print("검색어없음")
+        
+        allBoards = Boards.objects.all().order_by("-id")
 
-    # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
-    initialPage = math.trunc((page - 1) / 10) * 10 + 1
+        # page = 요청된 페이지. default 1
+        page = int(request.GET.get('page', 1))
 
-    if boardsCount > 10 * (initialPage + 9):
-        finalPage = initialPage + 9
+        # 페이지당 보여줄 게시글 개수 설정
+        paginator = Paginator(allBoards, 20)
+
+        # 페이징 객체 설정 : 요청된 페이지에 해당하는 페이징 객체 설정
+        # 표기될 페이지 개수
+        boards = paginator.get_page(page)
+
+        # 전체 게시글 개수
+        boardsCount = Boards.objects.all().count()
+        num_pages = paginator.num_pages
+
+        # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
+        initialPage = math.trunc((page - 1) / 10) * 10 + 1
+
+        if boardsCount > 10 * (initialPage + 9):
+            finalPage = initialPage + 9
+        else:
+            finalPage = math.ceil(boardsCount / 10)
+
+        pageList = []
+        for i in range(initialPage, finalPage + 1):
+            pageList.append(i)
+
+        # 이전, 다음 페이지 클릭시 넘어갈 페이지 값
+        previousPage = math.trunc((page - 1) / 10) * 10
+        nextPage = math.ceil(page / 10) * 10 + 1
+
+        return render(request, 'communityboard.html',
+                      {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage,
+                       'numPages': num_pages})
+
+    # 검색어 존재 / 검색어 검색시
     else:
-        finalPage = math.ceil(boardsCount / 10)
 
-    pageList = []
-    for i in range(initialPage, finalPage + 1):
-        pageList.append(i)
+        print('검색어 입력완료')
+        print(searchWord)
+        
+        # 검색 분류에 따른 조건
+        if searchType == "integrated":
+            allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+        elif searchType == 'title':
+            allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+        elif searchType == 'content':
+            allBoards = Boards.objects.filter(content__icontains=searchWord).order_by("-id")
+        # elif searchType == 'writer':
+        #     allBoards = Boards.objects.filter(user__exact=searchWord).order_by("-id")
 
-    # 이전, 다음 페이지 클릭시 넘어갈 페이지 값
-    previousPage = math.trunc((page - 1) / 10) * 10
-    nextPage = math.ceil(page / 10) * 10 + 1
 
-    return render(request, 'communityboard.html',
-                  {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage,
-                   'numPages': num_pages})
+        # 게시글 검색
+        # allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+
+        # 페이지당 보여줄 게시글 개수 설정
+        paginator = Paginator(allBoards, 20)
+
+        # 페이징 객체 설정 : 요청된 페이지에 해당하는 페이징 객체 설정
+        # 표기될 페이지 개수
+        boards = paginator.get_page(page)
+
+        # 전체 게시글 개수
+        boardsCount = allBoards.count()
+        num_pages = paginator.num_pages
+
+        # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
+        initialPage = math.trunc((page - 1) / 10) * 10 + 1
+
+        if boardsCount > 10 * (initialPage + 9):
+            finalPage = initialPage + 9
+        else:
+            finalPage = math.ceil(boardsCount / 10)
+
+        pageList = []
+        for i in range(initialPage, finalPage + 1):
+            pageList.append(i)
+
+        # 이전, 다음 페이지 클릭시 넘어갈 페이지 값
+        previousPage = math.trunc((page - 1) / 10) * 10
+        nextPage = math.ceil(page / 10) * 10 + 1
+
+        return render(request, 'communityboard.html',
+                      {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage,
+                       'numPages': num_pages})
 
 
 # 게시글 쓰기 페이지 이동

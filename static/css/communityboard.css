@@ -35,16 +35,27 @@ table {
 }
 
 
-td a{
+td a {
     color: var(--color-black);
 }
 
 /*board__page*/
 
 
-
 /*board__search*/
+.search__select {
+    /*float: left;*/
+    width: 110px;
+    height: 36px;
+}
 
+
+.searchword__input {
+    height: 36px;
+}
+
+
+.board__search button
 
 
 /*right__board*/
@@ -73,7 +84,7 @@ td a{
 }
 
 
-#board__user__login{
+#board__user__login {
     margin: 10px 0px;
 }
 
