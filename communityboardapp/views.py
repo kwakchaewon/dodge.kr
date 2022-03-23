@@ -14,10 +14,6 @@ from django.core.serializers.json import DjangoJSONEncoder
 import json
 from django.contrib.auth.hashers import check_password
 
-
-# from .forms import boardsForm
-
-
 # 메인 페이지 이동
 def goToMain(request):
     return render(request, 'main.html')
@@ -144,21 +140,7 @@ def writePost(request):
 
 @login_required
 def boardwriteCompleted(request):
-    # # post 방식으로 넘어오고 데이터들이 올바른 형식이면 데이터 베이스에 저장
-    # if request.method == "POST":
-    #     writePostForm = boardsForm(request.POST)
-    #
-    #     if writePostForm.is_valid():
-    #         writePostForm.save()
-    #         return redirect('/community')
-    #
-    #     # else:
-    #     #     return redirect('index')
-    #
-    # else:
-    #     writePostForm = boardsForm()
-    #     return render(request, 'writepost.html', {'writePostForm': writePostForm})
-
+    # post 방식으로 넘어오고 데이터들이 올바른 형식이면 데이터 베이스에 저장
     if request.method == "POST":
         title = request.POST['title']
         content = request.POST['content']
@@ -195,11 +177,6 @@ def boardwriteCompleted(request):
     # 게시글 작성 실패 시
     except:
         print('3')
-    # return redirect('/error')
-
-
-# print('4')
-# return redirect('/community')
 
 
 # 회원가입완료
@@ -355,12 +332,6 @@ def editBoardCompleted(request):
         content = request.POST['content']
         user = AuthUser.objects.get(username=request.user)
         boardId = request.POST['boardId']
-
-        # print(title)
-        # print(content)
-        # print(user)
-        # print(request.user)
-        # print(boardId)
 
         try:
             img_file = request.POST['img_file']
