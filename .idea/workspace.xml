@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +143,7 @@
       <workItem from="1647926221949" duration="5587000" />
       <workItem from="1648045290257" duration="1950000" />
       <workItem from="1648252927833" duration="7234000" />
-      <workItem from="1648276370514" duration="1693000" />
+      <workItem from="1648276370514" duration="2850000" />
     </task>
     <servers />
   </component>
