@@ -5,3 +5,9 @@ function searchBoard(){
     alert(searchWord);
     location.href= "?searchType=" + searchType +"&searchWord="+searchWord;
 }
+
+function insertSearchUp(){
+    if(window.event.keyCode == 13){
+        searchBoard();
+    }
+}
