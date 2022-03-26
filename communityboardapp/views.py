@@ -85,18 +85,21 @@ def goCommunity(request):
         
         # 검색 분류에 따른 조건
         if searchType == "integrated":
-            allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+            searchResult_title = Boards.objects.filter(content__icontains=searchWord).order_by("-id")
+            searchResult_content= Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+
+            # allBoards = searchResult_title.union(searchResult_content)
+            allBoards = searchResult_title.union(searchResult_content)
+
         elif searchType == 'title':
             allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+
         elif searchType == 'content':
             allBoards = Boards.objects.filter(content__icontains=searchWord).order_by("-id")
+
         elif searchType == 'writer':
             userList = AuthUser.objects.filter(username__exact=searchWord)
             allBoards = Boards.objects.filter(user=userList).order_by("-id")
-
-
-        # 게시글 검색
-        allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
 
         # 페이지당 보여줄 게시글 개수 설정
         paginator = Paginator(allBoards, 20)
