@@ -77,7 +77,7 @@ def goCommunity(request):
                       {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage,
                        'numPages': num_pages})
 
-    # 검색어 존재 / 검색어 검색시
+    # 검색어 존재 / 검색어 입력시
     else:
 
         print('검색어 입력완료')
@@ -90,12 +90,13 @@ def goCommunity(request):
             allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
         elif searchType == 'content':
             allBoards = Boards.objects.filter(content__icontains=searchWord).order_by("-id")
-        # elif searchType == 'writer':
-        #     allBoards = Boards.objects.filter(user__exact=searchWord).order_by("-id")
+        elif searchType == 'writer':
+            userList = AuthUser.objects.filter(username__exact=searchWord)
+            allBoards = Boards.objects.filter(user=userList).order_by("-id")
 
 
         # 게시글 검색
-        # allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+        allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
 
         # 페이지당 보여줄 게시글 개수 설정
         paginator = Paginator(allBoards, 20)
