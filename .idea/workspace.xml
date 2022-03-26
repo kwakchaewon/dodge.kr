@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/js/communityboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/communityboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/communityboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/communityboardapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/~$ding convention.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/communityboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/communityboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/communityboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/communityboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +142,9 @@
       <workItem from="1647585397489" duration="9243000" />
       <workItem from="1647662352936" duration="6910000" />
       <workItem from="1647743081066" duration="8717000" />
-      <workItem from="1647926221949" duration="5002000" />
+      <workItem from="1647926221949" duration="5587000" />
+      <workItem from="1648045290257" duration="1950000" />
+      <workItem from="1648252927833" duration="3294000" />
     </task>
     <servers />
   </component>
