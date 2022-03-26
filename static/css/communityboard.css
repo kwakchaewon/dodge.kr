@@ -54,8 +54,22 @@ td a {
     height: 36px;
 }
 
+.table_no{
+    width: 10%;
+}
 
-.board__search button
+.table_title{
+    width: 50%;
+}
+
+.table_writer{
+    width: 30%;
+}
+
+.table_count{
+    width: 10%;
+    text-align: center;
+}
 
 
 /*right__board*/

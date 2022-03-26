@@ -53,22 +53,19 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>제목</th>
-                            <th>작성자</th>
-                            <th>내용</th>
-                            <th>조회수</th>
+                            <th class="table_no">No.</th>
+                            <th class="table_title">제목</th>
+                            <th class="table_writer">작성자</th>
+                            <th class="table_count">조회수</th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for list in boards %}
                             <tr>
-                                <td>{{ list.id }}</td>
-                                <td><a href="viewboard/{{ list.id }}">{{ list.title }}</a></td>
-                                <td>{{ list.user.username }}</td>
-                                <td>{{ list.content }}</td>
-                                <td>{{ list.view_count }}</td>
-                                <td></td>
+                                <td class="table_no">{{ list.id }}</td>
+                                <td class="table_title"><a href="viewboard/{{ list.id }}">{{ list.title }}</a></td>
+                                <td class="table_writer">{{ list.user.username }}</td>
+                                <td class="table_count">{{ list.view_count }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>
