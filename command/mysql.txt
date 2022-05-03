@@ -172,3 +172,14 @@ ALTER TABLE 'boards' ADD 'likeornot' 자료형 int(1)
   foreign key(board_id) references boards(id),
   foreign key(user_id) references auth_user(id)
  );
+
+
+
+* board_like 스키마 변경 (delete cascade)
+ALTER TABLE board_like ADD CONSTRAINT FOREIGN KEY (board_id) REFERENCES boards(id) ON DELETE CASCADE;
+ALTER TABLE board_like ADD CONSTRAINT FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE;
+
+
+
+
+ALTER TABLE boards ADD CONSTRAINT FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE;
