@@ -165,11 +165,10 @@ ALTER TABLE 'boards' ADD 'likeornot' 자료형 int(1)
 
 * board_like 테이블 생성
  create table board_like (
-  id int(10) primary key,
+  id int(10) primary key auto increment,
   board_id int(10) not null,
   user_id int(10) not null,
   boardlike int(1) not null default 0,
   foreign key(board_id) references boards(id),
   foreign key(user_id) references auth_user(id)
  );
-
