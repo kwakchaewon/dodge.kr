@@ -149,7 +149,27 @@ ALTER TABLE auth_user ADD COLUMN
 ALTER TABLE auth_user ADD COLUMN
 date_birth datetime(6) NOT NULL; 
  
-alter table auth_user modify column first_name varchar(150);
+alter table auth_user modify column first_namfe varchar(150);
 
 
+
+* boards 게시글 rownum 지정
+SELECT @ROWNUM:=@ROWNUM-1 r, A.* from boards A,(SELECT @ROWNUM:= count(*)+1 from boards) R order by id desc;
+
+
+
+* boards likeornot 칼럼 추가
+ALTER TABLE 'boards' ADD 'likeornot' 자료형 int(1)
+
+
+
+* board_like 테이블 생성
+ create table board_like (
+  id int(10) primary key,
+  board_id int(10) not null,
+  user_id int(10) not null,
+  boardlike int(1) not null default 0,
+  foreign key(board_id) references boards(id),
+  foreign key(user_id) references auth_user(id)
+ );
 

@@ -14,6 +14,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 import json
 from django.contrib.auth.hashers import check_password
 
+
 # 메인 페이지 이동
 def goToMain(request):
     return render(request, 'main.html')
@@ -38,9 +39,9 @@ def goCommunity(request):
 
     # 검색어 없음 / 커뮤니티 처음 페이지
     if searchWord == '':
-        
+
         print("검색어없음")
-        
+
         allBoards = Boards.objects.all().order_by("-id")
 
         # page = 요청된 페이지. default 1
@@ -82,11 +83,11 @@ def goCommunity(request):
 
         print('검색어 입력완료')
         print(searchWord)
-        
+
         # 검색 분류에 따른 조건
         if searchType == "integrated":
             searchResult_title = Boards.objects.filter(content__icontains=searchWord).order_by("-id")
-            searchResult_content= Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+            searchResult_content = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
 
             # allBoards = searchResult_title.union(searchResult_content)
             allBoards = searchResult_title.union(searchResult_content)

@@ -5,4 +5,8 @@ python manage.py runserver  0.0.0.0:8000
 rm [파일명] :  파일삭제
 rm -r [디렉토리] : 디렉토리 삭제
 netstat -tnl : 포트 확인
-fuser -k -n tcp 8080 : 8080 포트 종료
+fuser -k -n tcp 8000 : 8000 포트 종료
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py inspectdb board_like>communityboardapp
