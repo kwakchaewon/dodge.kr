@@ -148,6 +148,18 @@ class BoardComment(models.Model):
         db_table = 'board_comment'
 
 
+
+class BoardLike(models.Model):
+    id = models.IntegerField(primary_key=True)
+    board = models.ForeignKey('Boards', models.DO_NOTHING)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    boardlike = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'board_like'
+
+
 class Boards(models.Model):
     category = models.ForeignKey(BoardCategories, models.DO_NOTHING)
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
@@ -166,7 +178,6 @@ class Boards(models.Model):
     def updateViewcount(self):
         self.view_count = self.view_count + 1
         self.save()
-
 
 class DjangoAdminLog(models.Model):
     action_time = models.DateTimeField()
