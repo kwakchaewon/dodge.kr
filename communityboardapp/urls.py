@@ -20,4 +20,7 @@ urlpatterns = [
     path('deleteBoard/<int:id>/', deleteBoard, name='deleteBoard'),
     path('editBoard/<int:id>/', editBoard, name='editBoard'),
     path('editBoardCompleted', editBoardCompleted, name='editBoardCompleted'),
+    path('boardThumbUp', boardThumbUp, name='boardThumbUp'),
+
+
 ]

@@ -3,13 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>Dodge.kr : 커뮤니티</title>
+
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+  $.ajaxSetup({
+    headers: { "X-CSRFToken": '{{ csrf_token }}' }
+  });
+        </script>
         {% load static %}
         <script type="text/javascript"> var insertCommentHref = "{% url 'insertComment' %}" </script>
+        <script type="text/javascript"> var boardThumbUpHref = "{% url 'boardThumbUp' %}" </script>
+
         <script type="text/javascript"> var username = "{{ user.id }}" </script>
         <script type="text/javascript"> var boardId = "{{ boardId }}" </script>
+
         <link rel="stylesheet" href="{% static 'css/viewboard.css' %}">
         <script src="{% static 'js/viewboard.js' %}"></script>
-        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
 
     {#    자유 게시판#}
@@ -47,7 +56,7 @@
             <div class="board__content">
                 {{ board.content }}
                 <div class="content__recommend">
-                    <div class="recommend__left">
+                    <div class="recommend__left" onclick="clickThumbUp()">
                         <div>추천</div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                              class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">

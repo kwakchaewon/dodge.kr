@@ -17,3 +17,20 @@ function insertComment(){
         },
     });
 }
+
+
+function clickThumbUp(){
+    $.ajax({
+    type: "POST",
+    url: boardThumbUpHref,
+
+    data: {
+    },
+        success : function(response){
+        },
+    });
+}
+
+
+function clickThumbDown(){
+}
