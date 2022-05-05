@@ -22,8 +22,11 @@
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/command/mysql.txt" beforeDir="false" afterPath="$PROJECT_DIR$/command/mysql.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Application plan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Application plan.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/communityboardapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/viewboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/viewboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,15 +64,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dodge.kr\communityboardapp\templates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dodge.kr\communityboardapp\templates\communityboardapp" />
       <recent name="C:\dodge.kr\templates\communityboardapp" />
       <recent name="C:\DjangoWebApp\static\css" />
       <recent name="C:\DjangoWebApp\communityboardapp" />
       <recent name="C:\DjangoWebApp\communityboardapp\templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\dodge.kr\communityboardapp\templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -153,7 +156,9 @@
       <workItem from="1651116317751" duration="606000" />
       <workItem from="1651210243655" duration="1910000" />
       <workItem from="1651386297220" duration="11277000" />
-      <workItem from="1651552579678" duration="8168000" />
+      <workItem from="1651552579678" duration="11014000" />
+      <workItem from="1651653876031" duration="4351000" />
+      <workItem from="1651769865318" duration="6859000" />
     </task>
     <servers />
   </component>
@@ -239,12 +244,12 @@
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1645532365494" />
     <state width="561" height="452" key="SwitcherDM/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1645589254417" />
-    <state x="-35" y="106" width="1156" height="895" key="dock-window-1" timestamp="1647936844488">
+    <state x="864" y="91" width="744" height="765" key="dock-window-1" timestamp="1651770175936">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="401" y="299" width="926" height="706" key="dock-window-1/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1646543152185" />
     <state x="403" y="49" width="1207" height="950" key="dock-window-1/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1646225919658" />
-    <state x="-35" y="106" width="1156" height="895" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1647936844488" />
+    <state x="864" y="91" width="744" height="765" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1651770175936" />
     <state x="424" y="100" width="1156" height="861" key="dock-window-2" timestamp="1647938246664">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -295,14 +300,9 @@
           <url>file://$PROJECT_DIR$/testapp/admin.py</url>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/communityboardapp/models.py</url>
-          <line>151</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/communityboardapp/templates/viewboard.html</url>
-          <line>89</line>
+          <line>98</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

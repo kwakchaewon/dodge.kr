@@ -181,5 +181,14 @@ ALTER TABLE board_like ADD CONSTRAINT FOREIGN KEY (user_id) REFERENCES auth_user
 
 
 
+* boards 데이터 삭제 (Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails)
+자식테이블 문제되는 데이터 먼저 삭제 후 부모테이블 데이터 삭제
+TRUNCATE  board_like;
+delete from boards where id > 300;
+
 
 ALTER TABLE boards ADD CONSTRAINT FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE;
+
+
+
+Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`testdb`.`board_like`, CONSTRAINT `board_like_ibfk_1` FOREIGN KEY (`board_id`) REFERENCES `boards` (`id`))
