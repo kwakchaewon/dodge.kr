@@ -5,7 +5,7 @@ from django.http import HttpResponse, Http404, JsonResponse
 from django.contrib.auth import authenticate, login
 from datetime import datetime, timezone
 from testapp import models
-from .models import Boards, BoardCategories, AuthUser, BoardComment
+from .models import Boards, BoardCategories, AuthUser, BoardComment, BoardLike
 import math
 from django.core.paginator import Paginator
 from django.views.generic import DetailView
@@ -277,9 +277,18 @@ def goErrorPage(request):
 
 # 게시글 자세히 조회
 def viewBoard(request, id):
+
+    if request.method == "POST":
+        username = request.POST.get('username', False)
+        print(username)
+        print('1')
+
     try:
         boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
         board = Boards.objects.get(id=id)
+        boardlike = BoardLike.objects.filter(board_id=id)
+
+        # print(boardlike)
 
     except Exception as e:
         Boards.DoesNotExist
@@ -370,3 +379,40 @@ def editBoardCompleted(request):
         redirection_page = '/error'
 
     return redirect(redirection_page)
+
+
+@login_required
+def boardThumbUp(request):
+
+    if request.method == "POST":
+        board = Boards.objects.get(id=300)
+        user = AuthUser.objects.get(id=4)
+
+        try:
+            print('1')
+
+            global BoardLikeResult
+            BoardLikeResult = BoardLike.objects.get(board=board, user=user)
+            print('2')
+
+            if BoardLikeResult.boardlike == 1:
+                print('값이 1입니다에서 0으로 변경됩니다.')
+                BoardLikeResult.boardlike = 0
+                BoardLikeResult.save()
+
+            else:
+                print('값이 0에서 1로 바뀝니다.')
+                BoardLikeResult.boardlike = 1
+                BoardLikeResult.save()
+
+        except BoardLike.DoesNotExist:
+            print('값이 없다가 1로 추가됩니다.')
+            boardlike = 1
+            newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
+            newBoardLike.save()
+
+    context = {
+    }
+    print('성공')
+
+    return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
