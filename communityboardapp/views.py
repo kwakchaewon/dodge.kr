@@ -301,6 +301,7 @@ def viewBoard(request, id):
 # 댓글삽입
 @login_required
 def insertComment(request):
+
     if request.method == "POST":
         username = request.POST.get('username', False)
         content = request.POST.get('content', False)
@@ -385,34 +386,74 @@ def editBoardCompleted(request):
 def boardThumbUp(request):
 
     if request.method == "POST":
-        board = Boards.objects.get(id=300)
-        user = AuthUser.objects.get(id=4)
+        boardId = request.POST.get('boardId', False)
+        print(request.POST)
+        board = Boards.objects.get(id=boardId)
+        user = AuthUser.objects.get(username=request.user)
 
         try:
-            print('1')
 
             global BoardLikeResult
             BoardLikeResult = BoardLike.objects.get(board=board, user=user)
-            print('2')
 
             if BoardLikeResult.boardlike == 1:
-                print('값이 1입니다에서 0으로 변경됩니다.')
+                print('추천버튼을 눌러 boardlike=0 으로 update 됩니다.')
                 BoardLikeResult.boardlike = 0
                 BoardLikeResult.save()
 
             else:
-                print('값이 0에서 1로 바뀝니다.')
+                print('추천버튼을 눌러 boardlike=1로 update 됩니다.')
                 BoardLikeResult.boardlike = 1
                 BoardLikeResult.save()
 
+
         except BoardLike.DoesNotExist:
-            print('값이 없다가 1로 추가됩니다.')
+
+            print('일치하는 boardlike 값이 없으므로 boardlike=1이 insert 됩니다.')
             boardlike = 1
             newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
             newBoardLike.save()
 
     context = {
     }
-    print('성공')
+
+    return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
+
+
+
+@login_required
+def boardThumbDown(request):
+
+    if request.method == "POST":
+        boardId = request.POST.get('boardId', False)
+        print(request.POST)
+        board = Boards.objects.get(id=boardId)
+        user = AuthUser.objects.get(username=request.user)
+
+        try:
+
+            global BoardLikeResult
+            BoardLikeResult = BoardLike.objects.get(board=board, user=user)
+
+            if BoardLikeResult.boardlike == 2:
+                print('비추버튼을 눌러 boardlike=0 으로 update 됩니다.')
+                BoardLikeResult.boardlike = 0
+                BoardLikeResult.save()
+
+            else:
+                print('비추버튼을 눌러 boardlike=2로 update 됩니다.')
+                BoardLikeResult.boardlike = 2
+                BoardLikeResult.save()
+
+
+        except BoardLike.DoesNotExist:
+
+            print('일치하는 boardlike 값이 없으므로 boardlike=1이 insert 됩니다.')
+            boardlike = 2
+            newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
+            newBoardLike.save()
+
+    context = {
+    }
 
     return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")

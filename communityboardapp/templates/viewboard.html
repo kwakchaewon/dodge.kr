@@ -9,13 +9,16 @@
   $.ajaxSetup({
     headers: { "X-CSRFToken": '{{ csrf_token }}' }
   });
+
         </script>
         {% load static %}
-        <script type="text/javascript"> var insertCommentHref = "{% url 'insertComment' %}" </script>
-        <script type="text/javascript"> var boardThumbUpHref = "{% url 'boardThumbUp' %}" </script>
-
         <script type="text/javascript"> var username = "{{ user.id }}" </script>
         <script type="text/javascript"> var boardId = "{{ boardId }}" </script>
+        <script type="text/javascript"> var insertCommentHref = "{% url 'insertComment' %}" </script>
+        <script type="text/javascript"> var boardThumbUpHref = "{% url 'boardThumbUp' %}" </script>
+        <script type="text/javascript"> var boardThumbDownHref = "{% url 'boardThumbDown' %}" </script>
+
+
 
         <link rel="stylesheet" href="{% static 'css/viewboard.css' %}">
         <script src="{% static 'js/viewboard.js' %}"></script>

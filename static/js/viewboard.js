@@ -20,12 +20,16 @@ function insertComment(){
 
 
 function clickThumbUp(){
+
     $.ajax({
     type: "POST",
     url: boardThumbUpHref,
 
     data: {
+    'boardId': boardId,
+    'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
     },
+
         success : function(response){
         },
     });
@@ -33,4 +37,16 @@ function clickThumbUp(){
 
 
 function clickThumbDown(){
+    $.ajax({
+    type: "POST",
+    url: boardThumbDownHref,
+
+    data: {
+    'boardId': boardId,
+    'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+    },
+
+        success : function(response){
+        },
+    });
 }
