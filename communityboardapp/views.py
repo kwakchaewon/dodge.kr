@@ -296,14 +296,14 @@ def viewBoard(request, id):
         # 로그인 상태일 경우, 게시글에 대한 내 추천/비추천 여부도 조회한다.
         else:
             user = AuthUser.objects.get(id=loginUser)
-            myBoardLike = BoardLike.objects.filter(board=board, user=user).values('boardlike')
+            myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
             boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
             upCount = BoardLike.objects.filter(board=board, boardlike=1).count()
             downCount = BoardLike.objects.filter(board=board, boardlike=2).count()
 
             return render(request, 'viewboard.html',
                           {'boardComment': boardComment, 'boardId': id, 'board': board, 'upCount': upCount,
-                           'downCount': downCount, 'downCount': myBoardLike})
+                           'downCount': downCount, 'myBoardLike': myBoardLike})
 
 
 
@@ -397,7 +397,6 @@ def boardThumbUp(request):
 
     if request.method == "POST":
         boardId = request.POST.get('boardId', False)
-        print(request.POST)
         board = Boards.objects.get(id=boardId)
         user = AuthUser.objects.get(username=request.user)
 
@@ -436,7 +435,6 @@ def boardThumbDown(request):
 
     if request.method == "POST":
         boardId = request.POST.get('boardId', False)
-        print(request.POST)
         board = Boards.objects.get(id=boardId)
         user = AuthUser.objects.get(username=request.user)
 
