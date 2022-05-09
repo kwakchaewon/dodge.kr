@@ -278,24 +278,34 @@ def goErrorPage(request):
 # 게시글 자세히 조회
 def viewBoard(request, id):
 
-    if request.method == "POST":
-        username = request.POST.get('username', False)
-        print(username)
-        print('1')
-
-    try:
-        boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
+    if request.method == "GET":
+        loginUser = request.user.id
         board = Boards.objects.get(id=id)
-        boardlike = BoardLike.objects.filter(board_id=id)
+        
+        # 로그인 상태가 아닐 경우, 게시글에 대한 내 추천/비추천 여부를 조회하지 않는다.
+        if loginUser is None:
+            boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
+            upCount = BoardLike.objects.filter(board=board, boardlike=1).count()
+            downCount = BoardLike.objects.filter(board=board, boardlike=2).count()
 
-        # print(boardlike)
+            return render(request, 'viewboard.html',
+                          {'boardComment': boardComment, 'boardId': id, 'board': board, 'upCount': upCount,
+                           'downCount': downCount})
 
-    except Exception as e:
-        Boards.DoesNotExist
-        print(e)
-        raise Http404("Does not exist!")
+            
+        # 로그인 상태일 경우, 게시글에 대한 내 추천/비추천 여부도 조회한다.
+        else:
+            user = AuthUser.objects.get(id=loginUser)
+            myBoardLike = BoardLike.objects.filter(board=board, user=user).values('boardlike')
+            boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
+            upCount = BoardLike.objects.filter(board=board, boardlike=1).count()
+            downCount = BoardLike.objects.filter(board=board, boardlike=2).count()
 
-    return render(request, 'viewboard.html', {'boardComment': boardComment, 'boardId': id, 'board': board})
+            return render(request, 'viewboard.html',
+                          {'boardComment': boardComment, 'boardId': id, 'board': board, 'upCount': upCount,
+                           'downCount': downCount, 'downCount': myBoardLike})
+
+
 
 
 # 댓글삽입
