@@ -296,7 +296,13 @@ def viewBoard(request, id):
         # 로그인 상태일 경우, 게시글에 대한 내 추천/비추천 여부도 조회한다.
         else:
             user = AuthUser.objects.get(id=loginUser)
-            myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
+
+            try:
+                myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
+
+            except BoardLike.DoesNotExist:
+                myBoardLike = 0
+
             boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
             upCount = BoardLike.objects.filter(board=board, boardlike=1).count()
             downCount = BoardLike.objects.filter(board=board, boardlike=2).count()
