@@ -15,6 +15,7 @@
 
 
 
+
         </script>
         {% load static %}
         <script type="text/javascript"> var username = "{{ user.id }}" </script>
@@ -65,6 +66,7 @@
                 {{ myBoardLike.boardlike }}
                 <div class="content__recommend">
                     <div class="thumbsup__count" id="thumbsup__count">{{ upCount }}</div>
+                    <div class="recommend__thumbs" id="recommend__thumbs">
                         {% if myBoardLike == 1 %}
                             <div class="recommend__thumbup__click" onclick="clickThumbUp()">
                                 <div class="recommend__title">추천</div>
@@ -116,6 +118,7 @@
                                 </svg>
                             </div>
                         {% endif %}
+                    </div>
 
                     <div class="thumbsdown__count" id="thumbsdown__count">{{ downCount }}</div>
                 </div>

@@ -472,11 +472,12 @@ def boardThumbDown(request):
             newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
             newBoardLike.save()
 
+        myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
         upCount = str(BoardLike.objects.filter(board=board, boardlike=1).count())
         downCount = str(BoardLike.objects.filter(board=board, boardlike=2).count())
 
     context = {
-        "upCount": upCount, "downCount": downCount
+        "upCount": upCount, "downCount": downCount, "myBoardLike": myBoardLike
     }
 
     return JsonResponse(context)

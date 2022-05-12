@@ -101,6 +101,7 @@
 }
 
 
+/*content__recommend 공통*/
 .content__recommend {
     width: 310px;
     height: 120px;
@@ -119,6 +120,11 @@
     width: 60px;
     text-align: center;
     padding-top: 25px;
+}
+
+
+.recommend__thumbs{
+    display: flex;
 }
 
 
