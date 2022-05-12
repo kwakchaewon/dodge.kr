@@ -244,7 +244,7 @@ def signupCompleted(request):
 
 
 # 아이디 중복 확인
-def userIdCheck(request):
+def  userIdCheck(request):
     if request.method == "POST":
         username = request.POST.get('username', False)
 
@@ -429,10 +429,15 @@ def boardThumbUp(request):
             newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
             newBoardLike.save()
 
+        myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
+        upCount = str(BoardLike.objects.filter(board=board, boardlike=1).count())
+        downCount = str(BoardLike.objects.filter(board=board, boardlike=2).count())
+
     context = {
+        "upCount": upCount, "downCount": downCount, "myBoardLike": myBoardLike
     }
 
-    return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
+    return JsonResponse(context)
 
 
 
@@ -467,7 +472,11 @@ def boardThumbDown(request):
             newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
             newBoardLike.save()
 
+        upCount = str(BoardLike.objects.filter(board=board, boardlike=1).count())
+        downCount = str(BoardLike.objects.filter(board=board, boardlike=2).count())
+
     context = {
+        "upCount": upCount, "downCount": downCount
     }
 
-    return HttpResponse(json.dumps(context, cls=DjangoJSONEncoder), content_type="application/json")
+    return JsonResponse(context)

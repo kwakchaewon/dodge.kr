@@ -64,7 +64,7 @@
                 {{ board.content }}
                 {{ myBoardLike.boardlike }}
                 <div class="content__recommend">
-                    <div class="thumbsup__count">{{ upCount }}</div>
+                    <div class="thumbsup__count" id="thumbsup__count">{{ upCount }}</div>
                         {% if myBoardLike == 1 %}
                             <div class="recommend__thumbup__click" onclick="clickThumbUp()">
                                 <div class="recommend__title">추천</div>
@@ -117,7 +117,7 @@
                             </div>
                         {% endif %}
 
-                    <div class="thumbsdown__count">{{ downCount }}</div>
+                    <div class="thumbsdown__count" id="thumbsdown__count">{{ downCount }}</div>
                 </div>
             </div>
             <div class="container__comments">
