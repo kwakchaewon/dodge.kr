@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/viewboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/viewboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/viewboard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +156,8 @@
       <workItem from="1651769865318" duration="23168000" />
       <workItem from="1651993491076" duration="883000" />
       <workItem from="1652084937051" duration="14156000" />
-      <workItem from="1652167828528" duration="10709000" />
+      <workItem from="1652167828528" duration="20166000" />
+      <workItem from="1654531263885" duration="597000" />
     </task>
     <servers />
   </component>
@@ -250,16 +249,17 @@
     <state x="401" y="299" width="926" height="706" key="dock-window-1/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1646543152185" />
     <state x="403" y="49" width="1207" height="950" key="dock-window-1/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1646225919658" />
     <state x="107" y="25" width="1663" height="945" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1652334539195" />
-    <state x="424" y="100" width="1156" height="861" key="dock-window-2" timestamp="1647938246664">
+    <state x="751" y="0" width="969" height="1024" key="dock-window-2" timestamp="1652346506679">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="2641" y="31" width="1009" height="711" key="dock-window-2/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1646559447616" />
     <state x="2641" y="31" width="1009" height="882" key="dock-window-2/0.0.1707.1027/2560.0.1920.1040@2560.0.1920.1040" timestamp="1646572542268" />
-    <state x="424" y="100" width="1156" height="861" key="dock-window-2/0.0.1707.1027@0.0.1707.1027" timestamp="1647938246664" />
-    <state x="2560" y="140" width="1106" height="665" key="dock-window-3" timestamp="1645454484627">
-      <screen x="2560" y="0" width="1920" height="1040" />
+    <state x="751" y="0" width="969" height="1024" key="dock-window-2/0.0.1707.1027@0.0.1707.1027" timestamp="1652346506679" />
+    <state x="399" y="117" width="1001" height="910" key="dock-window-3" timestamp="1652614094908">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="2560" y="140" width="1106" height="665" key="dock-window-3/0.0.1707.1027/2560.0.1920.1040@0.0.1707.1027" timestamp="1645454484627" />
+    <state x="399" y="117" width="1001" height="910" key="dock-window-3/0.0.1707.1027@0.0.1707.1027" timestamp="1652614094908" />
     <state x="561" y="226" width="1106" height="664" key="dock-window-4" timestamp="1645586020150">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
