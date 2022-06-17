@@ -32,13 +32,10 @@ function clickThumbUp(){
 
         success : function(response){
 
+        var loginState = response['loginState']
         var upCount = response['upCount'];
         var downCount = response['downCount'];
         var myBoardLike = response['myBoardLike'];
-
-        document.getElementById('thumbsup__count').innerText = upCount;
-        document.getElementById('thumbsdown__count').innerText = downCount;
-
 
 //      myBoardLike == 1 일 경우 바뀔 html
         var thumbsUpHtml =`<div class="recommend__thumbup__click" onclick="clickThumbUp()">
@@ -76,10 +73,17 @@ function clickThumbUp(){
                             </div>`
 
 
-        if (myBoardLike==1){
-              $('#recommend__thumbs').html(thumbsUpHtml);
-        }else{
-            $('#recommend__thumbs').html(thumbsZeroHtml);
+        if (loginState =='anonymous'){
+         alert('로그인 후 이용가능합니다.');
+        }
+        if (loginState == 'authenticated'){
+            document.getElementById('thumbsup__count').innerText = upCount;
+            document.getElementById('thumbsdown__count').innerText = downCount;
+            if (myBoardLike==1){
+                $('#recommend__thumbs').html(thumbsUpHtml);
+        }   else{
+                $('#recommend__thumbs').html(thumbsZeroHtml);
+        }
         }
 
         },
@@ -99,12 +103,10 @@ function clickThumbDown(){
 
         success : function(response){
 
+        var loginState = response['loginState']
         var upCount = response['upCount'];
         var downCount = response['downCount'];
         var myBoardLike = response['myBoardLike'];
-
-        document.getElementById('thumbsup__count').innerText = upCount;
-        document.getElementById('thumbsdown__count').innerText = downCount;
 
 //      myBoardLike == 2 일 경우 바뀔 html
         var thumbsUpHtml =`<div class="recommend__thumbup" onclick="clickThumbUp()">
@@ -142,10 +144,17 @@ function clickThumbDown(){
                             </div>`
 
 
-        if (myBoardLike==2){
-              $('#recommend__thumbs').html(thumbsUpHtml);
-        }else{
-            $('#recommend__thumbs').html(thumbsZeroHtml);
+        if (loginState =='anonymous'){
+         alert('로그인 후 이용가능합니다.');
+        }
+        if (loginState == 'authenticated'){
+            document.getElementById('thumbsup__count').innerText = upCount;
+            document.getElementById('thumbsdown__count').innerText = downCount;
+            if (myBoardLike==1){
+                $('#recommend__thumbs').html(thumbsUpHtml);
+        }   else{
+                $('#recommend__thumbs').html(thumbsZeroHtml);
+        }
         }
 
 

@@ -13,6 +13,7 @@ from django.core import serializers
 from django.core.serializers.json import DjangoJSONEncoder
 import json
 from django.contrib.auth.hashers import check_password
+from django.contrib import messages
 
 
 # 메인 페이지 이동
@@ -244,7 +245,7 @@ def signupCompleted(request):
 
 
 # 아이디 중복 확인
-def  userIdCheck(request):
+def userIdCheck(request):
     if request.method == "POST":
         username = request.POST.get('username', False)
 
@@ -277,11 +278,10 @@ def goErrorPage(request):
 
 # 게시글 자세히 조회
 def viewBoard(request, id):
-
     if request.method == "GET":
         loginUser = request.user.id
         board = Boards.objects.get(id=id)
-        
+
         # 로그인 상태가 아닐 경우, 게시글에 대한 내 추천/비추천 여부를 조회하지 않는다.
         if loginUser is None:
             boardComment = BoardComment.objects.filter(article__id=id).order_by('id')
@@ -292,7 +292,7 @@ def viewBoard(request, id):
                           {'boardComment': boardComment, 'boardId': id, 'board': board, 'upCount': upCount,
                            'downCount': downCount})
 
-            
+
         # 로그인 상태일 경우, 게시글에 대한 내 추천/비추천 여부도 조회한다.
         else:
             user = AuthUser.objects.get(id=loginUser)
@@ -312,12 +312,9 @@ def viewBoard(request, id):
                            'downCount': downCount, 'myBoardLike': myBoardLike})
 
 
-
-
 # 댓글삽입
 @login_required
 def insertComment(request):
-
     if request.method == "POST":
         username = request.POST.get('username', False)
         content = request.POST.get('content', False)
@@ -398,86 +395,110 @@ def editBoardCompleted(request):
     return redirect(redirection_page)
 
 
-@login_required
+# @login_required
 def boardThumbUp(request):
-
     if request.method == "POST":
-        boardId = request.POST.get('boardId', False)
-        board = Boards.objects.get(id=boardId)
-        user = AuthUser.objects.get(username=request.user)
 
-        try:
+        # 로그인이 되어있지 않을 경우, loginState = 'anonymous' 넣어 js 단에 전달
+        if request.user.is_anonymous:
 
-            global BoardLikeResult
-            BoardLikeResult = BoardLike.objects.get(board=board, user=user)
+            loginState = 'anonymous'
+            context = {
+                "loginState": loginState
+            }
 
-            if BoardLikeResult.boardlike == 1:
-                print('추천버튼을 눌러 boardlike=0 으로 update 됩니다.')
-                BoardLikeResult.boardlike = 0
-                BoardLikeResult.save()
+            return JsonResponse(context)
 
-            else:
-                print('추천버튼을 눌러 boardlike=1로 update 됩니다.')
-                BoardLikeResult.boardlike = 1
-                BoardLikeResult.save()
+        else:
+
+            boardId = request.POST.get('boardId', False)
+            board = Boards.objects.get(id=boardId)
+            user = AuthUser.objects.get(username=request.user)
+            loginState = 'authenticated'
+
+            try:
+
+                global BoardLikeResult
+                BoardLikeResult = BoardLike.objects.get(board=board, user=user)
+
+                if BoardLikeResult.boardlike == 1:
+                    print('추천버튼을 눌러 boardlike=0 으로 update 됩니다.')
+                    BoardLikeResult.boardlike = 0
+                    BoardLikeResult.save()
+
+                else:
+                    print('추천버튼을 눌러 boardlike=1로 update 됩니다.')
+                    BoardLikeResult.boardlike = 1
+                    BoardLikeResult.save()
 
 
-        except BoardLike.DoesNotExist:
+            except BoardLike.DoesNotExist:
 
-            print('일치하는 boardlike 값이 없으므로 boardlike=1이 insert 됩니다.')
-            boardlike = 1
-            newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
-            newBoardLike.save()
+                print('일치하는 boardlike 값이 없으므로 boardlike=1이 insert 됩니다.')
+                boardlike = 1
+                newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
+                newBoardLike.save()
 
-        myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
-        upCount = str(BoardLike.objects.filter(board=board, boardlike=1).count())
-        downCount = str(BoardLike.objects.filter(board=board, boardlike=2).count())
+            myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
+            upCount = str(BoardLike.objects.filter(board=board, boardlike=1).count())
+            downCount = str(BoardLike.objects.filter(board=board, boardlike=2).count())
 
-    context = {
-        "upCount": upCount, "downCount": downCount, "myBoardLike": myBoardLike
-    }
+        context = {
+            "upCount": upCount, "downCount": downCount, "myBoardLike": myBoardLike, "loginState": loginState
+        }
 
-    return JsonResponse(context)
-
+        return JsonResponse(context)
 
 
 @login_required
 def boardThumbDown(request):
-
     if request.method == "POST":
-        boardId = request.POST.get('boardId', False)
-        board = Boards.objects.get(id=boardId)
-        user = AuthUser.objects.get(username=request.user)
 
-        try:
+        # 로그인이 되어있지 않을 경우, loginState = 'anonymous' 넣어 js 단에 전달
+        if request.user.is_anonymous:
 
-            global BoardLikeResult
-            BoardLikeResult = BoardLike.objects.get(board=board, user=user)
+            loginState = 'anonymous'
+            context = {
+                "loginState": loginState
+            }
 
-            if BoardLikeResult.boardlike == 2:
-                print('비추버튼을 눌러 boardlike=0 으로 update 됩니다.')
-                BoardLikeResult.boardlike = 0
-                BoardLikeResult.save()
+            return JsonResponse(context)
 
-            else:
-                print('비추버튼을 눌러 boardlike=2로 update 됩니다.')
-                BoardLikeResult.boardlike = 2
-                BoardLikeResult.save()
+        else:
+
+            boardId = request.POST.get('boardId', False)
+            board = Boards.objects.get(id=boardId)
+            user = AuthUser.objects.get(username=request.user)
+
+            try:
+
+                global BoardLikeResult
+                BoardLikeResult = BoardLike.objects.get(board=board, user=user)
+
+                if BoardLikeResult.boardlike == 2:
+                    print('비추버튼을 눌러 boardlike=0 으로 update 됩니다.')
+                    BoardLikeResult.boardlike = 0
+                    BoardLikeResult.save()
+
+                else:
+                    print('비추버튼을 눌러 boardlike=2로 update 됩니다.')
+                    BoardLikeResult.boardlike = 2
+                    BoardLikeResult.save()
 
 
-        except BoardLike.DoesNotExist:
+            except BoardLike.DoesNotExist:
 
-            print('일치하는 boardlike 값이 없으므로 boardlike=1이 insert 됩니다.')
-            boardlike = 2
-            newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
-            newBoardLike.save()
+                print('일치하는 boardlike 값이 없으므로 boardlike=1이 insert 됩니다.')
+                boardlike = 2
+                newBoardLike = BoardLike(board=board, user=user, boardlike=boardlike)
+                newBoardLike.save()
 
-        myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
-        upCount = str(BoardLike.objects.filter(board=board, boardlike=1).count())
-        downCount = str(BoardLike.objects.filter(board=board, boardlike=2).count())
+            myBoardLike = BoardLike.objects.get(board=board, user=user).boardlike
+            upCount = str(BoardLike.objects.filter(board=board, boardlike=1).count())
+            downCount = str(BoardLike.objects.filter(board=board, boardlike=2).count())
 
-    context = {
-        "upCount": upCount, "downCount": downCount, "myBoardLike": myBoardLike
-    }
+        context = {
+            "upCount": upCount, "downCount": downCount, "myBoardLike": myBoardLike
+        }
 
-    return JsonResponse(context)
+        return JsonResponse(context)
