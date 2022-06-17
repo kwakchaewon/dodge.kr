@@ -8,5 +8,4 @@ netstat -tnl : 포트 확인
 fuser -k -n tcp 8000 : 8000 포트 종료
 python manage.py makemigrations
 python manage.py migrate
-
 python manage.py inspectdb board_like>communityboardapp
