@@ -91,17 +91,22 @@ def goCommunity(request):
             searchResult_content = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
 
             # allBoards = searchResult_title.union(searchResult_content)
-            allBoards = searchResult_title.union(searchResult_content)
+            allBoards = searchResult_title.union(searchResult_content).annotate(
+                row_number=Window(expression=RowNumber(), order_by=F('id').asc()))
 
         elif searchType == 'title':
-            allBoards = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+            allBoards = Boards.objects.filter(title__icontains=searchWord).annotate(
+                row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
         elif searchType == 'content':
-            allBoards = Boards.objects.filter(content__icontains=searchWord).order_by("-id")
+            allBoards = Boards.objects.filter(content__icontains=searchWord).annotate(
+                row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
         elif searchType == 'writer':
-            userList = AuthUser.objects.filter(username__exact=searchWord)
-            allBoards = Boards.objects.filter(user=userList).order_by("-id")
+            searchUser = AuthUser.objects.filter(username__exact=searchWord)
+            print(searchUser)
+            allBoards = Boards.objects.filter(user__in=searchUser).annotate(
+                row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
         # 페이지당 보여줄 게시글 개수 설정
         paginator = Paginator(allBoards, 20)
