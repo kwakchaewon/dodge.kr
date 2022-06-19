@@ -62,7 +62,8 @@
                         <tbody>
                         {% for list in boards %}
                             <tr>
-                                <td class="table_no">{{ list.id }}</td>
+                                <td class="table_no">{{ list.row_number }}</td>
+{#                                                                <td class="table_no">{{ forloop.counter0|add:list.start_index  }}</td>#}
                                 <td class="table_title"><a href="viewboard/{{ list.id }}">{{ list.title }}</a></td>
                                 <td class="table_writer">{{ list.user.username }}</td>
                                 <td class="table_count">{{ list.view_count }}</td>
@@ -107,7 +108,8 @@
                         <option value="writer">글쓴이</option>
                     </select>
                     <span class="search__searchword">
-                            <input type="text" id="searchword__input__value" class="searchword__input" placeholder="" onkeyup="insertSearchUp();">
+                            <input type="text" id="searchword__input__value" class="searchword__input" placeholder=""
+                                   onkeyup="insertSearchUp();">
                             <button onclick="searchBoard()" class="btn btn-info"><span
                                     class="glyphicon glyphicon-search"
                                     aria-hidden="true"></span></button>

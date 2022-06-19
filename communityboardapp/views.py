@@ -1,19 +1,18 @@
 from django.contrib.auth.decorators import login_required
+from django.db.models import Window, F
+from django.db.models.functions import RowNumber
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404, JsonResponse
 from django.contrib.auth import authenticate, login
 from datetime import datetime, timezone
+
 from testapp import models
 from .models import Boards, BoardCategories, AuthUser, BoardComment, BoardLike
 import math
 from django.core.paginator import Paginator
-from django.views.generic import DetailView
-from django.core import serializers
 from django.core.serializers.json import DjangoJSONEncoder
 import json
-from django.contrib.auth.hashers import check_password
-from django.contrib import messages
 
 
 # 메인 페이지 이동
@@ -43,7 +42,8 @@ def goCommunity(request):
 
         print("검색어없음")
 
-        allBoards = Boards.objects.all().order_by("-id")
+        allBoards = Boards.objects.all().annotate(
+            row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
         # page = 요청된 페이지. default 1
         page = int(request.GET.get('page', 1))
