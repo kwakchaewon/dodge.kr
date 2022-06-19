@@ -148,9 +148,10 @@ function clickThumbDown(){
          alert('로그인 후 이용가능합니다.');
         }
         if (loginState == 'authenticated'){
+
             document.getElementById('thumbsup__count').innerText = upCount;
             document.getElementById('thumbsdown__count').innerText = downCount;
-            if (myBoardLike==1){
+            if (myBoardLike==2){
                 $('#recommend__thumbs').html(thumbsUpHtml);
         }   else{
                 $('#recommend__thumbs').html(thumbsZeroHtml);

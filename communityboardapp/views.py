@@ -450,7 +450,7 @@ def boardThumbUp(request):
         return JsonResponse(context)
 
 
-@login_required
+# @login_required
 def boardThumbDown(request):
     if request.method == "POST":
 
@@ -469,6 +469,7 @@ def boardThumbDown(request):
             boardId = request.POST.get('boardId', False)
             board = Boards.objects.get(id=boardId)
             user = AuthUser.objects.get(username=request.user)
+            loginState = 'authenticated'
 
             try:
 
@@ -498,7 +499,7 @@ def boardThumbDown(request):
             downCount = str(BoardLike.objects.filter(board=board, boardlike=2).count())
 
         context = {
-            "upCount": upCount, "downCount": downCount, "myBoardLike": myBoardLike
+            "upCount": upCount, "downCount": downCount, "myBoardLike": myBoardLike, "loginState": loginState
         }
 
         return JsonResponse(context)
