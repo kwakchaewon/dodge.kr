@@ -29,16 +29,16 @@ def goCommunity(request):
     # page = 요청된 페이지. default 1
     page = int(request.GET.get('page', 1))
 
-    # searchType = 검색 type
-    searchType = str(request.GET.get('searchType', ''))
-    # searchWord = 검색어
-    searchWord = str(request.GET.get('searchWord', ''))
+    # target = 검색 type
+    target = str(request.GET.get('target', ''))
+    # query = 검색어
+    query = str(request.GET.get('query', ''))
 
-    print("searchword :" + searchWord)
-    print("searchtype :" + searchType)
+    print("searchword :" + query)
+    print("searchtype :" + target)
 
     # 검색어 없음 / 커뮤니티 처음 페이지
-    if searchWord == '':
+    if query == '':
 
         print("검색어없음")
 
@@ -83,27 +83,30 @@ def goCommunity(request):
     else:
 
         print('검색어 입력완료')
-        print(searchWord)
+        print(query)
 
         # 검색 분류에 따른 조건
-        if searchType == "integrated":
-            searchResult_title = Boards.objects.filter(content__icontains=searchWord).order_by("-id")
-            searchResult_content = Boards.objects.filter(title__icontains=searchWord).order_by("-id")
+        if target == "integrated":
+            searchResult_title = Boards.objects.filter(content__icontains=query)
+            searchResult_content = Boards.objects.filter(title__icontains=query)
+
+            allBoards = searchResult_title | searchResult_content.annotate(
+                row_number=Window(expression=RowNumber())).order_by("-id")
 
             # allBoards = searchResult_title.union(searchResult_content)
-            allBoards = searchResult_title.union(searchResult_content).annotate(
-                row_number=Window(expression=RowNumber(), order_by=F('id').asc()))
+            # allBoards = searchResult_title.union(searchResult_content).annotate(
+            #     row_number=Window(expression=RowNumber(), order_by=F('id').asc()))
 
-        elif searchType == 'title':
-            allBoards = Boards.objects.filter(title__icontains=searchWord).annotate(
+        elif target == 'title':
+            allBoards = Boards.objects.filter(title__icontains=query).annotate(
                 row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
-        elif searchType == 'content':
-            allBoards = Boards.objects.filter(content__icontains=searchWord).annotate(
+        elif target == 'content':
+            allBoards = Boards.objects.filter(content__icontains=query).annotate(
                 row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
-        elif searchType == 'writer':
-            searchUser = AuthUser.objects.filter(username__exact=searchWord)
+        elif target == 'writer':
+            searchUser = AuthUser.objects.filter(username__exact=query)
             print(searchUser)
             allBoards = Boards.objects.filter(user__in=searchUser).annotate(
                 row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
