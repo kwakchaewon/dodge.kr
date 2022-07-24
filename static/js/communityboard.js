@@ -1,7 +1,7 @@
 function searchBoard(){
-    var searchType = document.getElementById('search__select').value;
-    var searchWord = document.getElementById('searchword__input__value').value;
-    location.href= "?searchType=" + searchType +"&searchWord="+searchWord;
+    var target = document.getElementById('search__select').value;
+    var query = document.getElementById('searchword__input__value').value;
+    location.href= "?target=" + target +"&query="+query;
 }
 
 function insertSearchUp(){

@@ -34,8 +34,8 @@ def goCommunity(request):
     # query = 검색어
     query = str(request.GET.get('query', ''))
 
-    print("searchword :" + query)
-    print("searchtype :" + target)
+    print("query :" + query)
+    print("target :" + target)
 
     # 검색어 없음 / 커뮤니티 처음 페이지
     if query == '':
