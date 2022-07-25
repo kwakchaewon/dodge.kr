@@ -8,6 +8,7 @@
         {% load static %}
         <script src="{% static 'js/communityboard.js' %}"></script>
         <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript"> var searchBoardHref = "{% url 'searchBoard' %}" </script>
     </head>
 
     {#    자유 게시판#}
@@ -63,7 +64,7 @@
                         {% for list in boards %}
                             <tr>
                                 <td class="table_no">{{ list.row_number }}</td>
-{#                                                                <td class="table_no">{{ forloop.counter0|add:list.start_index  }}</td>#}
+                                {#                                                                <td class="table_no">{{ forloop.counter0|add:list.start_index  }}</td>#}
                                 <td class="table_title"><a href="viewboard/{{ list.id }}">{{ list.title }}</a></td>
                                 <td class="table_writer">{{ list.user.username }}</td>
                                 <td class="table_count">{{ list.view_count }}</td>
@@ -100,7 +101,6 @@
                     </ul>
                 </div>
                 <div class="board__search">
-
                     <select class="search__select" name="search__select" id="search__select">
                         <option value="integrated">제목+내용</option>
                         <option value="title">제목</option>
