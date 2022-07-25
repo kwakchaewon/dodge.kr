@@ -411,9 +411,6 @@ def searchBoard(request):
 
     # 검색 분류에 따른 조건
     if target == "integrated":
-        searchResult_title = Boards.objects.filter(content__icontains=query)
-        searchResult_content = Boards.objects.filter(title__icontains=query)
-
         searchList = Boards.objects.filter(Q(content__icontains=query)|Q(title__icontains=query)).annotate(
             row_number=Window(expression=RowNumber())).order_by("-id")
 
