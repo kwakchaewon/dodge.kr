@@ -54,6 +54,12 @@ a{
     color: var(--color-white);
 }
 
+
+a:hover{
+    text-decoration: none;
+}
+
+
 ul{
     padding-left: 0;
     list-style: none;
@@ -88,10 +94,11 @@ section{
 
 
 
-.logincontainer h1{
+.logincontainer__title{
     font-weight: 700;
+    text-decoration: none;
+    color: var(--color-black);
 }
-
 
 
 /*logincontainer__id,logincontainer__pw*/
