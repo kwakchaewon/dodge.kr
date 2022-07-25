@@ -2,12 +2,9 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Window, F, Q
 from django.db.models.functions import RowNumber
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404, JsonResponse
 from django.contrib.auth import authenticate, login
 from datetime import datetime, timezone
-
-from testapp import models
 from .models import Boards, BoardCategories, AuthUser, BoardComment, BoardLike
 import math
 from django.core.paginator import Paginator
@@ -134,46 +131,6 @@ def signupCompleted(request):
     login(request, user)
 
     return redirect('/')
-
-    # # if request.method == "POST":
-    #     username = request.POST['container__id']
-    #     password = request.POST['container__pw']
-    #     email = request.POST['email__id'] + '@' + request.POST['email__domain']
-    #     phone = request.POST['container__phonenum']
-    #     last_name = request.POST['container__name']
-    #     date_birth = request.POST['container__birth']
-    #
-    #     # 회원가입완료
-    #     user = User.objects.create_user(username, password, last_name, email, phone, date_birth)
-    #
-    #     # 사용자 인증 및 로그인
-    #     user = authenticate(username=username, password=password)
-    #     login(request, user)
-    #
-    #     return redirect('/')
-    #
-    #     # # 회원가입 성공시,
-    #     # try:
-    #     #     # 회원가입
-    #     #     # user = User.objects.create_user(username, email, password, {'phone': phone, 'date_birth': date_birth, 'last_name': last_name})
-    #     #     user = User.objects.create_user(username, email, password, {phone, last_name})
-    #     #
-    #     #
-    #     #     # 사용자 인증과 로그인 담당
-    #     #     user = authenticate(username=username, password=password)
-    #     #     login(request, user)
-    #     #
-    #     #     return redirect('/')
-    #     #
-    #     # except:
-    #     #     redirect('error')
-    #
-    #     # 사용자인증 및 로그인
-    #     # loginUser = authenticate(username=username, password=password)
-    #     # login(request, loginUser)
-    #
-    # # else:
-    # # return redirect('error')
 
 
 # 아이디 중복 확인
@@ -381,8 +338,7 @@ def boardThumbUp(request):
 
         return JsonResponse(context)
 
-
-# @login_required
+# 게시글 비추
 def boardThumbDown(request):
     if request.method == "POST":
 
