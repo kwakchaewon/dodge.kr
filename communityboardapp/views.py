@@ -406,7 +406,6 @@ def searchBoard(request):
 
     print("query :" + query)
     print("target :" + target)
-
     print('검색어 입력완료')
     print(query)
 
@@ -458,7 +457,7 @@ def searchBoard(request):
     previousPage = math.trunc((page - 1) / 10) * 10
     nextPage = math.ceil(page / 10) * 10 + 1
 
-    return render(request, 'communityboard.html',
+    return render(request, 'searchboard.html',
                   {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage,
-                   'numPages': num_pages})
+                   'numPages': num_pages, 'target': target, 'query': query})
 
