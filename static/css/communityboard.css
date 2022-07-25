@@ -62,6 +62,10 @@ td a {
     width: 50%;
 }
 
+.table_title a:hover{
+    color: var(--color-black);
+}
+
 .table_writer{
     width: 30%;
 }
