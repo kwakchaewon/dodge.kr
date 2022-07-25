@@ -459,39 +459,31 @@ def searchBoard(request):
         searchResult_title = Boards.objects.filter(content__icontains=query)
         searchResult_content = Boards.objects.filter(title__icontains=query)
 
-        allBoards = Boards.objects.filter(Q(content__icontains=query)|Q(title__icontains=query)).annotate(
+        searchList = Boards.objects.filter(Q(content__icontains=query)|Q(title__icontains=query)).annotate(
             row_number=Window(expression=RowNumber())).order_by("-id")
 
-        # allBoards = searchResult_title | searchResult_content.annotate(
-        #     row_number=Window(expression=RowNumber())).order_by("-id")
-
-        # allBoards = searchResult_title.union(searchResult_content)
-        # allBoards = searchResult_title.union(searchResult_content).annotate(
-        #     row_number=Window(expression=RowNumber(), order_by=F('id').asc()))
-
     elif target == 'title':
-        allBoards = Boards.objects.filter(title__icontains=query).annotate(
+        searchList = Boards.objects.filter(title__icontains=query).annotate(
             row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
     elif target == 'content':
-        allBoards = Boards.objects.filter(content__icontains=query).annotate(
+        searchList = Boards.objects.filter(content__icontains=query).annotate(
             row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
     elif target == 'writer':
         searchUser = AuthUser.objects.filter(username__exact=query)
-        print(searchUser)
-        allBoards = Boards.objects.filter(user__in=searchUser).annotate(
+        searchList = Boards.objects.filter(user__in=searchUser).annotate(
             row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
     # 페이지당 보여줄 게시글 개수 설정
-    paginator = Paginator(allBoards, 20)
+    paginator = Paginator(searchList, 20)
 
     # 페이징 객체 설정 : 요청된 페이지에 해당하는 페이징 객체 설정
     # 표기될 페이지 개수
     boards = paginator.get_page(page)
 
     # 전체 게시글 개수
-    boardsCount = allBoards.count()
+    boardsCount = searchList.count()
     num_pages = paginator.num_pages
 
     # initialPage : 표기되는 첫 페이지 / finalPage : 표기되는 마지막 페이지
