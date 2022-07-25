@@ -22,5 +22,5 @@ urlpatterns = [
     path('editBoardCompleted', editBoardCompleted, name='editBoardCompleted'),
     path('boardThumbUp', boardThumbUp, name='boardThumbUp'),
     path('boardThumbDown', boardThumbDown, name='boardThumbDown'),
-
+    path('searchboard', searchBoard, name='searchBoard'),
 ]
