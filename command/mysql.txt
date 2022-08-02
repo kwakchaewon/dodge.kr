@@ -1,3 +1,7 @@
+* db 사용
+use testdb;
+
+
 select now();
 
 show variables like '%character%';
@@ -61,7 +65,12 @@ TRUNCATE boards;
 
 
 * 외래키 제거
-ALTER TABLE boards DROP FOREIGN KEY boards_ibfk_2;
+ALTER TABLE boards DROP FOREIGN KEY boards_ibfk_1;
+ALTER TABLE board_comment ADD FOREIGN KEY article_id REFERENCES boards (id) ON DELETE CASCADE;
+
+
+
+* alter table boards add foreign key(user_id) references auth_user(id);
 
 
 

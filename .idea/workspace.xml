@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communityboardapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/communityboardapp/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/mysql.txt" beforeDir="false" afterPath="$PROJECT_DIR$/command/mysql.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +164,8 @@
       <workItem from="1655962499428" duration="3038000" />
       <workItem from="1657977816104" duration="2137000" />
       <workItem from="1658622316930" duration="5585000" />
-      <workItem from="1658644623854" duration="8918000" />
+      <workItem from="1658644623854" duration="11230000" />
+      <workItem from="1659409822555" duration="597000" />
     </task>
     <servers />
   </component>
@@ -201,10 +202,10 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="170" y="260" width="540" height="524" key="StructurePopup/0.0.1707.1027@0.0.1707.1027" timestamp="1658630283019" />
-    <state x="0" y="0" width="1301" height="865" key="dock-window-1" timestamp="1658722987613">
+    <state x="154" y="22" width="1301" height="865" key="dock-window-1" timestamp="1659411594323">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="0" y="0" width="1301" height="865" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1658722987613" />
+    <state x="154" y="22" width="1301" height="865" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1659411594323" />
     <state x="751" y="0" width="969" height="1024" key="dock-window-2" timestamp="1652346506679">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
