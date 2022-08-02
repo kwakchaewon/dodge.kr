@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30a0f8c0-fb6e-4f7d-9a69-87ea9a9affbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/command/mysql.txt" beforeDir="false" afterPath="$PROJECT_DIR$/command/mysql.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Application plan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Application plan.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DjangoWebApp 개발 현황.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +165,7 @@
       <workItem from="1657977816104" duration="2137000" />
       <workItem from="1658622316930" duration="5585000" />
       <workItem from="1658644623854" duration="11230000" />
-      <workItem from="1659409822555" duration="597000" />
+      <workItem from="1659409822555" duration="8086000" />
     </task>
     <servers />
   </component>
@@ -237,7 +237,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/communityboardapp/templates/communityboard.html</url>
-          <line>88</line>
+          <line>79</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
