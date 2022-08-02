@@ -196,8 +196,8 @@ TRUNCATE  board_like;
 delete from boards where id > 300;
 
 
-ALTER TABLE boards ADD CONSTRAINT FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE;
-
-
-
-Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`testdb`.`board_like`, CONSTRAINT `board_like_ibfk_1` FOREIGN KEY (`board_id`) REFERENCES `boards` (`id`))
+* board_categories 튜플 삭제 및 삽입
+insert into board_categories (id, category_code, category_name, list_count, authority, creation_date, last_update_date)
+values (1, 1, 'board_notice', 20, 20,now(),now());
+insert into board_categories (id, category_code, category_name, list_count, authority, creation_date, last_update_date)
+values (2, 2, 'board_boards', 20, 20,now(),now());
