@@ -27,9 +27,12 @@
                     <table class="table table-hover">
 
                         <tbody>
+                        {% for notices in notices %}
                         <tr>
-                            <td>윤석열이 그렇게 좋냐</td>
+                        <td class="table_no">{{ notices.title }}</td>
+                        <td class="table_writer">{{ notices.user.username }}</td>
                         </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -49,13 +52,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for list in boards %}
+                        {% for boards in boards %}
                             <tr>
-                                <td class="table_no">{{ list.row_number }}</td>
+                                <td class="table_no">{{ boards.row_number }}</td>
                                 {#                                                                <td class="table_no">{{ forloop.counter0|add:list.start_index  }}</td>#}
-                                <td class="table_title"><a href="viewboard/{{ list.id }}">{{ list.title }}</a></td>
-                                <td class="table_writer">{{ list.user.username }}</td>
-                                <td class="table_count">{{ list.view_count }}</td>
+                                <td class="table_title"><a href="viewboard/{{ boards.id }}">{{ boards.title }}</a></td>
+                                <td class="table_writer">{{ boards.user.username }}</td>
+                                <td class="table_count">{{ boards.view_count }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>
