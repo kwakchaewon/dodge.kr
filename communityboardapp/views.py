@@ -26,8 +26,16 @@ def goCommunity(request):
     # page = 요청된 페이지. default 1
     page = int(request.GET.get('page', 1))
 
-    allBoards = Boards.objects.all().annotate(
+    # allBoards = Boards.objects.all().annotate(
+    #     row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
+    category_notice = BoardCategories.objects.get(id=1)
+    category_board = BoardCategories.objects.get(id=2)
+
+    allNotices = Boards.objects.filter(category_id=category_notice).order_by("registered_date")
+    print(allNotices)
+    allBoards = Boards.objects.filter(category_id=category_board).annotate(
         row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
+
 
     # page = 요청된 페이지. default 1
     page = int(request.GET.get('page', 1))
@@ -60,7 +68,7 @@ def goCommunity(request):
     nextPage = math.ceil(page / 10) * 10 + 1
 
     return render(request, 'communityboard.html',
-                  {'boards': boards, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage,
+                  {'boards': boards, 'notices': allNotices, 'pageList': pageList, 'previousPage': previousPage, 'nextPage': nextPage,
                    'numPages': num_pages})
 
 
@@ -79,7 +87,7 @@ def boardwriteCompleted(request):
         title = request.POST['title']
         content = request.POST['content']
         user = AuthUser.objects.get(username=request.user)
-        category = BoardCategories.objects.get(id=1)
+        category = BoardCategories.objects.get(id=2)
 
         print('제목: ', title, '  내용: ', content, '  작성자:', user)
 
@@ -94,7 +102,7 @@ def boardwriteCompleted(request):
 
     # 게시글 작성 성공 시
     try:
-        category = BoardCategories.objects.get(id=1)
+        category = BoardCategories.objects.get(id=2)
         if title != None:
             # if request.user and title and content and request.user.is_superuser >= category.authority:
             article = Boards(category=category, user=user, title=title, content=content, image=img_file)
