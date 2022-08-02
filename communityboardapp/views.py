@@ -64,13 +64,12 @@ def goCommunity(request):
                    'numPages': num_pages})
 
 
-# 게시글 쓰기 페이지 이동
+# 게시글 작성 페이지 이동
 @login_required
 def writePost(request):
     # writePostForm = boardsForm()
 
     return render(request, 'writepost.html')
-    # return render(request, 'writepost.html', {'writePostForm': writePostForm})
 
 
 @login_required
@@ -80,7 +79,6 @@ def boardwriteCompleted(request):
         title = request.POST['title']
         content = request.POST['content']
         user = AuthUser.objects.get(username=request.user)
-        # user = request.POST['user']
         category = BoardCategories.objects.get(id=1)
 
         print('제목: ', title, '  내용: ', content, '  작성자:', user)
@@ -102,16 +100,14 @@ def boardwriteCompleted(request):
             article = Boards(category=category, user=user, title=title, content=content, image=img_file)
             article.save()
 
-            print('1')
             return redirect('/community')
 
         else:
-            print('2')
             return redirect('/error')
 
     # 게시글 작성 실패 시
     except:
-        print('3')
+        print('게시글 작성 실패')
 
 
 # 회원가입완료
