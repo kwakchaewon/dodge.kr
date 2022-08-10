@@ -80,6 +80,13 @@ def writePost(request):
     return render(request, 'writepost.html')
 
 
+# 공지 작성 페이지 이동
+@login_required
+def writeNotice(request):
+    return render(request, 'writenotice.html')
+
+
+
 @login_required
 def boardwriteCompleted(request):
     # post 방식으로 넘어오고 데이터들이 올바른 형식이면 데이터 베이스에 저장
