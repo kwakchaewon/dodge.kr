@@ -11,6 +11,7 @@ urlpatterns = [
     path('community/write', writePost, name='writePost'),
     path('writenotice', writeNotice, name='writeNotice'),
     path('boardwritecompleted', boardwriteCompleted, name='boardwriteCompleted'),
+    path('noticewritecompleted', noticeWriteCompleted, name='noticeWriteCompleted'),
     path('signupcompleted', signupCompleted, ),
     path('useridcheck', userIdCheck, ),
     path('login', auth_views.LoginView.as_view(template_name='login.html'), name='login'),

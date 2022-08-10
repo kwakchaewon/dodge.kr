@@ -125,6 +125,43 @@ def boardwriteCompleted(request):
         print('게시글 작성 실패')
 
 
+def noticeWriteCompleted(request):
+    # post 방식으로 넘어오고 데이터들이 올바른 형식이면 데이터 베이스에 저장
+    if request.method == "POST":
+        title = request.POST['title']
+        content = request.POST['content']
+        user = AuthUser.objects.get(username=request.user)
+
+        print('제목: ', title, '  내용: ', content, '  작성자:', user)
+
+        try:
+            img_file = request.POST['img_file']
+
+        except:
+            img_file = None
+
+    else:
+        title = None
+
+    # 게시글 작성 성공 시
+    try:
+        category = BoardCategories.objects.get(id=1)
+        if title != None:
+            # if request.user and title and content and request.user.is_superuser >= category.authority:
+            article = Boards(category=category, user=user, title=title, content=content, image=img_file)
+            article.save()
+
+            return redirect('/community')
+
+        else:
+            return redirect('/error')
+
+    # 게시글 작성 실패 시
+    except:
+        print('게시글 작성 실패')
+
+
+
 # 회원가입완료
 def signupCompleted(request):
     username = request.POST['container__id']
