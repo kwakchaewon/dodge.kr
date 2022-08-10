@@ -8,7 +8,7 @@ urlpatterns = [
     path('', goToMain, name='main'),
     path('signup', goSignUp, ),
     path('community', goCommunity, name='community'),
-    path('community/write', writePost, ),
+    path('community/write', writePost, name='writePost'),
     path('boardwritecompleted', boardwriteCompleted, name='boardwriteCompleted'),
     path('signupcompleted', signupCompleted, ),
     path('useridcheck', userIdCheck, ),
