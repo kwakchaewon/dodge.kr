@@ -13,7 +13,7 @@ urlpatterns = [
     path('writenotice', writeNotice, name='writeNotice'),
     path('boardwritecompleted', boardwriteCompleted, name='boardwriteCompleted'),
     path('noticewritecompleted', noticeWriteCompleted, name='noticeWriteCompleted'),
-    path('signupcompleted', signupCompleted, ),
+    path('signupcompleted', signupCompleted, name='signUpCompleted'),
     path('useridcheck', userIdCheck, ),
     path('login', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
