@@ -22,16 +22,20 @@
                 <div class="notify__table">
                     <div class="notify__title">
                         공지
+                        <a class="glyphicon glyphicon-plus" id="notify__regist"
+                           href="{% url 'writePost' %}"></a>
+
                     </div>
+
 
                     <table class="table table-hover">
 
                         <tbody>
                         {% for notices in notices %}
-                        <tr>
-                        <td class="table_no">{{ notices.title }}</td>
-                        <td class="table_writer">{{ notices.user.username }}</td>
-                        </tr>
+                            <tr>
+                                <td class="table_no">{{ notices.title }}</td>
+                                <td class="table_writer">{{ notices.user.username }}</td>
+                            </tr>
                         {% endfor %}
                         </tbody>
                     </table>
