@@ -5,6 +5,7 @@ from communityboardapp.views import *
 urlpatterns = [
     # path('cbvList', BoardListClassView.as_view(), name='cbv'),
     # path('url', view, name=''),
+
     path('', goToMain, name='main'),
     path('signup', goSignUp, ),
     path('community', goCommunity, name='community'),

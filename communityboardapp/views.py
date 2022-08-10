@@ -32,7 +32,6 @@ def goCommunity(request):
     category_board = BoardCategories.objects.get(id=2)
 
     allNotices = Boards.objects.filter(category_id=category_notice).order_by("registered_date")
-    print(allNotices)
     allBoards = Boards.objects.filter(category_id=category_board).annotate(
         row_number=Window(expression=RowNumber(), order_by=F('id').asc())).order_by("-id")
 
