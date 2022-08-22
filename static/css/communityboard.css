@@ -22,6 +22,13 @@
     float: left;
 }
 
+
+#notify__regist {
+    color: var(--color-black);
+    float: right;
+}
+
+
 /*board__title*/
 .board__title {
     text-align: left;

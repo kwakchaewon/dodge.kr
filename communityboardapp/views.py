@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Window, F, Q
 from django.db.models.functions import RowNumber
@@ -82,7 +83,21 @@ def writePost(request):
 # 공지 작성 페이지 이동
 @login_required
 def writeNotice(request):
+
+    # user = AuthUser.objects.get(username=request.user)
+    #
+    # if str(user) == 'admin':
+    #     print('성공')
+    #     messages.add_message(request, messages.SUCCESS, "권한이 없습니다.")
+    #
+    # else:
+    #     return render(request, 'writenotice.html')
+
     return render(request, 'writenotice.html')
+
+
+
+
 
 
 
